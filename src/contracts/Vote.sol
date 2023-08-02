@@ -21,13 +21,13 @@ contract Vote is SetTeam {
         _;
     }
 
-    function versus(string calldata _team1, string calldata _team2) public onlyBeforeVersus {
+    function versus(string memory _team1, string memory _team2) public onlyBeforeVersus {
         team1 = stringToBytes32(_team1);
         team2 = stringToBytes32(_team2);
         versusExecuted = true;
     }
 
-    function vote(string calldata _teamName, uint _amount) public onlyAfterVersus returns (bool) {
+    function vote(string memory _teamName, uint _amount) public onlyAfterVersus returns (bool) {
         require(!userData[msg.sender].voted, "You have already voted!");
         require(balanceOf(msg.sender) >= _amount, "Not enough tokens!");
         

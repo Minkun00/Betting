@@ -8,11 +8,11 @@ import Token from './truffle_abis/Token.json'
 import SetTeam from './truffle_abis/SetTeam.json'
 import Vote from './truffle_abis/Vote.json'
 // import Navbar
-import Navbar from './Navbar'
+import Navbar from './navbar/Navbar'
 // import Main(buttons are here)
-import Main from './Main.js'
+import Main from './user/Main.js'
 // import Team(only owner can use this)
-import Team from './Team.js'
+import Team from './owner/Team.js'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom' // Update the alias for BrowserRouter as Router
 
 class App extends Component {
@@ -75,87 +75,6 @@ class App extends Component {
       window.alert("Vote contract not deployed to detect network!")
     }
   }
-  
-
-  // function Token.sol -> logIn() 
-  LogIn_ = async () => {
-    const {token, account} = this.state;
-    try {
-      await token.methods.logIn().send({from: account})
-    } catch(error) {
-      if (error.code === 4001) {
-        window.alert("User denied the transaction. Maybe you have logined alredy")
-      } else {
-        window.alert("Already Login")
-      }
-    }
-  }
-  ShowOwner_ = async () => {
-    window.alert(String(this.state.ownerAddress))
-  }
-
-  // function SetTeam.sol -> function setTeam
-  // (string memory _teamName, string memory _top, string memory _jug, string memory _mid, string memory _adc, string memory _sup) 
-  // public onlyOwner
-  handleSetTeam_ = async (teamName, top, jug, mid, adc, sup) => {
-    const { setTeam, account } = this.state;
-    try {
-      await setTeam.methods.setTeam(teamName, top, jug, mid, adc, sup).send({ from: account });
-  
-      // Get team index by calling the getTeamIndexByTeamName function
-      let team1Index = await setTeam.methods.getTeamIndexByTeamName(teamName).call();
-  
-      // Get team data from teams array using the retrieved index
-      let teamData = this.state.teams[team1Index];
-  
-      // Create a new team object with the updated weight and other data
-      let updatedTeam = { ...teamData, top, jug, mid, adc, sup };
-      let updatedTeams = [...this.state.teams];
-      updatedTeams[team1Index] = updatedTeam;
-  
-      this.setState({ teams: updatedTeams });
-      console.log(teamName);
-      console.log(top);
-      console.log(jug);
-      console.log(mid);
-      console.log(adc);
-      console.log(sup);
-      window.alert('저장되었습니다.');
-    } catch (error) {
-      window.alert('Only owner can use this. Check the owner address');
-    }
-  };
-
-  vsTeam_ = async (team1, team2) => {
-    const { setTeam } = this.state;
-    try {
-      let team1Data = await setTeam.methods.getTeamDataByTeamName(team1).call()
-      let team2Data = await setTeam.methods.getTeamDataByTeamName(team2).call()
-      
-      // update team1, 2 data to constructor(props)
-      this.setState({
-        team1: {
-          teamName: team1Data[0],
-          top: team1Data[1],
-          jug: team1Data[2],
-          mid: team1Data[3],
-          adc: team1Data[4],
-          sup: team1Data[5]
-        },
-        team2: {
-          teamName: team2Data[0],
-          top: team2Data[1],
-          jug: team2Data[2],
-          mid: team2Data[3],
-          adc: team2Data[4],
-          sup: team2Data[5]
-        }
-      })
-    } catch (error) {
-      window.alert(`${team1} 또는 ${team2}가 블록체인에 존재하지 않습니다!`);
-    }
-  }
-
   constructor(props) {
     super(props)
     this.state = {
@@ -185,18 +104,19 @@ class App extends Component {
                   {/* Main 컴포넌트의 경로 */}
                   <Route 
                   path='/' 
-                  element={<Main tokenBalance={this.state.tokenBalance} 
-                                LogIn={this.LogIn_}
-                                team1={this.state.team1}
-                                team2={this.state.team2}/>} />
+                  element={<Main token={this.state.token}
+                                  vote={this.state.vote}
+                                  ownerAddress={this.state.ownerAddress}
+                                  account={this.state.account}
+                                  tokenBalance={this.state.tokenBalance}/>}/>
+                  
 
                   {/* Team 컴포넌트의 경로 */}
                   <Route
                     path='/owner'
                     element={<Team ownerAddress={this.state.ownerAddress} 
-                                  account={this.state.account} 
-                                  onSetTeam={this.handleSetTeam_}
-                                  vsTeam={this.vsTeam_}/>}/>
+                                  setTeam={this.state.setTeam}
+                                  vote={this.state.vote}/>}/>
                 </Routes>
 
               </main>
