@@ -81,6 +81,7 @@ contract Vote is SetTeam {
         
         emit BettingResultOver();
         teamNameWin = stringToBytes32('none');
+        versusExecuted = false;
 
     }
 }
