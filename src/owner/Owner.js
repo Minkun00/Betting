@@ -1,12 +1,14 @@
 // owner.js
 import React from 'react';
-import { SetTeam_ } from './Ownerfunction';
+import * as owner from './Ownerfunction'
 
 class Owner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      teamName: '' // State to store the team name
+      teamName: '' ,        // for 'setTeam'
+      teamName1: '',        // for 'Versus'
+      teamName2: ''
     };
     this.handleSetTeam = this.handleSetTeam.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -15,12 +17,13 @@ class Owner extends React.Component {
   async handleSetTeam() {
     const { setTeam, account } = this.props;
     const { teamName } = this.state;
-    await SetTeam_(setTeam, teamName, account);
+    await owner.SetTeam_(setTeam, teamName, account);
   }
 
   handleInputChange(event) {
     this.setState({ teamName: event.target.value }); // Update teamName state on input change
   }
+
 
   render() {
     const { account, ownerAddress } = this.props;

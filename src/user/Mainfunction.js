@@ -1,5 +1,5 @@
 // Mainfunction.js
-export async function LogIn_(token, account) {
+async function LogIn_(token, account) {
     console.log("login activate")
     try {
         await token.methods.logIn().send({from: account})
@@ -13,7 +13,7 @@ export async function LogIn_(token, account) {
     }
 }
 
-export async function showOwner_(token) {
+async function showOwner_(token) {
     console.log("show owner activate")
     try {
         let ownerAddress = await token.methods.showOwner().call()
@@ -24,3 +24,5 @@ export async function showOwner_(token) {
         window.alert("Show owner function error")
     }
 }
+
+export {LogIn_, showOwner_};

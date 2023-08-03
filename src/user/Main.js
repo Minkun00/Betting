@@ -1,6 +1,6 @@
 // Main.js
 import React from 'react'
-import { LogIn_, showOwner_ } from './Mainfunction'
+import * as main from './Mainfunction'
 class Main extends React.Component {
     constructor(props) {
         super(props)
@@ -8,14 +8,13 @@ class Main extends React.Component {
         this.handleShowOwner = this.handleShowOwner.bind(this)
     }
     async handleLogIn() {
-        const token = this.props.token
-        const account = this.props.account
-        await LogIn_(token, account)
+        const { token, account } = this.props
+        await main.LogIn_(token, account)
     }
 
     async handleShowOwner() {
-        const token = this.props.token
-        await showOwner_(token)
+        const { token } = this.props
+        await main.showOwner_(token)
     }
 
 
