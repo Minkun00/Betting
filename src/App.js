@@ -100,24 +100,34 @@ class App extends Component {
                 className='col-lg-12 ml-auto mr-auto'
                 style={{ maxWidth: '600px', minHeight: '100vm' }}>
                     
-                <Routes>
+
+                  <Routes>
                   {/* Main 컴포넌트의 경로 */}
-                  <Route 
-                  path='/' 
-                  element={<Main token={this.state.token}
-                                  vote={this.state.vote}
-                                  ownerAddress={this.state.ownerAddress}
-                                  account={this.state.account}
-                                  tokenBalance={this.state.tokenBalance}/>}/>
-                  
+                  <Route
+                    path='/'
+                    element={
+                      <Main
+                        token={this.state.token} // Pass the token prop here
+                        vote={this.state.vote}
+                        ownerAddress={this.state.ownerAddress}
+                        account={this.state.account}
+                        tokenBalance={this.state.tokenBalance}
+                      />
+                    }
+                  />
 
                   {/* Team 컴포넌트의 경로 */}
                   <Route
                     path='/owner'
-                    element={<Owner ownerAddress={this.state.ownerAddress} 
-                                  setTeam={this.state.setTeam}
-                                  vote={this.state.vote}
-                                  account={this.state.account}/>}/>
+                    element={
+                      <Owner
+                        ownerAddress={this.state.ownerAddress}
+                        setTeam={this.state.setTeam}
+                        vote={this.state.vote}
+                        account={this.state.account}
+                      />
+                    }
+                  />
                 </Routes>
 
               </main>

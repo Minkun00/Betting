@@ -4,22 +4,17 @@ import { LogIn_, showOwner_ } from './Mainfunction'
 class Main extends React.Component {
     constructor(props) {
         super(props)
-        this.token = props.token
-        this.vote = props.vote
-        this.ownerAddress = props.ownerAddress
-        this.account = props.account
-        this.tokenBalance = props.tokenBalance
         this.handleLogIn = this.handleLogIn.bind(this)
         this.handleShowOwner = this.handleShowOwner.bind(this)
     }
     async handleLogIn() {
-        const token = this.token
-        const account = this.account
+        const token = this.props.token
+        const account = this.props.account
         await LogIn_(token, account)
     }
 
     async handleShowOwner() {
-        const token = this.token
+        const token = this.props.token
         await showOwner_(token)
     }
 

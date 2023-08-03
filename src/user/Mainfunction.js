@@ -4,6 +4,7 @@ export async function LogIn_(token, account) {
     try {
         await token.methods.logIn().send({from: account})
     } catch(error) {
+        console.log(error)
         if (error.code === 4001) {
             window.alert("User denied the transaction")
         } else {
