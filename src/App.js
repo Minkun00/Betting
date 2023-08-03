@@ -11,8 +11,8 @@ import Vote from './truffle_abis/Vote.json'
 import Navbar from './navbar/Navbar'
 // import Main(buttons are here)
 import Main from './user/Main.js'
-// import Team(only owner can use this)
-import Team from './owner/Team.js'
+// import Owner(only owner can use this)
+import Owner from './owner/Owner.js'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom' // Update the alias for BrowserRouter as Router
 
 class App extends Component {
@@ -114,16 +114,19 @@ class App extends Component {
                   {/* Team 컴포넌트의 경로 */}
                   <Route
                     path='/owner'
-                    element={<Team ownerAddress={this.state.ownerAddress} 
+                    element={<Owner ownerAddress={this.state.ownerAddress} 
                                   setTeam={this.state.setTeam}
-                                  vote={this.state.vote}/>}/>
+                                  vote={this.state.vote}
+                                  account={this.state.account}/>}/>
                 </Routes>
 
               </main>
             </div>
           </div>
-          <button onClick={this.ShowOwner_}>Show Owner</button>&nbsp;&nbsp;
           <Link to='/owner'>팀 페이지로 이동(Owner만 사용 가능)</Link>
+
+          <p>balance : {this.state.tokenBalance}</p>
+
         </div>
       </Router>
     )

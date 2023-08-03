@@ -18,8 +18,9 @@ class Main extends React.Component {
         await LogIn_(token, account)
     }
 
-    handleShowOwner() {
-        showOwner_(this.ownerAddress)
+    async handleShowOwner() {
+        const token = this.token
+        await showOwner_(token)
     }
 
 
@@ -28,7 +29,6 @@ class Main extends React.Component {
             <div>
                 <button onClick={this.handleLogIn}>LOGIN</button>
                 <button onClick={this.handleShowOwner}>Show Owner</button>
-                <p>balance : {this.tokenBalance}</p>
             </div>
         )
     }

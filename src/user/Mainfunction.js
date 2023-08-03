@@ -12,6 +12,14 @@ export async function LogIn_(token, account) {
     }
 }
 
-export function showOwner_(ownerAddress) {
-    window.alert(String(ownerAddress))
+export async function showOwner_(token) {
+    console.log("show owner activate")
+    try {
+        let ownerAddress = await token.methods.showOwner().call()
+        console.log(ownerAddress)
+        window.alert(String(ownerAddress))
+    } catch(error) {
+        console.log(error)
+        window.alert("Show owner function error")
+    }
 }
