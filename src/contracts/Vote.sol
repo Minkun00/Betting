@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0; //>=0.8.18 <0.9.0
+pragma solidity >=0.8.18<0.9.0; //>=0.8.18 <0.9.0
 import './SetTeam.sol';
 // Vote.sol
 
@@ -27,13 +27,13 @@ contract Vote is SetTeam {
         _;
     }
     // team1, team2 저장
-    function versus(string memory _team1, string memory _team2) public onlyBeforeVersus {
+    function versus(string calldata _team1, string calldata _team2) public onlyBeforeVersus {
         team1 = stringToBytes32(_team1);
         team2 = stringToBytes32(_team2);
         versusExecuted = true;
     }
     // vote 과정 (전과 동일)
-    function vote(string memory _teamName, uint _amount) public onlyAfterVersus returns (bool) {
+    function vote(string calldata _teamName, uint _amount) public onlyAfterVersus returns (bool) {
         require(!userData[msg.sender].voted, "You have already voted!");
         require(balanceOf(msg.sender) >= _amount, "Not enough tokens!");
         
@@ -51,7 +51,7 @@ contract Vote is SetTeam {
         return true;
     }
     // game end : 전과 동일
-    function gameEnd(string memory _teamNameWin, string memory _teamNameLose) public onlyAfterVersus onlyOwner {
+    function gameEnd(string calldata _teamNameWin, string calldata _teamNameLose) public onlyAfterVersus onlyOwner {
         bytes32 win = stringToBytes32(_teamNameWin);
         bytes32 lose = stringToBytes32(_teamNameLose);
         require(win == team1 || win == team2);
@@ -64,7 +64,7 @@ contract Vote is SetTeam {
     }
     // 추가된 점...
     // 이상적으로 모든 user들이 돈을 받아갔으면 retrunBettingResultOver()자동 실행
-    function returnBettingResult() public onlyAfterVersus {
+    function returnBettingResult() public onlyAfterVersus returns(uint) {
         require(teamNameWin != stringToBytes32('none'));
 
         if (getUserVotedTeamName(msg.sender) == teamNameWin) {
@@ -75,10 +75,12 @@ contract Vote is SetTeam {
             if (teamWeight[teamNameWin] == 0) {
                 returnBettingResultOver();
             }
+            return amountToReturn;
         }
         userData[msg.sender].teamName = '';
         userData[msg.sender].voteBalance = 0;
         userData[msg.sender].voted = false;
+        return 0;
     }
     // 이 함수가 실행되어야지 다시 versus()함수를 실행 가능함
     function returnBettingResultOver() public onlyOwner onlyAfterVersus {
@@ -90,5 +92,9 @@ contract Vote is SetTeam {
         teamNameWin = stringToBytes32('none');
         versusExecuted = false;
 
+    }
+
+    function showVersusExecuted() public view returns(bool) {
+        return versusExecuted;
     }
 }
