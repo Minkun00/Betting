@@ -17850,12 +17850,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xA84Fd8963D34f1F78e2D6B47568abEc63f0fFaEE",
-      "transactionHash": "0xf269949af44c1a8a973c1f760cb75b56eaa4a6986405f49dd3d3550def895e5b"
+      "address": "0xf2A2031DA1440231ECbbAd68f74dAE3723F63232",
+      "transactionHash": "0x89c7b02fcf75c9e22289e3d82112f255ceab13547db46c84cba94196af608cf5"
     }
   },
   "schemaVersion": "3.4.14",
-  "updatedAt": "2023-08-04T06:35:20.420Z",
+  "updatedAt": "2023-08-05T08:41:30.370Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

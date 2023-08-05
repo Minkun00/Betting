@@ -1,30 +1,19 @@
 // Main.js
-import React from 'react'
-import * as main from './Mainfunction'
-class Main extends React.Component {
-    constructor(props) {
-        super(props)
-        this.handleLogIn = this.handleLogIn.bind(this)
-        this.handleShowOwner = this.handleShowOwner.bind(this)
-    }
-    async handleLogIn() {
-        const { token, account } = this.props
-        await main.LogIn_(token, account)
-    }
+import React from 'react';
+import Login from './src/Login';
 
-    async handleShowOwner() {
-        const { token } = this.props
-        await main.showOwner_(token)
-    }
+class Main extends React.Component {
 
 
     render() {
         return (
-            <div>
-                <button onClick={this.handleLogIn}>LOGIN</button>
-                <button onClick={this.handleShowOwner}>Show Owner</button>
-            </div>
-        )
+            <React.Fragment>
+                <Login
+                    token={this.props.token}
+                    account={this.props.account}
+                />
+            </React.Fragment>
+        );
     }
 }
 

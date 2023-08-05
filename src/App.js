@@ -91,7 +91,8 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
-          <Navbar account={this.state.account}/>
+          <Navbar account={this.state.account}
+                  tokenBalance={this.state.tokenBalance}/>
           <div className='container-fluid mt-5'>
             <div className='row'>
               <main

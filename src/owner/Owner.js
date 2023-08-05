@@ -32,8 +32,14 @@ class Owner extends React.Component {
           <GetMatch onSelectMatch={this.handleSelectMatch} onSendTeamLogos={(homeURL, awayURL) => this.setState({ selectedHomeTeamImageURL: homeURL, selectedAwayTeamImageURL: awayURL })} />
           {selectedHomeTeam && selectedAwayTeam && (
             <div>
-              선택된 홈 팀: {selectedHomeTeam}
-              선택된 원정 팀: {selectedAwayTeam}
+              <ul>
+                선택된 홈 팀: {selectedHomeTeam}
+
+              </ul>
+              <ul>
+                선택된 원정 팀: {selectedAwayTeam}
+
+              </ul>
             </div>
           )}
         </React.Fragment>

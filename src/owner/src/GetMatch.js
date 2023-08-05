@@ -85,7 +85,7 @@ class GetMatch extends React.Component {
 
     return (
       <div>
-        <div style={{ overflowY: 'scroll', height: '200px' }}>
+        <div style={{ overflowY: 'scroll', height: '400px' }}>
           {matchData.length > 0 && (
             <table>
               <thead>
