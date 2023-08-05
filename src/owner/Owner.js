@@ -1,45 +1,42 @@
-// owner.js
 import React from 'react';
-import * as owner from './Ownerfunction'
+import GetMatch from './src/GetMatch';
 
 class Owner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      teamName: '' ,        // for 'setTeam'
-      teamName1: '',        // for 'Versus'
-      teamName2: ''
+      selectedHomeTeam: '',
+      selectedAwayTeam: '',
+      selectedHomeTeamImageURL: '',
+      selectedAwayTeamImageURL: '',
     };
-    this.handleSetTeam = this.handleSetTeam.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSelectMatch = this.handleSelectMatch.bind(this);
   }
 
-  async handleSetTeam() {
-    const { setTeam, account } = this.props;
-    const { teamName } = this.state;
-    await owner.SetTeam_(setTeam, teamName, account);
+  handleSelectMatch(homeTeam, awayTeam, homeTeamImageURL, awayTeamImageURL) {
+    this.setState({
+      selectedHomeTeam: homeTeam,
+      selectedAwayTeam: awayTeam,
+      selectedHomeTeamImageURL: homeTeamImageURL,
+      selectedAwayTeamImageURL: awayTeamImageURL,
+    });
   }
-
-  handleInputChange(event) {
-    this.setState({ teamName: event.target.value }); // Update teamName state on input change
-  }
-
 
   render() {
     const { account, ownerAddress } = this.props;
-    const { teamName } = this.state;
+    const { selectedHomeTeam, selectedAwayTeam } = this.state;
 
     if (account === ownerAddress) {
       return (
-        <div>
-          <input
-            type='text'
-            placeholder='teamName'
-            value={teamName}
-            onChange={this.handleInputChange}
-          ></input>
-          <button onClick={this.handleSetTeam}>Set Team</button>
-        </div>
+        <React.Fragment>
+          <GetMatch onSelectMatch={this.handleSelectMatch} onSendTeamLogos={(homeURL, awayURL) => this.setState({ selectedHomeTeamImageURL: homeURL, selectedAwayTeamImageURL: awayURL })} />
+          {selectedHomeTeam && selectedAwayTeam && (
+            <div>
+              선택된 홈 팀: {selectedHomeTeam}
+              선택된 원정 팀: {selectedAwayTeam}
+            </div>
+          )}
+        </React.Fragment>
       );
     } else {
       return <div>you are not the owner</div>;

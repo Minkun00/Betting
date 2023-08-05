@@ -6,8 +6,12 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^21.0.1",
+    "pyscript-react": "^0.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-native-webview": "^13.3.1",
     "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
     "uws": "^200.0.0",
@@ -39,6 +43,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/core": "^7.22.9",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-react": "^7.22.5"
   }
 }

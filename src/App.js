@@ -1,5 +1,4 @@
 // App.js
-
 import './App.css'
 import React, { Component } from 'react'
 import Web3 from 'web3'
@@ -13,7 +12,7 @@ import Navbar from './navbar/Navbar'
 import Main from './user/Main.js'
 // import Owner(only owner can use this)
 import Owner from './owner/Owner.js'
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom' // Update the alias for BrowserRouter as Router
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom' // Update the alias for BrowserRouter as Router
 
 class App extends Component {
   async componentDidMount() {
@@ -92,7 +91,7 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
-          <Navbar account={this.state.account} />
+          <Navbar account={this.state.account}/>
           <div className='container-fluid mt-5'>
             <div className='row'>
               <main
@@ -133,7 +132,7 @@ class App extends Component {
               </main>
             </div>
           </div>
-          <Link to='/owner'>팀 페이지로 이동(Owner만 사용 가능)</Link>
+          
 
           <p>balance : {this.state.tokenBalance}</p>
 
