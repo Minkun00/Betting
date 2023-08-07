@@ -1,10 +1,10 @@
 // Ownerfunction.js
 
-async function SetTeam_(setTeam, teamName, account) {
+async function SetTeam_(_setTeam, _teamName, _account) {
     console.log('setTeam activate');
     try {
-      await setTeam.methods.setTeam(teamName).send({ from: account })
-      console.log(teamName + " is in block chain")
+      //await _setTeam.methods.setTeam(_teamName).send({ from: _account })
+      console.log(_teamName + " is in block chain")
     } catch (error) {
       console.log(error);
       window.alert('SetTeam Error!');

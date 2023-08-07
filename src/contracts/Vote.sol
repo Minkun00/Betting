@@ -9,7 +9,7 @@ contract Vote is SetTeam {
     bytes32 team1;  
     bytes32 team2;
     // 이긴 팀의 이름을 저장, default : 'none'
-    bytes32 teamNameWin = stringToBytes32('none');
+    bytes32 public teamNameWin = stringToBytes32('none');
     // versus과정 이후에 모든 과정들을 실행할 수 있게 modifier 작성했는데, 그걸 위한 bool 변수
     // versus 전 : false , versus 후 : true , returnBettingResultOver() 실행되면 다시 false...
     bool public versusExecuted = false;
@@ -30,6 +30,8 @@ contract Vote is SetTeam {
     function versus(string calldata _team1, string calldata _team2) public onlyBeforeVersus {
         team1 = stringToBytes32(_team1);
         team2 = stringToBytes32(_team2);
+        require(teamSetted[team1] && teamSetted[team2]);
+
         versusExecuted = true;
     }
     // vote 과정 (전과 동일)
@@ -56,7 +58,7 @@ contract Vote is SetTeam {
         bytes32 lose = stringToBytes32(_teamNameLose);
         require(win == team1 || win == team2);
         require(lose == team1 || lose == team2);
-
+        teamNameWin = win;
         winnerTeamPureBalance = teamWeight[win];
         teamWeight[win] += teamWeight[lose];
         bettingTotalBalance = teamWeight[win];

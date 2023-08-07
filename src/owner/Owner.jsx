@@ -1,5 +1,8 @@
+// Owner.js
 import React from 'react';
-import GetMatch from './src/GetMatch';
+import {GetMatch} from './src/GetMatch';
+import GameEnd from './src/GameEnd'
+import SetTeam from './src/SetTeam';
 
 class Owner extends React.Component {
   constructor(props) {
@@ -29,19 +32,24 @@ class Owner extends React.Component {
     if (account === ownerAddress) {
       return (
         <React.Fragment>
-          <GetMatch onSelectMatch={this.handleSelectMatch} onSendTeamLogos={(homeURL, awayURL) => this.setState({ selectedHomeTeamImageURL: homeURL, selectedAwayTeamImageURL: awayURL })} />
+          <SetTeam
+          setTeam={this.vote}/>
+          <GetMatch 
+          vote={this.vote}
+          onSelectMatch={this.handleSelectMatch} 
+          onSendTeamLogos={(homeURL, awayURL) => 
+              this.setState({ selectedHomeTeamImageURL: homeURL, selectedAwayTeamImageURL: awayURL })} />
           {selectedHomeTeam && selectedAwayTeam && (
             <div>
               <ul>
                 선택된 홈 팀: {selectedHomeTeam}
-
               </ul>
               <ul>
                 선택된 원정 팀: {selectedAwayTeam}
-
               </ul>
             </div>
           )}
+          <GameEnd selectedHomeTeam={selectedHomeTeam} selectedAwayTeam={selectedAwayTeam} />
         </React.Fragment>
       );
     } else {
