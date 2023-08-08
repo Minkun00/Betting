@@ -15,6 +15,7 @@ class Owner extends React.Component {
       awayTeamURL: null
     }
   }
+
   // GetMatch에서 VERSUS버튼을 누르면 versus에 들어간 값들을 owner.js에 저장함
   handleVersusMatchData = (matchData) => {
     console.log(`DATA : ${matchData}`)
@@ -24,6 +25,7 @@ class Owner extends React.Component {
       homeTeamURL: matchData.homeTeamImageURL,
       awayTeamURL: matchData.awayTeamImageURL
     })
+    this.props.updateMatchData(matchData)
   }
   handleInitVersusMatchData = () => {
     console.log(`DATA init`)
@@ -33,6 +35,13 @@ class Owner extends React.Component {
       homeTeamURL: null,
       awayTeamURL: null
     })
+    const matchData = {
+      homeTeam: null,
+      awayTeam: null,
+      homeTeamURL: null,
+      awayTeamURL: null
+    }
+    this.props.updateMatchData(matchData)
   }
   render() {
     const { homeTeam, homeTeamURL, awayTeam, awayTeamURL } = this.state
