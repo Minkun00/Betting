@@ -55,7 +55,15 @@ class App extends Component {
       window.alert("Vote contract not deployed to detect network!");
     }
   }
-  
+  updateMatchData = (matchData) => {
+    this.setState({
+      homeTeam: matchData.homeTeam,
+      awayTeam: matchData.awayTeam,
+      homeTeamURL: matchData.homeTeamImageURL,
+      awayTeamURL: matchData.awayTeamImageURL
+    })
+  }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -88,6 +96,7 @@ class App extends Component {
                         ownerAddress={this.state.ownerAddress}
                         account={this.state.account}
                         tokenBalance={this.state.tokenBalance}
+                        teamData={this.state.teamData}
                       />
                     }
                   />
@@ -99,6 +108,7 @@ class App extends Component {
                         ownerAddress={this.state.ownerAddress}
                         contract={this.state.contract}
                         account={this.state.account}
+                        updateMatchData={this.updateMatchData}
                       />
                     }
                   />
