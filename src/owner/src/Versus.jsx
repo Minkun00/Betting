@@ -31,7 +31,7 @@ function getSchedule() {
   return matchdata;
 }
 
-class GetMatch extends React.Component {
+class Versus extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -116,4 +116,4 @@ class GetMatch extends React.Component {
   }
 }
 
-export { GetMatch, getSchedule };
+export { Versus, getSchedule };

@@ -1,8 +1,9 @@
 // Owner.js
 import React from 'react';
-import {GetMatch} from './src/GetMatch';
+import {Versus} from './src/Versus';
 import GameEnd from './src/GameEnd'
 import SetTeam from './src/SetTeam';
+import ReturnBettingResultOver from './src/ReturnBettingResultOver';
 
 class Owner extends React.Component {
   constructor(props) {
@@ -24,8 +25,17 @@ class Owner extends React.Component {
       awayTeamURL: matchData.awayTeamImageURL
     })
   }
+  handleInitVersusMatchData = () => {
+    console.log(`DATA init`)
+    this.setState({
+      homeTeam: null,
+      awayTeam: null,
+      homeTeamURL: null,
+      awayTeamURL: null
+    })
+  }
   render() {
-    const { homeTeamURL, awayTeamURL } = this.state
+    const { homeTeam, homeTeamURL, awayTeam, awayTeamURL } = this.state
     const { account, ownerAddress } = this.props;
     if (account === ownerAddress) {
       return (
@@ -34,7 +44,7 @@ class Owner extends React.Component {
           vote={this.props.vote}
           account={this.props.account}/>
 
-          <GetMatch 
+          <Versus 
           vote={this.props.vote}
           account={this.props.account}
           onVersusMatchData={this.handleVersusMatchData} 
@@ -45,9 +55,15 @@ class Owner extends React.Component {
           account={this.props.account}
           homeTeam={this.state.homeTeam}
           awayTeam={this.state.awayTeam}/>
-
+          <p>homeTeam: {homeTeam}</p>
+          <p>awayTeam: {awayTeam}</p>
           <img src={homeTeamURL} alt="HOME TEAM"/>
           <img src={awayTeamURL} alt="AWAY TEAM"/>
+
+          <ReturnBettingResultOver
+          vote={this.props.vote}
+          account={this.props.account}
+          initVersusMatchData={this.handleInitVersusMatchData}/>
         </React.Fragment>
       );
     } else {
