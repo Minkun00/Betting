@@ -55,10 +55,14 @@ class Owner extends React.Component {
           account={this.props.account}
           homeTeam={this.state.homeTeam}
           awayTeam={this.state.awayTeam}/>
-          <p>homeTeam: {homeTeam}</p>
-          <p>awayTeam: {awayTeam}</p>
-          <img src={homeTeamURL} alt="HOME TEAM"/>
-          <img src={awayTeamURL} alt="AWAY TEAM"/>
+          {homeTeam !== null && awayTeam !== null && (  // null이 아닐 때에만 출력
+            <div>
+              <p>homeTeam: {homeTeam}</p>
+              <p>awayTeam: {awayTeam}</p>
+              <img src={homeTeamURL} alt="HOME TEAM" />
+              <img src={awayTeamURL} alt="AWAY TEAM" />
+            </div>
+          )}
 
           <ReturnBettingResultOver
           vote={this.props.vote}
