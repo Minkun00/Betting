@@ -40,7 +40,7 @@ contract Token {
     }
 
 
-    function logIn() public {
+    function logIn() public returns(uint){
         // logIn()은 한 번만 실행될 수 있음(by mapping -> registeredUsers)
         // 토큰 총 발행량을 넘어서는 유저의 수는 안됨
         require(!registeredUsers[msg.sender], 'You have already registered');
@@ -55,6 +55,7 @@ contract Token {
             voteBalance: 0
         });
         totalSupply -= 10 * (10 ** 18);
+        return balanceOf(msg.sender);
     }
 
     // 없어도 됨. react에서 owner의 주소를 잘 받아오는지 표기하기 위해서 인위적으로 만들었음
