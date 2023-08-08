@@ -3,12 +3,10 @@ import React from "react"
 import { returnBettingResultOver_ } from "../function/Ownerfunction"
 
 class ReturnBettingResultOver extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+
     
     handleReturnBettingResultOver = async() => {
-        const { vote, account } = this.props
+        const { vote, account, initVersusMatchData } = this.props
         await returnBettingResultOver_(vote, account)
         console.log(`Return Betting Over`)
         initVersusMatchData()
@@ -23,4 +21,4 @@ class ReturnBettingResultOver extends React.Component {
     }
 }
 
-export default ReturnBettingResultOver
+export default ReturnBettingResultOver;
