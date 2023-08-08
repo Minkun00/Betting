@@ -20,16 +20,20 @@ class App extends Component {
 
   // load metamask address
   async loadWeb3() {
-    if(window.ethereum) {
-      window.web3 = new Web3(window.ethereum)
-      await window.ethereum.enable()
-    }
-    else if (window.web3) {
-      window.web3 = new Web3(window.web3.currentProvider)
-    }
-    else {
-      window.alert('No ethereum browser detected!')
-    }
+    try{
+      if(window.ethereum) {
+        window.web3 = new Web3(window.ethereum)
+        await window.ethereum.enable()
+      }
+      else if (window.web3) {
+        window.web3 = new Web3(window.web3.currentProvider)
+      }
+      else {
+        window.alert('No ethereum browser detected!')
+      }
+    } catch(error) {
+      window.alert(error)
+    } 
   }
   
   // load smart contracts(Token, SetTeam, Vote)
@@ -61,8 +65,8 @@ class App extends Component {
       tokenBalance: '0',
     }
   }
+
   render() {
-    
     return (
       <Router>
         <div className='App'>
