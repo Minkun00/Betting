@@ -1,6 +1,6 @@
 // Owner.js
 import React from 'react';
-import {Versus} from './src/Versus';
+import { Versus } from './src/Versus';
 import GameEnd from './src/GameEnd'
 import SetTeam from './src/SetTeam';
 import ReturnBettingResultOver from './src/ReturnBettingResultOver';
@@ -50,20 +50,20 @@ class Owner extends React.Component {
       return (
         <React.Fragment>
           <SetTeam
-          contract={this.props.contract}
-          account={this.props.account}/>
+            contract={this.props.contract}
+            account={this.props.account} />
 
-          <Versus 
-          contract={this.props.contract}
-          account={this.props.account}
-          onVersusMatchData={this.handleVersusMatchData} 
+          <Versus
+            contract={this.props.contract}
+            account={this.props.account}
+            onVersusMatchData={this.handleVersusMatchData}
           />
 
-          <GameEnd 
-          contract={this.props.contract}
-          account={this.props.account}
-          homeTeam={this.state.homeTeam}
-          awayTeam={this.state.awayTeam}/>
+          <GameEnd
+            contract={this.props.contract}
+            account={this.props.account}
+            homeTeam={this.state.homeTeam}
+            awayTeam={this.state.awayTeam} />
           {homeTeam !== null && awayTeam !== null && (  // null이 아닐 때에만 출력
             <div>
               <p>homeTeam: {homeTeam}</p>
@@ -74,9 +74,9 @@ class Owner extends React.Component {
           )}
 
           <ReturnBettingResultOver
-          contract={this.props.contract}
-          account={this.props.account}
-          initVersusMatchData={this.handleInitVersusMatchData}/>
+            contract={this.props.contract}
+            account={this.props.account}
+            initVersusMatchData={this.handleInitVersusMatchData} />
         </React.Fragment>
       );
     } else {
