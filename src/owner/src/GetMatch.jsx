@@ -50,11 +50,12 @@ class GetMatch extends React.Component {
   handleVersusClick = async () => {
     const selectedMatchData = getSchedule()[this.state.selectedMatch];
     if (selectedMatchData) {
-      const { vote, account } = this.props;
+      const { vote, account, onVersusMatchData } = this.props;
       console.log(vote)
-      const { homeTeam, awayTeam } = selectedMatchData;
+      const { homeTeam, awayTeam, homeTeamImageURL, awayTeamImageURL } = selectedMatchData;
       // Execute the Versus_ function passing the required arguments
       await Versus_(vote, homeTeam, awayTeam, account); // Replace vote and account with the actual valuesx
+      onVersusMatchData({homeTeam, homeTeamImageURL, awayTeam, awayTeamImageURL})
     }
   };
 
@@ -107,6 +108,7 @@ class GetMatch extends React.Component {
       {selectedMatch !== null && isVersusButtonShown && (
         <button onClick={this.handleVersusClick}>VERSUS</button>
       )}
+      {/*확인용 버튼*/}
       <button onClick={this.handleShowMatchUp}>show matchup in console</button>
       <button onClick={this.handleShowVersusExecuted}>show versusExecuted</button>
       </div>

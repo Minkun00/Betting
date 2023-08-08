@@ -69,11 +69,10 @@ class App extends Component {
         <div className='App'>
           <Navbar account={this.state.account}
                   tokenBalance={this.state.tokenBalance}/>
-          <div className='container-fluid mt-5'>
+          <div>
             <div className='row'>
               <main
                 role='main'
-                className='col-lg-12 ml-auto mr-auto'
                 style={{ maxWidth: '600px', minHeight: '100vm' }}>
                     
 
@@ -100,6 +99,7 @@ class App extends Component {
                       />
                     }
                   />
+                  
                 </Routes>
 
               </main>

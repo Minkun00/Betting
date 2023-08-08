@@ -8,9 +8,9 @@ class GameEnd extends React.Component {
     }
 
     handleGameEnd = async() => {
-        const { vote, selectedHomeTeam, selectedAwayTeam, account } = this.props
-        await gameEnd_(vote, selectedHomeTeam, selectedAwayTeam, account)
-        console.log(`Win : ${selectedHomeTeam}, Lose : ${selectedAwayTeam}`)
+        const { vote, homeTeam, awayTeam, account } = this.props
+        await gameEnd_(vote, homeTeam, awayTeam, account)
+        console.log(`Win : ${homeTeam}, Lose : ${awayTeam}`)
     }
     
     render() {
