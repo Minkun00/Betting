@@ -41,17 +41,17 @@ class Owner extends React.Component {
       return (
         <React.Fragment>
           <SetTeam
-          vote={this.props.vote}
+          contract={this.props.contract}
           account={this.props.account}/>
 
           <Versus 
-          vote={this.props.vote}
+          contract={this.props.contract}
           account={this.props.account}
           onVersusMatchData={this.handleVersusMatchData} 
           />
 
           <GameEnd 
-          vote={this.props.vote}
+          contract={this.props.contract}
           account={this.props.account}
           homeTeam={this.state.homeTeam}
           awayTeam={this.state.awayTeam}/>
@@ -65,7 +65,7 @@ class Owner extends React.Component {
           )}
 
           <ReturnBettingResultOver
-          vote={this.props.vote}
+          contract={this.props.contract}
           account={this.props.account}
           initVersusMatchData={this.handleInitVersusMatchData}/>
         </React.Fragment>

@@ -9,13 +9,13 @@ class Login extends React.Component {
         this.handleShowOwner = this.handleShowOwner.bind(this)
     }
     async handleLogIn() {
-        const { token, account } = this.props
-        await LogIn_(token, account)
+        const { contract, account } = this.props
+        await LogIn_(contract, account)
     }
 
     async handleShowOwner() {
-        const { token } = this.props
-        await showOwner_(token)
+        const { contract } = this.props
+        await showOwner_(contract)
     }
 
 

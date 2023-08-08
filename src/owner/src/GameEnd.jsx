@@ -3,13 +3,9 @@ import React from "react"
 import { gameEnd_ } from "../function/Ownerfunction"
 
 class GameEnd extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     handleGameEnd = async() => {
-        const { vote, homeTeam, awayTeam, account } = this.props
-        await gameEnd_(vote, homeTeam, awayTeam, account)
+        const { contract, homeTeam, awayTeam, account } = this.props
+        await gameEnd_(contract, homeTeam, awayTeam, account)
         console.log(`Win : ${homeTeam}, Lose : ${awayTeam}`)
     }
     

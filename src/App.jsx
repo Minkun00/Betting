@@ -3,7 +3,7 @@ import './App.css'
 import React, { Component } from 'react'
 import Web3 from 'web3'
 // import compiled smart contract 
-import Vote from './truffle_abis/Vote.json'
+import Contracts from './truffle_abis/Vote.json'
 // import Navbar
 import Navbar from './navbar/Navbar.jsx'
 // import Main(buttons are here)
@@ -39,15 +39,14 @@ class App extends Component {
     this.setState({ account: accounts[0] });
     const networkId = await web3.eth.net.getId();
   
-    const voteData = Vote.networks[networkId];
-    if (voteData) {
-      const vote = new web3.eth.Contract(Vote.abi, voteData.address);
+    const contractData = Contracts.networks[networkId];
+    if (contractData) {
+      const contract = new web3.eth.Contract(Contracts.abi, contractData.address);
   
-      let ownerAddress = await vote.methods.showOwner(this.state.account).call();
-      
-      // Update tokenBalance state with the latest value
-      let tokenBalance = await vote.methods.balanceOf(this.state.account).call();
-      this.setState({ ownerAddress, vote, tokenBalance });
+      let ownerAddress = await contract.methods.showOwner(this.state.account).call();
+      let tokenBalance = await contract.methods.balanceOf(this.state.account).call();
+
+      this.setState({ ownerAddress, contract, tokenBalance });
     } else {
       window.alert("Vote contract not deployed to detect network!");
     }
@@ -57,9 +56,9 @@ class App extends Component {
     super(props)
     this.state = {
       ownerAddress: '',
-      account: '0x0',   // user`s actual address
-      vote: {},         // contract of the Vote.sol
-      tokenBalance: '0',// token Balance
+      account: '0x0',   
+      contract: {},         
+      tokenBalance: '0',
     }
   }
   render() {
@@ -81,7 +80,7 @@ class App extends Component {
                     path='/'
                     element={
                       <Main
-                        vote={this.state.vote}
+                        contract={this.state.contract}
                         ownerAddress={this.state.ownerAddress}
                         account={this.state.account}
                         tokenBalance={this.state.tokenBalance}
@@ -94,7 +93,7 @@ class App extends Component {
                     element={
                       <Owner
                         ownerAddress={this.state.ownerAddress}
-                        vote={this.state.vote}
+                        contract={this.state.contract}
                         account={this.state.account}
                       />
                     }

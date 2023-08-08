@@ -14,8 +14,8 @@ class SetTeam extends React.Component {
   };
 
   handleSetTeamClick = async () => {
-    const { vote, account } = this.props;
-    console.log(vote)
+    const { contract, account } = this.props;
+    console.log(contract)
     console.log(account)
     const { teamNameInput } = this.state;
 
@@ -25,7 +25,7 @@ class SetTeam extends React.Component {
     }
 
     // Execute the SetTeam_ function with the team name entered by the user
-    await SetTeam_(vote, teamNameInput, account);
+    await SetTeam_(contract, teamNameInput, account);
   };
 
   render() {

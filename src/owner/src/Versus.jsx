@@ -50,23 +50,23 @@ class Versus extends React.Component {
   handleVersusClick = async () => {
     const selectedMatchData = getSchedule()[this.state.selectedMatch];
     if (selectedMatchData) {
-      const { vote, account, onVersusMatchData } = this.props;
-      console.log(vote)
+      const { contract, account, onVersusMatchData } = this.props;
+      console.log(contract)
       const { homeTeam, awayTeam, homeTeamImageURL, awayTeamImageURL } = selectedMatchData;
       // Execute the Versus_ function passing the required arguments
-      await Versus_(vote, homeTeam, awayTeam, account); // Replace vote and account with the actual valuesx
+      await Versus_(contract, homeTeam, awayTeam, account); // Replace vote and account with the actual valuesx
       onVersusMatchData({homeTeam, homeTeamImageURL, awayTeam, awayTeamImageURL})
     }
   };
 
   handleShowMatchUp = async () => {
-    const { vote } = this.props
-    await showMatchUpTeams_(vote)
+    const { contract } = this.props
+    await showMatchUpTeams_(contract)
   }
 
   handleShowVersusExecuted = async() => {
-    const { vote } = this.props
-    await showVersusExecuted_(vote)
+    const { contract } = this.props
+    await showVersusExecuted_(contract)
   }
 
   render() {

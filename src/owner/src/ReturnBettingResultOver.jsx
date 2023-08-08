@@ -6,8 +6,8 @@ class ReturnBettingResultOver extends React.Component {
 
     
     handleReturnBettingResultOver = async() => {
-        const { vote, account, initVersusMatchData } = this.props
-        await returnBettingResultOver_(vote, account)
+        const { contract, account, initVersusMatchData } = this.props
+        await returnBettingResultOver_(contract, account)
         console.log(`Return Betting Over`)
         initVersusMatchData()
     }

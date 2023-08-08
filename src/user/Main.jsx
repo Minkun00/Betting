@@ -7,7 +7,7 @@ class Main extends React.Component {
         return (
             <React.Fragment>
                 <Login
-                    token={this.props.vote}
+                    contract={this.props.contract}
                     account={this.props.account}
                 />
             </React.Fragment>
