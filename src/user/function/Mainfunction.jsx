@@ -62,16 +62,5 @@ async function returnBettingResult_(vote, account) {
     }
 }
 
-// 여기서 return 하는 versusExecuted 의 값으로 다른 함수들 실행 조건으로 사용
-async function showVersusExecuted_(vote) {
-    console.log("show versus executed activate")
-    try {
-        let versusExecuted = await vote.methods.showVersusExecuted().call()
-        console.log(`versusExecuted : ${versusExecuted}`)
-        return versusExecuted
-    } catch(error) {
-        console.log(error)
-        window.alert("showVersusExecuted error")
-    }
-}
-export {LogIn_, showOwner_, getTeamWeightByTeamName_, vote_, returnBettingResult_, showVersusExecuted_};
+
+export {LogIn_, showOwner_, getTeamWeightByTeamName_, vote_, returnBettingResult_};

@@ -34,26 +34,25 @@ class App extends Component {
   
   // load smart contracts(Token, SetTeam, Vote)
   async loadContracts() {
-    const web3 = window.web3
-    const accounts = await web3.eth.getAccounts()
-    this.setState({account: accounts[0]})
-    const networkId = await web3.eth.net.getId()
-
-    const voteData = Vote.networks[networkId]
-    if(voteData) {
-      // get Vote contract code
-      const vote = new web3.eth.Contract(Vote.abi, voteData.address)
+    const web3 = window.web3;
+    const accounts = await web3.eth.getAccounts();
+    this.setState({ account: accounts[0] });
+    const networkId = await web3.eth.net.getId();
+  
+    const voteData = Vote.networks[networkId];
+    if (voteData) {
+      const vote = new web3.eth.Contract(Vote.abi, voteData.address);
+  
+      let ownerAddress = await vote.methods.showOwner(this.state.account).call();
       
-      let ownerAddress = await vote.methods.showOwner(this.state.account).call()
-      let tokenBalance = await vote.methods.balanceOf(this.state.account).call()
-
-      this.setState({ownerAddress})
-      this.setState({tokenBalance})
-      this.setState({vote})
-    } else {  // if not detected
-      window.alert("Vote contract not deployed to detect network!")
+      // Update tokenBalance state with the latest value
+      let tokenBalance = await vote.methods.balanceOf(this.state.account).call();
+      this.setState({ ownerAddress, vote, tokenBalance });
+    } else {
+      window.alert("Vote contract not deployed to detect network!");
     }
   }
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -64,6 +63,7 @@ class App extends Component {
     }
   }
   render() {
+    
     return (
       <Router>
         <div className='App'>

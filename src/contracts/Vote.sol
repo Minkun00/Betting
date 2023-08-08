@@ -6,8 +6,8 @@ import './SetTeam.sol';
 contract Vote is SetTeam {
     // vote.sol에서 function versus( )에서 정해지는 두 팀
     // 이 두 팀의 게임에 대한 결과에 따라 betting result 과정을 거친다
-    bytes32 team1;  
-    bytes32 team2;
+    bytes32 public team1;  
+    bytes32 public team2;
     // 이긴 팀의 이름을 저장, default : 'none'
     bytes32 public teamNameWin = stringToBytes32('none');
     // versus과정 이후에 모든 과정들을 실행할 수 있게 modifier 작성했는데, 그걸 위한 bool 변수
@@ -98,5 +98,12 @@ contract Vote is SetTeam {
 
     function showVersusExecuted() public view returns(bool) {
         return versusExecuted;
+    }
+
+    function showMatchUp1() public view returns(bytes32) {
+        return team1;
+    }
+    function showMatchUp2() public view returns(bytes32) {
+        return team2;
     }
 }

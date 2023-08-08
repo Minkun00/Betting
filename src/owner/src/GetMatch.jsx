@@ -1,7 +1,7 @@
 // GetMatch.js
 import React from 'react';
 import match from './LCK_MATCH.json';
-import { Versus_ } from '../function/Ownerfunction';
+import { Versus_, showMatchUpTeams_, showVersusExecuted_ } from '../function/Ownerfunction';
 
 function getSchedule() {
   const matchdata = [];
@@ -54,9 +54,19 @@ class GetMatch extends React.Component {
       console.log(vote)
       const { homeTeam, awayTeam } = selectedMatchData;
       // Execute the Versus_ function passing the required arguments
-      await Versus_(vote, homeTeam, awayTeam, account); // Replace vote and account with the actual values
+      await Versus_(vote, homeTeam, awayTeam, account); // Replace vote and account with the actual valuesx
     }
   };
+
+  handleShowMatchUp = async () => {
+    const { vote } = this.props
+    await showMatchUpTeams_(vote)
+  }
+
+  handleShowVersusExecuted = async() => {
+    const { vote } = this.props
+    await showVersusExecuted_(vote)
+  }
 
   render() {
     const matchData = getSchedule();
@@ -97,6 +107,8 @@ class GetMatch extends React.Component {
       {selectedMatch !== null && isVersusButtonShown && (
         <button onClick={this.handleVersusClick}>VERSUS</button>
       )}
+      <button onClick={this.handleShowMatchUp}>show matchup in console</button>
+      <button onClick={this.handleShowVersusExecuted}>show versusExecuted</button>
       </div>
     )
   }

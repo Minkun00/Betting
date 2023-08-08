@@ -33,12 +33,15 @@ class Owner extends React.Component {
       return (
         <React.Fragment>
           <SetTeam
-          setTeam={this.vote}/>
+          setTeam={this.props.vote}/>
+
           <GetMatch 
-          vote={this.vote}
-          onSelectMatch={this.handleSelectMatch} 
+          vote={this.props.vote}
+          onSelectMatch={this.handleSelectMatch}
+          account={this.props.account} 
           onSendTeamLogos={(homeURL, awayURL) => 
               this.setState({ selectedHomeTeamImageURL: homeURL, selectedAwayTeamImageURL: awayURL })} />
+
           {selectedHomeTeam && selectedAwayTeam && (
             <div>
               <ul>
@@ -49,7 +52,12 @@ class Owner extends React.Component {
               </ul>
             </div>
           )}
-          <GameEnd selectedHomeTeam={selectedHomeTeam} selectedAwayTeam={selectedAwayTeam} />
+
+          <GameEnd 
+          selectedHomeTeam={selectedHomeTeam} 
+          selectedAwayTeam={selectedAwayTeam} 
+          vote={this.props.vote}
+          account={this.props.account}/>
         </React.Fragment>
       );
     } else {
