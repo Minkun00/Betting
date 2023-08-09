@@ -14,4 +14,3 @@ function Main({ contract, account }) {
 }
 
 export default Main;
-

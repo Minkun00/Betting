@@ -2,21 +2,16 @@
 import React from "react";
 import { Versus_ } from "../function/Ownerfunction";
 
-function Versus({ teamData, contract, account, updateMatchData }) {
+function Versus({ teamData, contract, account, updateAppTeamData }) {
   const handleVersus = async (team1Name, team2Name) => {
     try {
-      await Versus_(contract, team1Name, team2Name, account);
-      // 실행 후, 결과를 updateMatchData 함수를 통해 App 컴포넌트에 전달
-      updateMatchData({
-        homeTeam: team1Name,
-        awayTeam: team2Name,
-        // ... (homeTeamImageURL, awayTeamImageURL 등)
-      });
+      await Versus_(contract, team1Name, team2Name, account)
+      updateAppTeamData(teamData)
     } catch (error) {
-      console.log(error);
-      window.alert("Versus Error!");
+      console.log(error)
+      window.alert("Versus Error!")
     }
-  };
+  }
 
   return (
     <div>
@@ -33,7 +28,7 @@ function Versus({ teamData, contract, account, updateMatchData }) {
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
 export default Versus;

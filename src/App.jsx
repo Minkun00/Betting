@@ -12,10 +12,9 @@ function App() {
   const [account, setAccount] = useState('0x0');
   const [contract, setContract] = useState({});
   const [tokenBalance, setTokenBalance] = useState('0');
-  const [homeTeam, setHomeTeam] = useState('');
-  const [awayTeam, setAwayTeam] = useState('');
-  const [homeTeamURL, setHomeTeamURL] = useState('');
-  const [awayTeamURL, setAwayTeamURL] = useState('');
+
+  const [appTeamData, setAppTeamData] = useState([])
+  const [appWLData, setAppWLData] = useState([])
 
   useEffect(() => {
     loadWeb3();
@@ -63,12 +62,16 @@ function App() {
     }
   }
 
-  const updateMatchData = (matchData) => {
-    setHomeTeam(matchData.homeTeam);
-    setAwayTeam(matchData.awayTeam);
-    setHomeTeamURL(matchData.homeTeamImageURL);
-    setAwayTeamURL(matchData.awayTeamImageURL);
-  };
+  const updateAppTeamData = (teamData) => {
+    setAppTeamData(teamData)
+  }
+  const updateAppWLData = (teamWLData) => {
+    setAppWLData(teamWLData)
+  }
+  const resetAppData = () => {
+    setAppTeamData([]);
+    setAppWLData([]);
+  }
 
   return (
     <Router>
@@ -86,7 +89,7 @@ function App() {
                       ownerAddress={ownerAddress}
                       account={account}
                       tokenBalance={tokenBalance}
-                      teamData={[{ team1: { name: homeTeam }, team2: { name: awayTeam } }]}
+                      appTeamData={appTeamData}
                     />
                   }
                 />
@@ -98,7 +101,9 @@ function App() {
                       ownerAddress={ownerAddress}
                       contract={contract}
                       account={account}
-                      updateMatchData={updateMatchData}
+                      updateAppTeamData={updateAppTeamData}
+                      onWLTeamDataSet={updateAppWLData}
+                      resetAppData={resetAppData}
                     />
                   }
                 />

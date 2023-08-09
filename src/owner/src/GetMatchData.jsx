@@ -42,16 +42,22 @@ function GetMatchData({ onTeamSelected }) {
       alert("Please select a row.");
       return;
     }
-
+  
     const selectedTeamData = {
-      team1: selectedRow.match.teams[0],
-      team2: selectedRow.match.teams[1]
+      team1: {
+        name: selectedRow.match.teams[0].name,
+        image: selectedRow.match.teams[0].image
+      },
+      team2: {
+        name: selectedRow.match.teams[1].name,
+        image: selectedRow.match.teams[1].image
+      }
     };
-
+  
     onTeamSelected(selectedTeamData);
     setSelectedRow(null);
   };
-
+  
   const lckEvents = localData?.data?.schedule?.events?.filter(event => event.league?.name === 'LCK');
 
   return (
