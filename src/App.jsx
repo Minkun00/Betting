@@ -16,6 +16,22 @@ function App() {
   const [appTeamData, setAppTeamData] = useState([])
   const [appWLData, setAppWLData] = useState([])
 
+  const updateAppTeamData = (teamData) => {
+    setAppTeamData(teamData);
+  }
+  
+  useEffect(() => {
+    console.log(appTeamData); // 업데이트된 appTeamData를 출력
+  }, [appTeamData]);
+  
+  const updateAppWLData = (teamWLData) => {
+    setAppWLData(teamWLData)
+  }
+  const resetAppData = () => {
+    setAppTeamData([]);
+    setAppWLData([]);
+  }
+
   useEffect(() => {
     loadWeb3();
     loadContracts();
@@ -61,18 +77,6 @@ function App() {
       console.log(error);
     }
   }
-
-  const updateAppTeamData = (teamData) => {
-    setAppTeamData(teamData)
-  }
-  const updateAppWLData = (teamWLData) => {
-    setAppWLData(teamWLData)
-  }
-  const resetAppData = () => {
-    setAppTeamData([]);
-    setAppWLData([]);
-  }
-
   return (
     <Router>
       <div className="App">
@@ -86,10 +90,10 @@ function App() {
                   element={
                     <Main
                       contract={contract}
-                      ownerAddress={ownerAddress}
                       account={account}
                       tokenBalance={tokenBalance}
                       appTeamData={appTeamData}
+                      appWLData={appWLData}
                     />
                   }
                 />
@@ -101,7 +105,7 @@ function App() {
                       ownerAddress={ownerAddress}
                       contract={contract}
                       account={account}
-                      updateAppTeamData={updateAppTeamData}
+                      onAppTeamData={updateAppTeamData}
                       onWLTeamDataSet={updateAppWLData}
                       resetAppData={resetAppData}
                     />
