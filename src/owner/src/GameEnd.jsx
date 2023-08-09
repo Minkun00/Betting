@@ -3,8 +3,6 @@ import React from "react"
 import { gameEnd_ } from "../function/Ownerfunction"
 
 class GameEnd extends React.Component {
-    
-
     handleGameEnd = async() => {
         const { contract, account } = this.props
         const { winnerTeam, loserTeam } = this.state;

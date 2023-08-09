@@ -1,0 +1,3720 @@
+{
+    "data": {
+        "schedule": {
+            "pages": {
+                "older": "b2xkZXI6OjExMDM3MTU1MTI3OTA4MTk4MA==",
+                "newer": "bmV3ZXI6OjExMDczMzgzODkzNjUxMjU2OA=="
+            },
+            "events": [
+                {
+                    "startTime": "2023-08-06T08:30:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "LCK",
+                        "slug": "lck"
+                    },
+                    "match": {
+                        "id": "110371551279081980",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "kt Rolster",
+                                "code": "KT",
+                                "image": "http://static.lolesports.com/teams/kt_darkbackground.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 2
+                                },
+                                "record": {
+                                    "wins": 17,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "Liiv SANDBOX",
+                                "code": "LSB",
+                                "image": "http://static.lolesports.com/teams/liiv-sandbox-new.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 5,
+                                    "losses": 13
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 3
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T09:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "6주 차",
+                    "league": {
+                        "name": "PCS",
+                        "slug": "pcs"
+                    },
+                    "match": {
+                        "id": "110423696149447706",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Beyond Gaming",
+                                "code": "BYG",
+                                "image": "http://static.lolesports.com/teams/1686826371701_beyondGaming_logo_W.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 14,
+                                    "losses": 4
+                                }
+                            },
+                            {
+                                "name": "West Point Esports",
+                                "code": "WP",
+                                "image": "http://static.lolesports.com/teams/1686826980767_WPE_Full.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 7,
+                                    "losses": 11
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T09:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "플레이오프 - 3라운드",
+                    "league": {
+                        "name": "LJL",
+                        "slug": "ljl-japan"
+                    },
+                    "match": {
+                        "id": "110395337117294344",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "DetonatioN FocusMe",
+                                "code": "DFM",
+                                "image": "http://static.lolesports.com/teams/1673415140442_dfm.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Fukuoka SoftBank HAWKS gaming",
+                                "code": "SHG",
+                                "image": "https://lolstatic-a.akamaihd.net/esports-assets/production/team/fukuoka-softbank-hawks-gaming-b99n2uq2.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 2
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T10:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "8주 차",
+                    "league": {
+                        "name": "VCS",
+                        "slug": "vcs"
+                    },
+                    "match": {
+                        "id": "110416959492258880",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "TEAM WHALES",
+                                "code": "TW",
+                                "image": "http://static.lolesports.com/teams/1674646643550_TEAMWHALE_LOGO_VERSIONS_W_fullwhite-06-svg.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 4
+                                }
+                            },
+                            {
+                                "name": "CERBERUS ESPORTS",
+                                "code": "CES",
+                                "image": "http://static.lolesports.com/teams/1636526090059_900px-CERBERUS_Esports.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 2
+                                },
+                                "record": {
+                                    "wins": 9,
+                                    "losses": 5
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 3
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T10:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "6주 차",
+                    "league": {
+                        "name": "PCS",
+                        "slug": "pcs"
+                    },
+                    "match": {
+                        "id": "110423696149447742",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "J Team",
+                                "code": "JT",
+                                "image": "http://static.lolesports.com/teams/1592588569647_JTeamJT-01-FullonDark.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 15,
+                                    "losses": 3
+                                }
+                            },
+                            {
+                                "name": "Dewish Team",
+                                "code": "DWT",
+                                "image": "http://static.lolesports.com/teams/1656308173484_DWT_Logo_W.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 17
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T11:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "6주 차",
+                    "league": {
+                        "name": "PCS",
+                        "slug": "pcs"
+                    },
+                    "match": {
+                        "id": "110423696149447726",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Deep Cross Gaming",
+                                "code": "DCG",
+                                "image": "http://static.lolesports.com/teams/1644502702164_DeepCrossGaming_W_1.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 8
+                                }
+                            },
+                            {
+                                "name": "Frank Esports",
+                                "code": "FAK",
+                                "image": "http://static.lolesports.com/teams/1656308269827_220621_FRANK_Final_Logo_W.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 9,
+                                    "losses": 10
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T12:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "6주 차",
+                    "league": {
+                        "name": "PCS",
+                        "slug": "pcs"
+                    },
+                    "match": {
+                        "id": "110423696149447714",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "CTBC Flying Oyster",
+                                "code": "CFO",
+                                "image": "http://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 9
+                                }
+                            },
+                            {
+                                "name": "Impunity Esports",
+                                "code": "IMP",
+                                "image": "http://static.lolesports.com/teams/impunity.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 16
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T13:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "8주 차",
+                    "league": {
+                        "name": "VCS",
+                        "slug": "vcs"
+                    },
+                    "match": {
+                        "id": "110416959492258808",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "GAM Esports",
+                                "code": "GAM",
+                                "image": "http://static.lolesports.com/teams/1643263093448_GAMyellow.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 2
+                                },
+                                "record": {
+                                    "wins": 11,
+                                    "losses": 3
+                                }
+                            },
+                            {
+                                "name": "Team Secret",
+                                "code": "TS",
+                                "image": "http://static.lolesports.com/teams/1656693717651_TS.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 8,
+                                    "losses": 6
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 3
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T13:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "6주 차",
+                    "league": {
+                        "name": "PCS",
+                        "slug": "pcs"
+                    },
+                    "match": {
+                        "id": "110423696149447774",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Hell Pigs",
+                                "code": "HPS",
+                                "image": "http://static.lolesports.com/teams/1674036338265_HPS_W.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 7,
+                                    "losses": 11
+                                }
+                            },
+                            {
+                                "name": "PSG Talon",
+                                "code": "PSG",
+                                "image": "http://static.lolesports.com/teams/1644501567410_PSG_3.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 16,
+                                    "losses": 2
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T16:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "TCL",
+                        "slug": "turkiye-sampiyonluk-ligi"
+                    },
+                    "match": {
+                        "id": "110429898578824096",
+                        "flags": [
+                            "hasVod",
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "NASR ESPORTS",
+                                "code": "NASR",
+                                "image": "http://static.lolesports.com/teams/red.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "FUT ESPORTS",
+                                "code": "FUT",
+                                "image": "http://static.lolesports.com/teams/1673957996955_FUT.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T16:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "Prime League",
+                        "slug": "primeleague"
+                    },
+                    "match": {
+                        "id": "110343648528824408",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Unicorns of Love Sexy Edition",
+                                "code": "USE",
+                                "image": "http://static.lolesports.com/teams/1674832383233_PRM_USE-FullColorDarkBG.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 3,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Eintracht Spandau",
+                                "code": "EINS",
+                                "image": "http://static.lolesports.com/teams/1674832820210_PRM_EINS-FullColorDarkBG.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 2
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T16:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL",
+                        "slug": "cblol-brazil"
+                    },
+                    "match": {
+                        "id": "110413046183474826",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Los Grandes",
+                                "code": "LOS",
+                                "image": "http://static.lolesports.com/teams/1686087430642_logo_los_white_newest.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 6,
+                                    "losses": 12
+                                }
+                            },
+                            {
+                                "name": "LOUD",
+                                "code": "LLL",
+                                "image": "http://static.lolesports.com/teams/Logo-LOUD-Esports_Original.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 13,
+                                    "losses": 5
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T17:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL",
+                        "slug": "cblol-brazil"
+                    },
+                    "match": {
+                        "id": "110413046183474904",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "INTZ",
+                                "code": "ITZ",
+                                "image": "http://static.lolesports.com/teams/1643056732785_INTZ_Logo_Principal_2022.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 11,
+                                    "losses": 7
+                                }
+                            },
+                            {
+                                "name": "FLUXO",
+                                "code": "FX",
+                                "image": "http://static.lolesports.com/teams/1670539056915_fluxo_escudo_w.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 11,
+                                    "losses": 7
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T17:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "LCS Challengers Qualifiers",
+                        "slug": "lcs_challengers_qualifiers"
+                    },
+                    "match": {
+                        "id": "110733838936512552",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "Gentle Hearts Gaming",
+                                "code": "GHG",
+                                "image": "http://static.lolesports.com/teams/1689664866295_GentleHeartsGaming.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "Team Coachify",
+                                "code": "CFY",
+                                "image": "http://static.lolesports.com/teams/1689664767106_TeamCoachify.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 2
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 3
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T17:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "LCS Challengers Qualifiers",
+                        "slug": "lcs_challengers_qualifiers"
+                    },
+                    "match": {
+                        "id": "110733838936512544",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "Mirage Alliance",
+                                "code": "MIR",
+                                "image": "http://static.lolesports.com/teams/1678194212317_MirageAlliance.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 2
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Apex Mission Impossible",
+                                "code": "AMI",
+                                "image": "http://static.lolesports.com/teams/1686625614565_ApexMissionImpossible.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 3
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T18:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL",
+                        "slug": "cblol-brazil"
+                    },
+                    "match": {
+                        "id": "110413046183474870",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Liberty",
+                                "code": "LBR",
+                                "image": "http://static.lolesports.com/teams/1643305707691_RXfNcFMU.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 16
+                                }
+                            },
+                            {
+                                "name": "FURIA",
+                                "code": "FUR",
+                                "image": "http://static.lolesports.com/teams/FURIA---black.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 8,
+                                    "losses": 10
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T19:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL",
+                        "slug": "cblol-brazil"
+                    },
+                    "match": {
+                        "id": "110413046183474866",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "KaBuM! Esports",
+                                "code": "KBM",
+                                "image": "http://static.lolesports.com/teams/1671197541491_LOGO-KABUM-ESPORTS-2023-NEGATIVO-FUNDOPRETO.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 17
+                                }
+                            },
+                            {
+                                "name": "paiN Gaming",
+                                "code": "PNG",
+                                "image": "http://static.lolesports.com/teams/1674657011011_pain_logo_white.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 14,
+                                    "losses": 4
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T19:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "LCS Challengers Qualifiers",
+                        "slug": "lcs_challengers_qualifiers"
+                    },
+                    "match": {
+                        "id": "110733838936512548",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "Team Ambition",
+                                "code": "TA",
+                                "image": "http://static.lolesports.com/teams/1675235626712_TeamAmbition.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 2
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Team E Turner",
+                                "code": "TET",
+                                "image": "http://static.lolesports.com/teams/1689664807064_TeamETurner.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 3
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T19:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "LCS Challengers Qualifiers",
+                        "slug": "lcs_challengers_qualifiers"
+                    },
+                    "match": {
+                        "id": "110733838936512556",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "Winthrop University",
+                                "code": "WU",
+                                "image": "http://static.lolesports.com/teams/1675157784150_WinthropUniversity.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 2
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Lit Esports",
+                                "code": "LIT",
+                                "image": "http://static.lolesports.com/teams/1675157915608_LiTEsports.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 3
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T20:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL",
+                        "slug": "cblol-brazil"
+                    },
+                    "match": {
+                        "id": "110413046183474846",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Vivo Keyd Stars",
+                                "code": "VKS",
+                                "image": "http://static.lolesports.com/teams/1670542079678_vks.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 8
+                                }
+                            },
+                            {
+                                "name": "RED Kalunga",
+                                "code": "RED",
+                                "image": "http://static.lolesports.com/teams/1631820575924_red-2021-worlds.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 14,
+                                    "losses": 4
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-06T21:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "플레이오프 - 2라운드",
+                    "league": {
+                        "name": "LCS",
+                        "slug": "lcs"
+                    },
+                    "match": {
+                        "id": "110767955468411240",
+                        "flags": [
+                            "hasVod",
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Golden Guardians",
+                                "code": "GG",
+                                "image": "http://static.lolesports.com/teams/1592590586919_GoldenGuardiansGGS-01-FullonDark.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "NRG",
+                                "code": "NRG",
+                                "image": "http://static.lolesports.com/teams/1681501735148_NRG_PRIMARY_LIGHT.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-07T05:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "플레이오프 - 1라운드",
+                    "league": {
+                        "name": "LCK 챌린저스",
+                        "slug": "lck_challengers_league"
+                    },
+                    "match": {
+                        "id": "110378429158160351",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "HLE Challengers",
+                                "code": "HLE",
+                                "image": "http://static.lolesports.com/teams/hle-2021-color-on-dark.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Gen.G Global Academy",
+                                "code": "GEN",
+                                "image": "http://static.lolesports.com/teams/1672911977540_GGA_2023ver_LOGO_GGA_simplyA_W1.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-07T08:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "대표 선발전",
+                    "league": {
+                        "name": "LPL",
+                        "slug": "lpl"
+                    },
+                    "match": {
+                        "id": "110825936252892805",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "TOP ESPORTS",
+                                "code": "TES",
+                                "image": "http://static.lolesports.com/teams/1592592064571_TopEsportsTES-01-FullonDark.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 2
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "WeiboGaming FAW AUDI",
+                                "code": "WBG",
+                                "image": "http://static.lolesports.com/teams/1641202879910_3.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-07T09:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "6주 차",
+                    "league": {
+                        "name": "PCS",
+                        "slug": "pcs"
+                    },
+                    "match": {
+                        "id": "110843038172344818",
+                        "flags": [
+                            "hasVod",
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "CTBC Flying Oyster",
+                                "code": "CFO",
+                                "image": "http://static.lolesports.com/teams/1656307849320_CFO_Logo.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 9
+                                }
+                            },
+                            {
+                                "name": "Frank Esports",
+                                "code": "FAK",
+                                "image": "http://static.lolesports.com/teams/1656308269827_220621_FRANK_Final_Logo_W.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 9,
+                                    "losses": 10
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-07T09:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "플레이오프 - 1라운드",
+                    "league": {
+                        "name": "LCK 챌린저스",
+                        "slug": "lck_challengers_league"
+                    },
+                    "match": {
+                        "id": "110378429158160357",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "DRX Challengers",
+                                "code": "DRX",
+                                "image": "http://static.lolesports.com/teams/1672910744570_01.Basic_W.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "kt Challengers",
+                                "code": "KT",
+                                "image": "http://static.lolesports.com/teams/kt_darkbackground.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-07T20:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL 아카데미",
+                        "slug": "cblol_academy"
+                    },
+                    "match": {
+                        "id": "110413246204091801",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "FURIA Academy",
+                                "code": "FUR",
+                                "image": "http://static.lolesports.com/teams/FUR-FullonDark-7.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 6,
+                                    "losses": 12
+                                }
+                            },
+                            {
+                                "name": "Vivo Keyd Stars Academy",
+                                "code": "VKS",
+                                "image": "http://static.lolesports.com/teams/1670613637640_NAMINGRIGHTS-BRANCO.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 12,
+                                    "losses": 6
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-07T21:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL 아카데미",
+                        "slug": "cblol_academy"
+                    },
+                    "match": {
+                        "id": "110413246204091815",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "paiN Academy",
+                                "code": "PNG",
+                                "image": "http://static.lolesports.com/teams/1675609745517_paiN_para_fundo_preto.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 8
+                                }
+                            },
+                            {
+                                "name": "Liberty Academy",
+                                "code": "LBR",
+                                "image": "http://static.lolesports.com/teams/1643305747654_RXfNcFMU.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 11,
+                                    "losses": 7
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-07T22:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL 아카데미",
+                        "slug": "cblol_academy"
+                    },
+                    "match": {
+                        "id": "110413246204026215",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "INTZ Academy",
+                                "code": "ITZ",
+                                "image": "http://static.lolesports.com/teams/1643056777663_INTZ_Logo_Principal_20221.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 6,
+                                    "losses": 12
+                                }
+                            },
+                            {
+                                "name": "LOUD Academy",
+                                "code": "LLL",
+                                "image": "http://static.lolesports.com/teams/LOUD-FullonDark-4.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 8,
+                                    "losses": 10
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-07T23:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL 아카데미",
+                        "slug": "cblol_academy"
+                    },
+                    "match": {
+                        "id": "110413246204026233",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "RED Academy",
+                                "code": "RED",
+                                "image": "http://static.lolesports.com/teams/1642969030123_REDlogo_REDCanids-RGB-linhabranca1.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 8
+                                }
+                            },
+                            {
+                                "name": "Los Grandes Academy",
+                                "code": "LOS",
+                                "image": "http://static.lolesports.com/teams/1686087482910_logo_los_white_newest.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 5,
+                                    "losses": 13
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-08T00:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "North Regional League",
+                        "slug": "north_regional_league"
+                    },
+                    "match": {
+                        "id": "110377170770228031",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Fuego",
+                                "code": "FUE",
+                                "image": "http://static.lolesports.com/teams/1642594085876_FUEGO-ColorLight.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 3,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "Bandits Gaming",
+                                "code": "BAN",
+                                "image": "http://static.lolesports.com/teams/1642594034709_BANDITS-White.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 2
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-08T00:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL 아카데미",
+                        "slug": "cblol_academy"
+                    },
+                    "match": {
+                        "id": "110413246204091773",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "FLUXO Academy",
+                                "code": "FX",
+                                "image": "http://static.lolesports.com/teams/1670613746540_fluxo_escudo_w.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 8
+                                }
+                            },
+                            {
+                                "name": "KaBuM! Academy",
+                                "code": "KBM",
+                                "image": "http://static.lolesports.com/teams/1671198215251_LOGO-KABUM-ESPORTS-2023-NEGATIVO-FUNDOPRETO.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 12,
+                                    "losses": 6
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-08T08:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "플레이오프 - 1라운드",
+                    "league": {
+                        "name": "LCK",
+                        "slug": "lck"
+                    },
+                    "match": {
+                        "id": "110371551279082016",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Hanwha Life Esports",
+                                "code": "HLE",
+                                "image": "http://static.lolesports.com/teams/1631819564399_hle-2021-worlds.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "DRX",
+                                "code": "DRX",
+                                "image": "http://static.lolesports.com/teams/1672910733664_01.Basic_W.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-08T09:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "대표 선발전",
+                    "league": {
+                        "name": "LPL",
+                        "slug": "lpl"
+                    },
+                    "match": {
+                        "id": "110825936252892811",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "SHANGHAI EDWARD GAMING HYCAN",
+                                "code": "EDG",
+                                "image": "http://static.lolesports.com/teams/1631819297476_edg-2021-worlds.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 2
+                                }
+                            },
+                            {
+                                "name": "WeiboGaming FAW AUDI",
+                                "code": "WBG",
+                                "image": "http://static.lolesports.com/teams/1641202879910_3.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-08T15:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "Arabian League",
+                        "slug": "arabian_league"
+                    },
+                    "match": {
+                        "id": "110422923165247457",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "Anubis Gaming",
+                                "code": "ANB",
+                                "image": "http://static.lolesports.com/teams/1674634690739_anbpng.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Nigma Galaxy",
+                                "code": "NGX",
+                                "image": "http://static.lolesports.com/teams/1673829529728_Logo_mark.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-08T20:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL 아카데미",
+                        "slug": "cblol_academy"
+                    },
+                    "match": {
+                        "id": "110413246204026217",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Los Grandes Academy",
+                                "code": "LOS",
+                                "image": "http://static.lolesports.com/teams/1686087482910_logo_los_white_newest.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 5,
+                                    "losses": 13
+                                }
+                            },
+                            {
+                                "name": "LOUD Academy",
+                                "code": "LLL",
+                                "image": "http://static.lolesports.com/teams/LOUD-FullonDark-4.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 8,
+                                    "losses": 10
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-08T21:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL 아카데미",
+                        "slug": "cblol_academy"
+                    },
+                    "match": {
+                        "id": "110413246204091793",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "INTZ Academy",
+                                "code": "ITZ",
+                                "image": "http://static.lolesports.com/teams/1643056777663_INTZ_Logo_Principal_20221.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 6,
+                                    "losses": 12
+                                }
+                            },
+                            {
+                                "name": "FLUXO Academy",
+                                "code": "FX",
+                                "image": "http://static.lolesports.com/teams/1670613746540_fluxo_escudo_w.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 8
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-08T22:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "Liga Latinoamérica",
+                        "slug": "lla"
+                    },
+                    "match": {
+                        "id": "110411420270240421",
+                        "flags": [
+                            "hasVod",
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Movistar R7",
+                                "code": "R7",
+                                "image": "http://static.lolesports.com/teams/1673451007201_IMG_3488.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 3
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Estral Esports",
+                                "code": "EST",
+                                "image": "http://static.lolesports.com/teams/EST.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-08T22:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL 아카데미",
+                        "slug": "cblol_academy"
+                    },
+                    "match": {
+                        "id": "110413246204091809",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Liberty Academy",
+                                "code": "LBR",
+                                "image": "http://static.lolesports.com/teams/1643305747654_RXfNcFMU.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 11,
+                                    "losses": 7
+                                }
+                            },
+                            {
+                                "name": "FURIA Academy",
+                                "code": "FUR",
+                                "image": "http://static.lolesports.com/teams/FUR-FullonDark-7.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 6,
+                                    "losses": 12
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-08T23:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL 아카데미",
+                        "slug": "cblol_academy"
+                    },
+                    "match": {
+                        "id": "110413246204091785",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "KaBuM! Academy",
+                                "code": "KBM",
+                                "image": "http://static.lolesports.com/teams/1671198215251_LOGO-KABUM-ESPORTS-2023-NEGATIVO-FUNDOPRETO.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 12,
+                                    "losses": 6
+                                }
+                            },
+                            {
+                                "name": "paiN Academy",
+                                "code": "PNG",
+                                "image": "http://static.lolesports.com/teams/1675609745517_paiN_para_fundo_preto.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 8
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-09T00:00:00Z",
+                    "state": "completed",
+                    "type": "match",
+                    "blockName": "9주 차",
+                    "league": {
+                        "name": "CBLOL 아카데미",
+                        "slug": "cblol_academy"
+                    },
+                    "match": {
+                        "id": "110413246204026225",
+                        "flags": [
+                            "hasVod"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Vivo Keyd Stars Academy",
+                                "code": "VKS",
+                                "image": "http://static.lolesports.com/teams/1670613637640_NAMINGRIGHTS-BRANCO.png",
+                                "result": {
+                                    "outcome": "loss",
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 12,
+                                    "losses": 6
+                                }
+                            },
+                            {
+                                "name": "RED Academy",
+                                "code": "RED",
+                                "image": "http://static.lolesports.com/teams/1642969030123_REDlogo_REDCanids-RGB-linhabranca1.png",
+                                "result": {
+                                    "outcome": "win",
+                                    "gameWins": 1
+                                },
+                                "record": {
+                                    "wins": 10,
+                                    "losses": 8
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-09T08:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 1라운드",
+                    "league": {
+                        "name": "LCK",
+                        "slug": "lck"
+                    },
+                    "match": {
+                        "id": "110371551279082022",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "T1",
+                                "code": "T1",
+                                "image": "http://static.lolesports.com/teams/1631819523085_t1-2021-worlds.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Dplus Kia",
+                                "code": "DK",
+                                "image": "http://static.lolesports.com/teams/1673260049703_DPlusKIALOGO11.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-09T15:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "Arabian League",
+                        "slug": "arabian_league"
+                    },
+                    "match": {
+                        "id": "110422923165247463",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "Geekay Esports",
+                                "code": "GK",
+                                "image": "http://static.lolesports.com/teams/1673830053328_Geekay_Esports-logo.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "RAAD",
+                                "code": "RAAD",
+                                "image": "http://static.lolesports.com/teams/1676278903430_FullcolorTransparent1.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-09T16:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "La Ligue Française",
+                        "slug": "lfl"
+                    },
+                    "match": {
+                        "id": "110424922268009201",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Vitality.Bee",
+                                "code": "VITB",
+                                "image": "http://static.lolesports.com/teams/Vitality-logo-color-outline-rgb.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Team GO",
+                                "code": "GO",
+                                "image": "http://static.lolesports.com/teams/1674127451318_Logo-TeamGOR_B.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-09T20:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "LCS Challengers",
+                        "slug": "north_american_challenger_league"
+                    },
+                    "match": {
+                        "id": "110574243271705520",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Evil Geniuses Challengers",
+                                "code": "EG",
+                                "image": "http://static.lolesports.com/teams/1592590391188_EvilGeniusesEG-01-FullonDark.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 4,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "Disguised",
+                                "code": "DSG",
+                                "image": "http://static.lolesports.com/teams/1685003091686_Disguised.jpg",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 3,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-09T22:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "Liga Latinoamérica",
+                        "slug": "lla"
+                    },
+                    "match": {
+                        "id": "110411420270240433",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Isurus",
+                                "code": "ISG",
+                                "image": "http://static.lolesports.com/teams/ISG.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Six Karma",
+                                "code": "6K",
+                                "image": "http://static.lolesports.com/teams/1673937179109_6KLOGOLOLESPORTS.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-10T08:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 2라운드",
+                    "league": {
+                        "name": "LCK",
+                        "slug": "lck"
+                    },
+                    "match": {
+                        "id": "110371551279082028",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "kt Rolster",
+                                "code": "KT",
+                                "image": "http://static.lolesports.com/teams/kt_darkbackground.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-10T15:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "Arabian League",
+                        "slug": "arabian_league"
+                    },
+                    "match": {
+                        "id": "110422923165247469",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Nigma Galaxy",
+                                "code": "NGX",
+                                "image": "http://static.lolesports.com/teams/1673829529728_Logo_mark.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-10T16:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "La Ligue Française",
+                        "slug": "lfl"
+                    },
+                    "match": {
+                        "id": "110424922268009207",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "BK ROG Esports",
+                                "code": "BKR",
+                                "image": "http://static.lolesports.com/teams/1674127552169_BK-Rog-Esports-red.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-10T21:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "South Regional League",
+                        "slug": "south_regional_league"
+                    },
+                    "match": {
+                        "id": "110377190578222165",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Furious Gaming",
+                                "code": "FG",
+                                "image": "http://static.lolesports.com/teams/1643036760739_furious-ColorLight.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Primate",
+                                "code": "PMT",
+                                "image": "http://static.lolesports.com/teams/1673504851897_2000x2000-PRIMAT.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-10T21:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 3라운드",
+                    "league": {
+                        "name": "LCS",
+                        "slug": "lcs"
+                    },
+                    "match": {
+                        "id": "110767987075556479",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Evil Geniuses LG",
+                                "code": "EG",
+                                "image": "http://static.lolesports.com/teams/1592590374862_EvilGeniusesEG-01-FullonDark.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "Team Liquid Honda",
+                                "code": "TL",
+                                "image": "http://static.lolesports.com/teams/1631820014208_tl-2021-worlds.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-11T08:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 2라운드",
+                    "league": {
+                        "name": "LCK",
+                        "slug": "lck"
+                    },
+                    "match": {
+                        "id": "110371551279082034",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "Gen.G",
+                                "code": "GEN",
+                                "image": "http://static.lolesports.com/teams/1655210113163_GenG_logo_200407-05.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-11T08:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "LJL Academy",
+                        "slug": "ljl_academy"
+                    },
+                    "match": {
+                        "id": "110507407706737267",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "V3 Academy",
+                                "code": "V3",
+                                "image": "http://static.lolesports.com/teams/1630063288304_v3_512px.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "SHG Academy",
+                                "code": "SHG",
+                                "image": "http://static.lolesports.com/teams/1630063354653_shg_512px.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-11T09:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "PCS",
+                        "slug": "pcs"
+                    },
+                    "match": {
+                        "id": "110847390580148358",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "Team Bliss",
+                                "code": "TB",
+                                "image": "http://static.lolesports.com/teams/1673594389871_TeamBlissUpdated.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Beyond Gaming",
+                                "code": "BYG",
+                                "image": "http://static.lolesports.com/teams/1686826371701_beyondGaming_logo_W.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-11T14:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "1일 차",
+                    "league": {
+                        "name": "TFT Rising Legends",
+                        "slug": "tft_esports"
+                    },
+                    "match": {
+                        "id": "109761195189495607",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "TFT",
+                                "code": "TFT",
+                                "image": "http://static.lolesports.com/teams/1687221686213_LOGOMARK_NEG.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "TFT",
+                                "code": "TFT",
+                                "image": "http://static.lolesports.com/teams/1687221679971_LOGOMARK_NEG.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 1
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-11T15:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "Arabian League",
+                        "slug": "arabian_league"
+                    },
+                    "match": {
+                        "id": "110422923165247475",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Anubis Gaming",
+                                "code": "ANB",
+                                "image": "http://static.lolesports.com/teams/1674634690739_anbpng.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-11T16:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "La Ligue Française",
+                        "slug": "lfl"
+                    },
+                    "match": {
+                        "id": "110424922268009213",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            },
+                            {
+                                "name": "Karmine Corp",
+                                "code": "KC",
+                                "image": "http://static.lolesports.com/teams/LFL-KC-logo.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-11T16:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 1라운드",
+                    "league": {
+                        "name": "CBLOL",
+                        "slug": "cblol-brazil"
+                    },
+                    "match": {
+                        "id": "110471059652887218",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "FLUXO",
+                                "code": "FX",
+                                "image": "http://static.lolesports.com/teams/1670539056915_fluxo_escudo_w.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Vivo Keyd Stars",
+                                "code": "VKS",
+                                "image": "http://static.lolesports.com/teams/1670542079678_vks.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-11T21:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "South Regional League",
+                        "slug": "south_regional_league"
+                    },
+                    "match": {
+                        "id": "110377190578222183",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Malvinas Rise",
+                                "code": "MVG",
+                                "image": "http://static.lolesports.com/teams/1684220708770_MALVINASBLANCO.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "Wap Esports",
+                                "code": "WAP",
+                                "image": "http://static.lolesports.com/teams/1643795834172_WAP-White.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-11T21:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 3라운드",
+                    "league": {
+                        "name": "LCS",
+                        "slug": "lcs"
+                    },
+                    "match": {
+                        "id": "110767987075556473",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Golden Guardians",
+                                "code": "GG",
+                                "image": "http://static.lolesports.com/teams/1592590586919_GoldenGuardiansGGS-01-FullonDark.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "Dignitas",
+                                "code": "DIG",
+                                "image": "http://static.lolesports.com/teams/DIG-FullonDark.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T06:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 3라운드",
+                    "league": {
+                        "name": "LCK",
+                        "slug": "lck"
+                    },
+                    "match": {
+                        "id": "110371551279082040",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T09:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 3라운드",
+                    "league": {
+                        "name": "LJL",
+                        "slug": "ljl-japan"
+                    },
+                    "match": {
+                        "id": "110395337117294362",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "FENNEL",
+                                "code": "FL",
+                                "image": "http://static.lolesports.com/teams/1673413831349_fl.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "Sengoku Gaming",
+                                "code": "SG",
+                                "image": "http://static.lolesports.com/teams/1673609987836_sg.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T09:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "PCS",
+                        "slug": "pcs"
+                    },
+                    "match": {
+                        "id": "110847390580017280",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "The Chiefs",
+                                "code": "CHF",
+                                "image": "http://static.lolesports.com/teams/1642465931119_ChiefsLogo1000x1000.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Deep Cross Gaming",
+                                "code": "DCG",
+                                "image": "http://static.lolesports.com/teams/1644502702164_DeepCrossGaming_W_1.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T10:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "VCS",
+                        "slug": "vcs"
+                    },
+                    "match": {
+                        "id": "110416990196889959",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "Team Flash",
+                                "code": "TF",
+                                "image": "http://static.lolesports.com/teams/1636631066814_TF.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Saigon Buffalo Esports",
+                                "code": "SGB",
+                                "image": "http://static.lolesports.com/teams/1636524131703_900px-Saigon_Buffalo.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T11:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "Elite Series",
+                        "slug": "elite_series"
+                    },
+                    "match": {
+                        "id": "110424377526038826",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "KRC Genk Esports",
+                                "code": "GENK",
+                                "image": "http://static.lolesports.com/teams/1671442731956_KRCGenkEsports.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Team 7AM",
+                                "code": "7AM",
+                                "image": "http://static.lolesports.com/teams/1641905957193_White1.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T14:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "Esports Balkan League",
+                        "slug": "esports_balkan_league"
+                    },
+                    "match": {
+                        "id": "110418013824164870",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Cyber Wolves Esports",
+                                "code": "CWE",
+                                "image": "http://static.lolesports.com/teams/1641813209296_EBL_CWE-MonochromeDarkBG.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Diamant Esports",
+                                "code": "DIA",
+                                "image": "http://static.lolesports.com/teams/1641813288438_EBL_DIA-MonochromeDarkBG.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T14:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "TCL",
+                        "slug": "turkiye-sampiyonluk-ligi"
+                    },
+                    "match": {
+                        "id": "110429898578824102",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "DenizBank İstanbul Wildcats",
+                                "code": "IW",
+                                "image": "http://static.lolesports.com/teams/1654773501062_DenizBankIstanbulWildcatsWhite1.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "NASR ESPORTS",
+                                "code": "NASR",
+                                "image": "http://static.lolesports.com/teams/red.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T15:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "Ultraliga",
+                        "slug": "ultraliga"
+                    },
+                    "match": {
+                        "id": "110310652412781725",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Orbit Anonymo",
+                                "code": "OAE",
+                                "image": "http://static.lolesports.com/teams/1678284506132_hSEW5dQ.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Alior Bank Team",
+                                "code": "AB",
+                                "image": "http://static.lolesports.com/teams/1672414472041_TtChFUe.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 3,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T16:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "SuperLiga",
+                        "slug": "superliga"
+                    },
+                    "match": {
+                        "id": "110349992510661376",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Bisons",
+                                "code": "BSO",
+                                "image": "http://static.lolesports.com/teams/1639829017451_618bec7c49c31172742131.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Movistar Riders",
+                                "code": "MRS",
+                                "image": "http://static.lolesports.com/teams/1585046777741_220px-Movistar_Riderslogo_square.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T16:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "Prime League",
+                        "slug": "primeleague"
+                    },
+                    "match": {
+                        "id": "110343648528824414",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "SK Gaming Prime",
+                                "code": "SKP",
+                                "image": "http://static.lolesports.com/teams/1674832544726_SK_logo_white.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Unicorns of Love Sexy Edition",
+                                "code": "USE",
+                                "image": "http://static.lolesports.com/teams/1674832383233_PRM_USE-FullColorDarkBG.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 3,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T16:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 2라운드",
+                    "league": {
+                        "name": "CBLOL",
+                        "slug": "cblol-brazil"
+                    },
+                    "match": {
+                        "id": "110471059652887224",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "paiN Gaming",
+                                "code": "PNG",
+                                "image": "http://static.lolesports.com/teams/1674657011011_pain_logo_white.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "INTZ",
+                                "code": "ITZ",
+                                "image": "http://static.lolesports.com/teams/1643056732785_INTZ_Logo_Principal_2022.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T17:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "LCS Challengers Qualifiers",
+                        "slug": "lcs_challengers_qualifiers"
+                    },
+                    "match": {
+                        "id": "110733838936512560",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Team Ambition",
+                                "code": "TA",
+                                "image": "http://static.lolesports.com/teams/1675235626712_TeamAmbition.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Mirage Alliance",
+                                "code": "MIR",
+                                "image": "http://static.lolesports.com/teams/1678194212317_MirageAlliance.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 3
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T19:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "LCS Challengers Qualifiers",
+                        "slug": "lcs_challengers_qualifiers"
+                    },
+                    "match": {
+                        "id": "110733838936512564",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Winthrop University",
+                                "code": "WU",
+                                "image": "http://static.lolesports.com/teams/1675157784150_WinthropUniversity.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "Team Coachify",
+                                "code": "CFY",
+                                "image": "http://static.lolesports.com/teams/1689664767106_TeamCoachify.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 3
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T21:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "South Regional League",
+                        "slug": "south_regional_league"
+                    },
+                    "match": {
+                        "id": "110377190578222189",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-12T21:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 3라운드",
+                    "league": {
+                        "name": "LCS",
+                        "slug": "lcs"
+                    },
+                    "match": {
+                        "id": "110767955468411264",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Cloud9",
+                                "code": "C9",
+                                "image": "http://static.lolesports.com/teams/1631820065346_cloud9-2021-worlds.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "NRG",
+                                "code": "NRG",
+                                "image": "http://static.lolesports.com/teams/1681501735148_NRG_PRIMARY_LIGHT.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 2,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-13T06:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 3라운드",
+                    "league": {
+                        "name": "LCK",
+                        "slug": "lck"
+                    },
+                    "match": {
+                        "id": "110371551279147582",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-13T09:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "PCS",
+                        "slug": "pcs"
+                    },
+                    "match": {
+                        "id": "110847390580148370",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "J Team",
+                                "code": "JT",
+                                "image": "http://static.lolesports.com/teams/1592588569647_JTeamJT-01-FullonDark.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-13T09:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 4라운드",
+                    "league": {
+                        "name": "LJL",
+                        "slug": "ljl-japan"
+                    },
+                    "match": {
+                        "id": "110395337117294368",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "Fukuoka SoftBank HAWKS gaming",
+                                "code": "SHG",
+                                "image": "https://lolstatic-a.akamaihd.net/esports-assets/production/team/fukuoka-softbank-hawks-gaming-b99n2uq2.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 1,
+                                    "losses": 1
+                                }
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-13T10:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "토너먼트 스테이지",
+                    "league": {
+                        "name": "VCS",
+                        "slug": "vcs"
+                    },
+                    "match": {
+                        "id": "110416990196889965",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "Team Secret",
+                                "code": "TS",
+                                "image": "http://static.lolesports.com/teams/1656693717651_TS.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "CERBERUS ESPORTS",
+                                "code": "CES",
+                                "image": "http://static.lolesports.com/teams/1636526090059_900px-CERBERUS_Esports.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-13T16:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "플레이오프 - 3라운드",
+                    "league": {
+                        "name": "CBLOL",
+                        "slug": "cblol-brazil"
+                    },
+                    "match": {
+                        "id": "110471059652887230",
+                        "flags": [],
+                        "teams": [
+                            {
+                                "name": "RED Kalunga",
+                                "code": "RED",
+                                "image": "http://static.lolesports.com/teams/1631820575924_red-2021-worlds.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            },
+                            {
+                                "name": "LOUD",
+                                "code": "LLL",
+                                "image": "http://static.lolesports.com/teams/Logo-LOUD-Esports_Original.png",
+                                "result": {
+                                    "outcome": null,
+                                    "gameWins": 0
+                                },
+                                "record": {
+                                    "wins": 0,
+                                    "losses": 0
+                                }
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                },
+                {
+                    "startTime": "2023-08-13T17:00:00Z",
+                    "state": "unstarted",
+                    "type": "match",
+                    "blockName": "결승",
+                    "league": {
+                        "name": "LCS Challengers Qualifiers",
+                        "slug": "lcs_challengers_qualifiers"
+                    },
+                    "match": {
+                        "id": "110733838936512568",
+                        "flags": [
+                            "isSpoiler"
+                        ],
+                        "teams": [
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            },
+                            {
+                                "name": "TBD",
+                                "code": "TBD",
+                                "image": "http://assets.lolesports.com/watch/team-tbd.png",
+                                "result": null,
+                                "record": null
+                            }
+                        ],
+                        "strategy": {
+                            "type": "bestOf",
+                            "count": 5
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
