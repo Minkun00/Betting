@@ -9,7 +9,6 @@ contract SetTeam is Token {
     // team weight에 접근하는 mapping
     mapping(bytes32 => uint) public teamWeight;
     // team이 입력되었는지 확인용으로 만든 mapping
-    mapping(bytes32 => bool) public teamSetted;
 
     uint bettingTotalBalance = 0;
     uint winnerTeamPureBalance = 0;
@@ -28,16 +27,6 @@ contract SetTeam is Token {
             result := mload(add(source, 32))
         }
     }
-    
-    // team 설정
-    function setTeam(string calldata _teamName) external onlyOwner {
-        require(bytes(_teamName).length > 0, "Team name cannot be empty");
-        bytes32 teamNameHash = stringToBytes32((_teamName));
-        require(!teamSetted[teamNameHash], "Team name already exists");
-
-        teamSetted[teamNameHash] = true;
-    }
-
     // team weight를 불러오기
     function getTeamWeightByTeamName(string calldata _teamName) external view returns (uint) {
         return teamWeight[stringToBytes32(_teamName)];

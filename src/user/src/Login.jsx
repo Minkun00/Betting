@@ -1,32 +1,30 @@
-// Login.js
-import React from "react"
-import { LogIn_, showOwner_ } from "../function/Mainfunction"
+import React, { useState, useEffect } from "react";
+import { LogIn_, showOwner_ } from "../function/Mainfunction";
 
-class Login extends React.Component {
-    constructor(props) {
-        super(props)
-        this.handleLogIn = this.handleLogIn.bind(this)
-        this.handleShowOwner = this.handleShowOwner.bind(this)
-    }
-    async handleLogIn() {
-        const { contract, account } = this.props
-        await LogIn_(contract, account)
-    }
+function Login({ contract, account }) {
+  const [loginCheck, setLoginCheck] = useState(localStorage.getItem("loginCheck") || "0");
 
-    async handleShowOwner() {
-        const { contract } = this.props
-        await showOwner_(contract)
-    }
+  useEffect(() => {
+    localStorage.setItem("loginCheck", loginCheck);
+  }, [loginCheck]);
 
+  const handleLogIn = async () => {
+    await LogIn_(contract, account);
+    setLoginCheck("1");
+  };
 
-    render() {
-        return (
-            <div>
-                <button onClick={this.handleLogIn}>LOGIN</button>&nbsp;&nbsp;&nbsp;
-                <button onClick={this.handleShowOwner}>Show Owner</button>
-            </div>
-        )
-    }
+  const handleShowOwner = async () => {
+    await showOwner_(contract);
+  };
+
+  return (
+    <div>
+      {loginCheck === "0" && (
+        <button onClick={handleLogIn}>LOGIN</button>
+      )}&nbsp;&nbsp;&nbsp;
+      <button onClick={handleShowOwner}>Show Owner</button>
+    </div>
+  );
 }
 
 export default Login;

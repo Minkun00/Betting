@@ -30,7 +30,6 @@ contract Vote is SetTeam {
     function versus(string calldata _team1, string calldata _team2) public onlyBeforeVersus {
         team1 = stringToBytes32(_team1);
         team2 = stringToBytes32(_team2);
-        require(teamSetted[team1] && teamSetted[team2]);
 
         versusExecuted = true;
     }

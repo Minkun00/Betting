@@ -12,13 +12,13 @@ async function SetTeam_(_setTeam, _teamName, _account) {
 }
 
 async function Versus_(vote, teamName1, teamName2, account) {
-    console.log("Versus activate")
+    console.log("Versus activate");
     try {        
-        await vote.methods.versus(String(teamName1), String(teamName2)).send({ from: account })
-        console.log(teamName1 + ' vs ' + teamName2)
+        await vote.methods.versus(teamName1, teamName2).send({ from: account });
+        console.log(teamName1 + ' vs ' + teamName2);
     } catch (error) {
-        console.log(error)
-        window.alert('Versus Error!')
+        console.log(error);
+        window.alert('Versus Error!');
     }
 }
 

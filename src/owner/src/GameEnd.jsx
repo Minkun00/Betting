@@ -1,20 +1,59 @@
-// GameEnd.jsx
-import React from "react"
-import { gameEnd_ } from "../function/Ownerfunction"
+import React, { useState } from "react";
+import { gameEnd_ } from "../function/Ownerfunction";
 
-class GameEnd extends React.Component {
-    handleGameEnd = async() => {
-        const { contract, homeTeam, awayTeam, account } = this.props
-        await gameEnd_(contract, homeTeam, awayTeam, account)
-        console.log(`Win : ${homeTeam}, Lose : ${awayTeam}`)
+function GameEnd({ contract, account, teamData, onWLTeamDataSet }) {
+  const [teamwin, setTeamWin] = useState(null);
+  const [teamlose, setTeamLose] = useState(null);
+
+  const handleGameEnd = async () => {
+    if (teamwin && teamlose) {
+        try{  
+            await gameEnd_(contract, teamwin, teamlose, account);
+            console.log(`Win: ${teamwin} Lose: ${teamlose}`);
+            const WLTeamData = {
+                win: teamwin,
+                lose: teamlose
+            }
+            onWLTeamDataSet(WLTeamData)
+
+        } catch(error) {
+            console.log(error)
+            window.alert('game end error!')
+        }
+    } else {
+      window.alert("Please select both winning and losing teams.");
     }
-    
-    render() {
-        return(
-            <div>
-                <button onClick={this.handleGameEnd}>GAME END</button>
-            </div>
-        )
-    }
+  };
+
+  const handleTeamSelection = (teamwin, teamlose) => {
+    setTeamWin(teamwin)
+    setTeamLose(teamlose)
+  };
+
+  return (
+    <div>
+      <h2>Game End</h2>
+      <div>
+        {teamData.map((team, index) => (
+          <div key={index}>
+            <button
+              className={`team-button ${teamwin === team.team1.name ? "selected" : ""}`}
+              onClick={() => handleTeamSelection(team.team1.name, team.team2.name)}>
+              {team.team1.name}
+            </button>
+            <button
+              className={`team-button ${teamwin === team.team2.name ? "selected" : ""}`}
+              onClick={() => handleTeamSelection(team.team2.name, team.team1.name)}>
+              {team.team2.name}
+            </button>
+          </div>
+        ))}
+      </div>
+      <div>
+        <button onClick={handleGameEnd}>Game End</button>
+      </div>
+    </div>
+  );
 }
+
 export default GameEnd;
