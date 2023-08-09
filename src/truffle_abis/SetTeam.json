@@ -9860,12 +9860,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x170e22441d64B7C11de0591b694e00c671669c3e",
-      "transactionHash": "0x4bde9d238eae7b872c53613ec96fefe7c3385357e4ee20a717d343d1d4042293"
+      "address": "0x6722EDBf68FE0c67E1a813461B6acCa9901b7eC1",
+      "transactionHash": "0x7505ed0978364b242414434cae12bd9c0fe3845a8feea4c41126fb549df180ee"
     }
   },
   "schemaVersion": "3.4.14",
-  "updatedAt": "2023-08-09T06:27:15.451Z",
+  "updatedAt": "2023-08-09T06:34:41.764Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

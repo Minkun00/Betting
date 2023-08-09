@@ -82,10 +82,11 @@ function GetMatchData({ onTeamSelected }) {
                 {lckEvents.map(event => (
                   <tr key={event.match.id} onClick={() => handleSelectRow(event)}>
                     <td>
-                      <input
-                        type="checkbox"
-                        checked={selectedRow === event}
-                      />
+                    <input
+                    type="checkbox"
+                    checked={selectedRow === event}
+                    onChange={() => handleSelectRow(event)}
+                    />
                     </td>
                     <td>{event.startTime}</td>
                     <td>

@@ -2,9 +2,10 @@
 
 # dependencies
 /node_modules
+/src/truffle_abis
 /.pnp
 .pnp.js
-/src/truffle_abis
+
 
 # testing
 /coverage

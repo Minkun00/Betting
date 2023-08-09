@@ -1,11 +1,21 @@
+// Versus.jsx
 import React from "react";
 import { Versus_ } from "../function/Ownerfunction";
 
-function Versus({ teamData, contract, account }) {
-  const handleVersus = (team1Name, team2Name) => {
-    console.log(team1Name, team2Name)
-    // 실행하려는 Versus_ 함수에 contract와 account를 전달하여 실행
-    Versus_(contract, team1Name, team2Name, account);
+function Versus({ teamData, contract, account, updateMatchData }) {
+  const handleVersus = async (team1Name, team2Name) => {
+    try {
+      await Versus_(contract, team1Name, team2Name, account);
+      // 실행 후, 결과를 updateMatchData 함수를 통해 App 컴포넌트에 전달
+      updateMatchData({
+        homeTeam: team1Name,
+        awayTeam: team2Name,
+        // ... (homeTeamImageURL, awayTeamImageURL 등)
+      });
+    } catch (error) {
+      console.log(error);
+      window.alert("Versus Error!");
+    }
   };
 
   return (
