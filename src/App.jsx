@@ -16,22 +16,6 @@ function App() {
   const [appTeamData, setAppTeamData] = useState([])
   const [appWLData, setAppWLData] = useState([])
 
-  const updateAppTeamData = (teamData) => {
-    setAppTeamData(teamData);
-  }
-  
-  useEffect(() => {
-    console.log(appTeamData); // 업데이트된 appTeamData를 출력
-  }, [appTeamData]);
-  
-  const updateAppWLData = (teamWLData) => {
-    setAppWLData(teamWLData)
-  }
-  const resetAppData = () => {
-    setAppTeamData([]);
-    setAppWLData([]);
-  }
-
   useEffect(() => {
     loadWeb3();
     loadContracts();
@@ -105,9 +89,6 @@ function App() {
                       ownerAddress={ownerAddress}
                       contract={contract}
                       account={account}
-                      onAppTeamData={updateAppTeamData}
-                      onWLTeamDataSet={updateAppWLData}
-                      resetAppData={resetAppData}
                     />
                   }
                 />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { LogIn_, showOwner_ } from "../function/Mainfunction";
 
 function Login({ contract, account }) {
-  const [loginCheck, setLoginCheck] = useState(localStorage.getItem("loginCheck") || "0");
+  const [loginCheck, setLoginCheck] = useState();
 
   useEffect(() => {
     localStorage.setItem("loginCheck", loginCheck);

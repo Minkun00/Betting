@@ -1,31 +1,28 @@
 import React from 'react';
 import Login from './src/Login';
 import Vote from './src/Vote';
+import { getDataFromLocal } from '../owner/function/LocalStorageService';
 
 function Main({ contract, account, tokenBalance, appTeamData, appWLData, vote }) {
+  const versusData = getDataFromLocal('versusTeamsData');
+
+  // team1과 team2 데이터를 가져오기
+  const team1Data = versusData[0]?.team1 || { name: 'No data', image: 'No data' };
+  const team2Data = versusData[0]?.team2 || { name: 'No data', image: 'No data' };
+
   return (
     <React.Fragment>
       <Login
         contract={contract}
         account={account}
       />
-      <p>
-        {appTeamData.length > 0 ? (
-          `${appTeamData[0].team1.name} vs ${appTeamData[0].team2.name}`
-        ) : (
-          'No team data'
-        )}
-      </p>
-      <p>
-        win: {appWLData.win ? appWLData.win : 'No win data'} lose: {appWLData.lose ? appWLData.lose : 'No lose data'}
-      </p>
       <Vote 
         contract={contract}
         account={account}
-        team1Name={appTeamData.length > 0 ? appTeamData[0].team1.name : 'No data'}
-        team1URL={appTeamData.length > 0 ? appTeamData[0].team1.image : 'No data'}
-        team2Name={appTeamData.length > 0 ? appTeamData[0].team2.name : 'No data'}
-        team2URL={appTeamData.length > 0 ? appTeamData[0].team2.image : 'No data'} 
+        team1Name={team1Data.name}
+        team1URL={team1Data.image}
+        team2Name={team2Data.name}
+        team2URL={team2Data.image}
       />
     </React.Fragment>
   );

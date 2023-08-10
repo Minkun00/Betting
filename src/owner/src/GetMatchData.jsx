@@ -51,9 +51,8 @@ function GetMatchData({ onTeamSelected }) {
       team2: {
         name: selectedRow.match.teams[1].name,
         image: selectedRow.match.teams[1].image
-      }
+      },
     };
-  
     onTeamSelected(selectedTeamData);
     setSelectedRow(null);
   };
