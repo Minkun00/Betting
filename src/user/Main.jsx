@@ -3,7 +3,7 @@ import Login from './src/Login';
 import Vote from './src/Vote';
 import { getDataFromLocal } from '../owner/function/LocalStorageService';
 
-function Main({ contract, account, tokenBalance, appTeamData, appWLData, vote }) {
+function Main({ contract, account, tokenBalance }) {
   const versusData = getDataFromLocal('versusTeamsData');
 
   // team1과 team2 데이터를 가져오기
