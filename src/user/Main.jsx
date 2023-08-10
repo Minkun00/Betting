@@ -7,8 +7,8 @@ function Main({ contract, account, tokenBalance }) {
   const versusData = getDataFromLocal('versusTeamsData');
 
   // team1과 team2 데이터를 가져오기
-  const team1Data = versusData[0]?.team1 || { name: 'No data', image: 'No data' };
-  const team2Data = versusData[0]?.team2 || { name: 'No data', image: 'No data' };
+  const team1Data = versusData && versusData[0]?.team1 || { name: 'No data', image: 'No data' };
+  const team2Data = versusData && versusData[0]?.team2 || { name: 'No data', image: 'No data' };
 
   return (
     <React.Fragment>
@@ -27,5 +27,6 @@ function Main({ contract, account, tokenBalance }) {
     </React.Fragment>
   );
 }
+
 
 export default Main;
