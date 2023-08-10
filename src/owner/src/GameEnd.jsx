@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { gameEnd_ } from "../function/Ownerfunction";
 
-function GameEnd({ contract, account, teamData, onWLTeamDataSet }) {
+function GameEnd({ contract, account, teamData }) {
   const [teamwin, setTeamWin] = useState(null);
   const [teamlose, setTeamLose] = useState(null);
 
@@ -10,12 +10,6 @@ function GameEnd({ contract, account, teamData, onWLTeamDataSet }) {
         try{  
             await gameEnd_(contract, teamwin, teamlose, account);
             console.log(`Win: ${teamwin} Lose: ${teamlose}`);
-            const WLTeamData = {
-                win: teamwin,
-                lose: teamlose
-            }
-            onWLTeamDataSet(WLTeamData)
-
         } catch(error) {
             console.log(error)
             window.alert('game end error!')

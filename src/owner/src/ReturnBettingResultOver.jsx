@@ -2,11 +2,10 @@
 import React from "react"
 import { returnBettingResultOver_ } from "../function/Ownerfunction"
 
-function ReturnBettingResultOver({contract, account, teamDatumReset}) {
+function ReturnBettingResultOver({contract, account }) {
     const handleReturnBettingResultOver = async() => {
         try {
             await returnBettingResultOver_(contract, account)
-            teamDatumReset([])
         } catch(error) {
             console.log(error)
             window.alert("return betting over error!")

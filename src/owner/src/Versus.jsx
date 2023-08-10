@@ -1,18 +1,20 @@
 // Versus.jsx
 import React from "react";
 import { Versus_ } from "../function/Ownerfunction";
+import { saveDataToLocal } from "../function/LocalStorageService";
 
-function Versus({ contract, account, teamData, onAppTeamData }) {
+function Versus({ contract, account, teamData }) {
   const handleVersus = async (team1Name, team2Name) => {
     try {
       await Versus_(contract, team1Name, team2Name, account);
       // teamData가 배열일 경우에만 updateAppTeamData를 호출
       console.log(teamData);
-      onAppTeamData(teamData); // 이 부분 수정
     } catch (error) {
       console.log(error);
       window.alert("Versus Error!");
+      return;
     }
+    saveDataToLocal('versusTeamsData', teamData);
   }
 
   return (
