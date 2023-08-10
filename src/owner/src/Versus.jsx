@@ -9,11 +9,12 @@ function Versus({ contract, account, teamData }) {
       await Versus_(contract, team1Name, team2Name, account);
       // teamData가 배열일 경우에만 updateAppTeamData를 호출
       console.log(teamData);
-      saveDataToLocal('versusTeamsData', teamData);
     } catch (error) {
       console.log(error);
       window.alert("Versus Error!");
+      return;
     }
+    saveDataToLocal('versusTeamsData', teamData);
   }
 
   return (
@@ -24,7 +25,7 @@ function Versus({ contract, account, teamData }) {
           <ul key={index}>
             <button
               onClick={() => handleVersus(team.team1.name, team.team2.name)}>
-              {team.team1.name} vs {team.team2.name}
+              {team.team1.name} vs {team.team2.name}`
             </button>
           </ul>
         ))}
