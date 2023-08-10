@@ -25,7 +25,7 @@ function Versus({ contract, account, teamData }) {
           <ul key={index}>
             <button
               onClick={() => handleVersus(team.team1.name, team.team2.name)}>
-              {team.team1.name} vs {team.team2.name}`
+              {team.team1.name} vs {team.team2.name}
             </button>
           </ul>
         ))}
