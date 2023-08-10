@@ -30,6 +30,8 @@ contract Vote is SetTeam {
     function versus(string calldata _team1, string calldata _team2) public onlyBeforeVersus {
         team1 = stringToBytes32(_team1);
         team2 = stringToBytes32(_team2);
+        stringTeamName[team1] = _team1;
+        stringTeamName[team2] = _team2;
 
         versusExecuted = true;
     }
@@ -62,8 +64,8 @@ contract Vote is SetTeam {
         teamWeight[win] += teamWeight[lose];
         bettingTotalBalance = teamWeight[win];
         teamWeight[lose] = 0;
+        stringTeamName[teamNameWin] = _teamNameWin;
     }
-    // 추가된 점...
     // 이상적으로 모든 user들이 돈을 받아갔으면 retrunBettingResultOver()자동 실행
     function returnBettingResult() public onlyAfterVersus returns(uint) {
         require(teamNameWin != stringToBytes32('none'));
@@ -92,17 +94,14 @@ contract Vote is SetTeam {
         emit BettingResultOver();
         teamNameWin = stringToBytes32('none');
         versusExecuted = false;
-
     }
 
-    function showVersusExecuted() public view returns(bool) {
-        return versusExecuted;
-    }
 
-    function showMatchUp1() public view returns(bytes32) {
-        return team1;
+    // main.jsx용. versus에 어떤 팀들이 입력되었는지 확인하기 위함
+    function showVersus() public view returns(string memory, string memory) {
+        return(stringTeamName[team1], stringTeamName[team2]);
     }
-    function showMatchUp2() public view returns(bytes32) {
-        return team2;
+    function showWinnerTeam() public view returns(string memory) {
+        return(stringTeamName[teamNameWin]);
     }
 }

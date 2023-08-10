@@ -8,6 +8,7 @@ contract SetTeam is Token {
 
     // team weight에 접근하는 mapping
     mapping(bytes32 => uint) public teamWeight;
+    mapping(bytes32 => string) public stringTeamName;
     // team이 입력되었는지 확인용으로 만든 mapping
 
     uint bettingTotalBalance = 0;
