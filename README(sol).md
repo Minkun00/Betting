@@ -2,6 +2,8 @@
 truffle, metamask 준비가 다 되었으면, solidity code를 작성해보자.  
 먼저, 어떤 작품을 만들고 싶은지를 생각하고, 그에 따라서 어떤 내용의 변수, 함수들이 필요한지 생각을 해야한다. 이 프로젝트는 LCK 대회 기반으로 베팅을 하는 간단한 코드를 만들어보도록 하겠다. 최종 결과물(react에서)의 느낌을 twitch에서 포인트 베팅하는, 유사한 느낌의 사이트를 만들어보는 것이다.
 
+가장 중요한 것은, 이 내용들을 간단히 익히고, 자신만의 다른 작품을 만드는 것이 가장 좋다고 생각한다. 이 프로젝트 역시 인터넷 강의를 듣고, 기본적인 지식을 익힌 후에 우리만의 방법으로 다른 것을 만들었기 때문이다. 여러분들도 그러기를 바란다. 다시 말해, 재미로 보고, 응용할 부분을 응용하고, 여기 쓰인 것이 마음에 안드는 것은 다른 방법으로 시도해보기를 바란다.
+
 이 페이지는 총 4개의 contract에 대해서 설명할 것이다. 각 contract별로 설명, 간단한 문제, 답이 적혀있다. 
 ## 1. Migrations.sol
 가장 먼저 필요한 코드는 Migrations.sol이다. truffle을 사용할 때, terminal에서 우리가 사용할 명령어는 크게 2가지이다. 
@@ -226,3 +228,68 @@ function stringToBytes32(string memory source) public pure returns(bytes32 resul
   }
 }
 ```
+### 3. onlyOwner
+-----
+원래 Token.sol에서 사용된 ```address owner```를 상속받은 SetTeam에서 쓸 수 있다. 그래서 modifier onlyOwner()를 만들어 볼 것이다. 뜬금없이 튀어나오는 내용일 수 있는데, 의식의 흐름대로 쓰고 있어서 그렇다. 
+
+1. ```modifier onlyOwner()```를 만들어보자. ```msg.sender```와 ```owner```값이 동일해야 실행 될 수 있게 하는 제한자이다.
+
+```solidity
+modifier onlyOwner() {
+  require(msg.sender == owner);
+  _;
+}
+```
+
+### 정리
+------
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.8.18<0.9.0;
+import './Token.sol';
+
+contract SetTeam is Token {
+    // 팀 관련 변수 접근은 모두 mapping으로 들어감
+    // stringToBytes32(<Team Name>) 을 mapping에 넣어야 해당 값이 튀어나오게 했음.
+
+    mapping(bytes32 => string) public stringTeamName;
+    // team이 입력되었는지 확인용으로 만든 mapping
+
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+
+    function stringToBytes32(string memory source) public pure returns(bytes32 result) {
+        bytes memory tempEmptyStringTest = bytes(source);
+        if(tempEmptyStringTest.length == 0) {
+            return 0x0;
+        }
+        assembly {
+            result := mload(add(source, 32))
+        }
+    }
+}
+```
+
+## 4. Vote.sol
+지금까지 만든 것들은 Vote.sol을 실행하기 위한 초석들이다. 처음부터 완벽하게 contract들을 짜지 않았기에, Vote.sol을 만들면서 추가적으로 필요한 것들을 Token.sol, SetTeam.sol에 추가하면서 만들어보자. 
+
+### 1. 생각하는 시간
+잠시 정리하는 시간을 가져보자. 실제 베팅의 과정을 어떻게 해야 할까? React에서 실제 LCK 매칭 데이터를 어떻게든 가져온다고 생각을 해보자(이때까지는 API 사용이 아닌 Crawling으로 해결하려고 했다. 만약 python Crawling 과정이 궁금하다면 [여기](https://github.com/Minkun00/vote/tree/main/src/python)). 
+
+상상으로 React화면을 상상하면서 해보자.. 
+
+1. React에서 LCK Match 한 게임의 팀 이름의 값을 가져온다. 
+
+2. 두 팀 이름을 Contract에 저장하고, 게임 시작을 알린다.
+3. User들이 두 팀 중 어디가 이길지 베팅을 한다
+4. 게임 결과가 나오면 게임 종료 선언 및 승자 선언을 한다.
+5. User들은 자신들의 베팅 결과에 따른 돈을 받아간다.(베팅된 금액의 비율에 따라서 받아감)
+6. User들이 다 받아가면 다음 게임 Setting을 위한 준비를 한다.<br>
+(1 ~ 6 과정의 반복)
+
+이러한 과정을 만들기 위해서 solidity로는 2 ~ 6의 과정을 함수로 만들 수 있다. 
+
+### 2. 기초 작업
+위에서 말한 순서대로 과정이 이루어지기 위해서 ```require, modifier```를 적절히 사용해야한다.
