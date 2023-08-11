@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { vote_ } from "../function/Mainfunction"
+import { vote_,balanceOf_ } from "../function/Mainfunction"
 
 function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
     const [selectedTeamName, setSelectedTeamName] = useState('NOT SELECTED');
@@ -24,6 +24,7 @@ function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
         console.log(error);
         window.alert("vote Error!");
     }
+    balanceOf_(contract, account)
   }
 
     const handleImageClick = (selectedTeamName) => {

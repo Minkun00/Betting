@@ -1,8 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar({ account, tokenBalance }) {
-    const formattedTokenBalance = parseInt(tokenBalance, 10).toLocaleString();
+    const [formattedTokenBalance, setFormattedTokenBalance] = useState(
+        parseInt(tokenBalance, 10).toLocaleString()
+    );
+
+    useEffect(() => {
+        // Update the formattedTokenBalance whenever tokenBalance changes
+        setFormattedTokenBalance(parseInt(tokenBalance, 10).toLocaleString());
+    }, [tokenBalance]);
+
     return (
         <nav className='navbar navbar-dark fixed-top shadow p-0 ' style={{backgroundColor: 'black', height:'110px'}}>
             <a style={{color:'white'}} href='https://github.com/Minkun00/Betting'>VOTE FOR LEAGUE OF LEGEND CHAMPIONSHIP KOREA </a>
@@ -22,5 +30,5 @@ export default function Navbar({ account, tokenBalance }) {
                 </ul>
             </ul>
         </nav>
-    )
+    );
 }
