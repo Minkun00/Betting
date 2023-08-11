@@ -108,8 +108,85 @@ https://trufflesuite.com/ganache/
 ![ganache-11](./wsl-img/ganache-11.png)
 ###1-9. 아까 설정했던 네트워크 및 계정을 설정하면 가나슈의 첫번째 계정 정보를 메타마스크에서 확인 할 수 있다. 
 
-truffle compile
-truffle migrate --reset
+##truffle-config.js 설정 
+truffle-config.js는 truffle이라는 프레임워크를 사용할 경우 설정해야하는 파일입니다. 
+truffle을 통해 스마트 컨트랙트를 컴파일하고, 사용하는 테스트넷에 배포할 수 있습니다. 
+각각의 필요한 세부사항을 살펴보겠습니다. 
+
+    module.exports = {
+        networks: {},
+        contracts_directory: ,
+        contracts_build_directory:,
+        migrations_directory:,
+        tests_directory:,
+        compilers: {}
+    }
+
+해당 구조가 기본 코드의 틀이라고 할 수 있습니다. 
+networks 파트를 먼저 보겠습니다. 
+아까 위의 가나슈 설정 파트에서 사용했던 테스트 넷 RFC 주소를 참고하여 작성합니다. 
+
+    networks: {
+        development: {
+        host: "XXX.XXX.XXX.XXX",     // Ganache 앱을 실행 중인 로컬 호스트
+        port: 7545,            // Ganache 앱에서 사용하는 포트 번호 (기본값은 7545)
+        network_id: "*",        // 모든 네트워크에 대해 설정
+        },
+    },
+    
+XXX.XXX.XXX.XXX:7545 이라는 테스트 넷에 접속하여, 테스트 넷의 네트워크 id와 상관없이 연결을 하겠다는 코드입니다. 
+
+    contracts_directory: './src/contracts/',
+    contracts_build_directory: './src/truffle_abis/',
+    migrations_directory: './migrations/',
+    tests_directory: './test/',
+
+해당 디렉토리 중 컨트랙트가 보관되어 있는 디렉토리, 컴파일 시 생성되는 파일에 대한 디렉토리, migrations 설정이 들어있는 디렉토리, 그리고 test를 사용할 때 필요한 파일을 담은 디렉토리의 위치를 설정해주는 코드입니다. 
+
+    compilers: {
+        solc: {
+        version: '0.8.18',
+        optimizer: {
+            enabled: true,
+            runs: 200
+        },
+        }
+    }
+
+해당 코드는 solidity언어를 compile할 compiler의 정보를 설정하는 코드입니다. 
+version은 compiler가 사용할 solidiy의 버전을
+optimizer의 enable은 컴파일러 실행 속도 및 가스 비용을 줄일 수 있는 기능입니다. 
+run은 해당 기능이 활성화 되었을 경우, 계약이 자주 호출된다면 높은 값을, 그렇지 않다면 낮은 값을 설정하는게 
+유리합니다. 
+
+아래의 코드는 truffle-config.js 파일의 코드 전체입니다. 
+
+    module.exports = {
+    networks: {
+        development: {
+        host: "192.168.96.1",     
+        port: 7545,            
+        network_id: "*",        
+        },
+    },
+    contracts_directory: './src/contracts/',
+    contracts_build_directory: './src/truffle_abis/',
+    migrations_directory: './migrations/',
+    tests_directory: './test/',
+    compilers: {
+        solc: {
+        version: '0.8.18',
+        optimizer: {
+            enabled: true,
+            runs: 200
+        },
+        }
+    }
+    }
+
+만일 가나슈의 워크 스페이스를 계속 실행하며 테스트 넷 RFC server 주소가 바뀐다면 
+network의 host의 값을 계속해서 변경해야 제대로 deploy가 될 수 있습니다. 
+
 
 ##solidy
 ##react 

@@ -9931,12 +9931,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x417566Cc6fFE70589604645e7b4320313eC58500",
-      "transactionHash": "0x90a4e77694c3bc11fdc3632f135099b554c3716e057315f53cf0b56583103598"
+      "address": "0x56C0Dc2D13E01e2B9D2F2AdD27D87988233AA01D",
+      "transactionHash": "0x4fe4f2e564ff00e468c1fb5a95d8599fd931058f18c7353d96f1942054c5bd45"
     }
   },
   "schemaVersion": "3.4.14",
-  "updatedAt": "2023-08-10T08:49:32.192Z",
+  "updatedAt": "2023-08-11T13:37:27.308Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
