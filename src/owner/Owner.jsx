@@ -3,6 +3,7 @@ import GetMatchData from './src/GetMatchData';
 import Versus from './src/Versus';
 import GameEnd from './src/GameEnd';
 import ReturnBettingResultOver from './src/ReturnBettingResultOver';
+import '../App.css'
 
 function Owner({ ownerAddress, contract, account })  {
   const [teamData, setTeamData] = useState([]);
@@ -14,7 +15,7 @@ function Owner({ ownerAddress, contract, account })  {
 
   
   return(
-    <div>
+    <div className = 'common-container'>
       <GetMatchData onTeamSelected={handleTeamSelected}/>
       <Versus contract={contract} account={account} teamData={teamData}  />
       <GameEnd contract={contract} account={account} teamData={teamData}/>

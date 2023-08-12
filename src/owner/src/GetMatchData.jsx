@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { saveDataToLocal, getDataFromLocal } from '../function/LocalStorageService';
+import '../../App.css'
 
 function GetMatchData({ onTeamSelected }) {
   const [localData, setLocalData] = useState(getDataFromLocal('matchData') || null);
@@ -60,18 +61,22 @@ function GetMatchData({ onTeamSelected }) {
   const lckEvents = localData?.data?.schedule?.events?.filter(event => event.league?.name === 'LCK');
 
   return (
-    <div className="GetMatchData">
+    <div className="common-container">
       {!localData ? (
         <button onClick={() => handleFetchData()}>Fetch Data</button>
       ) : (
         <div>
           {localData.data.schedule.pages.newer && (
-            <button onClick={() => handleFetchData(localData.data.schedule.pages.newer)} disabled={isLoading}>
+            <button 
+              className = 'common-button'
+              onClick={() => handleFetchData(localData.data.schedule.pages.newer)} disabled={isLoading}>
               Fetch Newer Data
             </button>
           )}
           {localData.data.schedule.pages.older && (
-            <button onClick={() => handleFetchData(localData.data.schedule.pages.older)} disabled={isLoading}>
+            <button 
+              className = 'common-button'
+              onClick={() => handleFetchData(localData.data.schedule.pages.older)} disabled={isLoading}>
               Fetch Older Data
             </button>
           )}
@@ -82,7 +87,7 @@ function GetMatchData({ onTeamSelected }) {
       ) : (
         lckEvents && (
           <div>
-            <table className="event-table">
+            <table className = 'event-table'>
               <tbody>
                 {lckEvents.map(event => (
                   <tr key={event.match.id} onClick={() => handleSelectRow(event)}>
@@ -114,8 +119,10 @@ function GetMatchData({ onTeamSelected }) {
                 ))}
               </tbody>
             </table>
-            <div className="button-container">
-              <button onClick={handleSetMatch}>Set Match</button>
+            <div className='common-container'>
+              <button 
+                className = 'common-button'
+                onClick={handleSetMatch}>Set Match</button>
             </div>
           </div>
         )

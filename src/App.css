@@ -1,6 +1,48 @@
 body {
   font-family: 'Chaney Ultra Extended';
-  background-color:rgba(68, 57, 138, 0.333);
+  background-color:rgba(41, 33, 57, 0.795);
   overflow-x: hidden;
   overflow-y: hidden;  
+}
+
+.common-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+
+.common-button {
+    font-family: 'Chaney Ultra Extended';
+    background-color: white;
+    font-size: 15px;
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+    color: black;
+    transition: background 0.3s;
+    margin-right: 30px;
+    
+}
+
+.vote-button {
+    font-family: 'Chaney Ultra Extended';
+    background-color: white;
+    font-size: 15px;
+    padding: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+    color: black;
+    transition: background 0.3s;
+    margin-right: 30px;
+    
+}
+
+.common-button:hover {
+    background-color: rgba(245, 245, 245, 0.671);
+}
+
+.component-spacing {
+    margin-bottom: 20px; 
 }

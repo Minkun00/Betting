@@ -1,5 +1,6 @@
 import React  from "react";
 import { returnBettingResult_ } from "../function/Mainfunction";
+import '../../App.css'
 
 function ReturnBettingResult({ contract, account }) {
 

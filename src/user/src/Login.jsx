@@ -1,6 +1,6 @@
 import React  from "react";
 import { LogIn_, showOwner_ } from "../function/Mainfunction";
-import '../Main.css'
+import '../../App.css'
 
 function Login({ contract, account }) {
 
