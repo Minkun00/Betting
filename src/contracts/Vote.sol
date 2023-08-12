@@ -69,21 +69,20 @@ contract Vote is SetTeam {
     // 이상적으로 모든 user들이 돈을 받아갔으면 retrunBettingResultOver()자동 실행
     function returnBettingResult() public onlyAfterVersus returns(uint) {
         require(teamNameWin != stringToBytes32('none'));
-
+        uint amountToReturn = 0;
         if (getUserVotedTeamName(msg.sender) == teamNameWin) {
-            uint amountToReturn = (voteBalanceOf(msg.sender) / winnerTeamPureBalance) * bettingTotalBalance;
+            amountToReturn = (voteBalanceOf(msg.sender) / winnerTeamPureBalance) * bettingTotalBalance;
             userData[msg.sender].balance += amountToReturn;
             teamWeight[teamNameWin] -= amountToReturn;
 
             if (teamWeight[teamNameWin] == 0) {
                 returnBettingResultOver();
             }
-            return amountToReturn;
         }
         userData[msg.sender].teamName = '';
         userData[msg.sender].voteBalance = 0;
         userData[msg.sender].voted = false;
-        return 0;
+        return amountToReturn;
     }
     // 이 함수가 실행되어야지 다시 versus()함수를 실행 가능함
     function returnBettingResultOver() public onlyOwner onlyAfterVersus {

@@ -6,7 +6,7 @@ truffle, metamask 준비가 다 되었으면, solidity code를 작성해보자.
 
 이 페이지는 총 4개의 contract에 대해서 설명할 것이다. 각 contract별로 설명, 간단한 문제, 답이 적혀있다. 
 ## 1. Migrations.sol
-가장 먼저 필요한 코드는 Migrations.sol이다. truffle을 사용할 때, terminal에서 우리가 사용할 명령어는 크게 2가지이다. 
+가장 먼저 필요한 코드는 **Migrations.sol**이다. truffle을 사용할 때, terminal에서 우리가 사용할 명령어는 크게 2가지이다. 
 ```cmd
 truffle compile
 truffle migrate --network development
@@ -190,10 +190,11 @@ contract Token {
 }
 ```
 ## 3. SetTeam.sol
-전의 Token.sol은 토큰에 대한 기본적인 관리와 User의 데이터 관리를 중심으로 다루었다. 이번 contract는 실제 lck 팀들이 베팅하기 위해서 필요한 팀에 대한 정보를 관리하는 것이다. LCK 팀들의 팀원 정보, 사진, .. 이런 내용들은 나중에 React에서 API를 사용하는 방식으로 접근할 것이기 때문에, 순수하게 베팅에 필요한 변수들만 관리할 것이다. 
+전의 **Token.sol**은 토큰에 대한 기본적인 관리와 User의 데이터 관리를 중심으로 다루었다. 이번 contract는 실제 lck 팀들이 베팅하기 위해서 필요한 팀에 대한 정보를 관리하는 것이다. LCK 팀들의 팀원 정보, 사진, .. 이런 내용들은 나중에 React에서 API를 사용하는 방식으로 접근할 것이기 때문에, 순수하게 베팅에 필요한 변수들만 관리할 것이다. 
 
 ### 1. 상속
-SetTeam.sol은 Token.sol을 상속받는 코드이다. 이를 반영해서 기본적인 SetTeam.sol을 작성하자.
+----
+**SetTeam.sol**은 **Token.sol**을 상속받는 코드이다. 이를 반영해서 기본적인 **SetTeam.sol**을 작성하자.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -230,7 +231,7 @@ function stringToBytes32(string memory source) public pure returns(bytes32 resul
 ```
 ### 3. onlyOwner
 -----
-원래 Token.sol에서 사용된 ```address owner```를 상속받은 SetTeam에서 쓸 수 있다. 그래서 modifier onlyOwner()를 만들어 볼 것이다. 뜬금없이 튀어나오는 내용일 수 있는데, 의식의 흐름대로 쓰고 있어서 그렇다. 
+원래 **Token.sol**에서 사용된 ```address owner```를 상속받은 SetTeam에서 쓸 수 있다. 그래서 modifier onlyOwner()를 만들어 볼 것이다. 뜬금없이 튀어나오는 내용일 수 있는데, 의식의 흐름대로 쓰고 있어서 그렇다. 
 
 1. ```modifier onlyOwner()```를 만들어보자. ```msg.sender```와 ```owner```값이 동일해야 실행 될 수 있게 하는 제한자이다.
 
@@ -273,9 +274,9 @@ contract SetTeam is Token {
 ```
 
 ## 4. Vote.sol
-지금까지 만든 것들은 Vote.sol을 실행하기 위한 초석들이다. 처음부터 완벽하게 contract들을 짜지 않았기에, Vote.sol을 만들면서 추가적으로 필요한 것들을 Token.sol, SetTeam.sol에 추가하면서 만들어보자. 
+지금까지 만든 것들은 **Vote.sol**을 실행하기 위한 초석들이다. 처음부터 완벽하게 contract들을 짜지 않았기에, **Vote.sol**을 만들면서 추가적으로 필요한 것들을 **Token.sol, SetTeam.sol**에 추가하면서 만들어보자. 
 
-물론, Vote.sol은 SetTeam.sol을 상속받고 있다.
+물론, **Vote.sol**은 **SetTeam.sol**을 상속받고 있다.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -289,6 +290,7 @@ contract Vote is SetTeam {
 ```
 
 ### 1. 생각하는 시간
+----
 잠시 정리하는 시간을 가져보자. 실제 베팅의 과정을 어떻게 해야 할까? React에서 실제 LCK 매칭 데이터를 어떻게든 가져온다고 생각을 해보자(이때까지는 API 사용이 아닌 Crawling으로 해결하려고 했다. 만약 python Crawling 과정이 궁금하다면 [여기](https://github.com/Minkun00/vote/tree/main/src/python)). 
 
 상상으로 React화면을 상상하면서 해보자.. 
@@ -305,13 +307,14 @@ contract Vote is SetTeam {
 이러한 과정을 만들기 위해서 solidity로는 2 ~ 6의 과정을 함수로 만들 수 있다. 
 
 ### 2. Versus
+----
 위에서 말한 순서대로 과정이 이루어지기 위해서 ```require, modifier```를 적절히 사용해야한다. 제일 중요한 것은 2번 과정이라고 생각한다. Contract에 매치가 저장이 되어있는지 확인하는 modifier를 작성해보자. 당연히, 매치를 저장하는 함수도 필요하다. 
 
 1. ```bool public versusExecuted```를 선언하고, 기본값을 false로 설정하자.(기본적으로 선언을 안하면 false라고 하는데, 혹시 모르니 해두는걸로..)
 
 2. ```modifier onlyBeforeVersus```와 ```modifier onlyAfterVersus```를 만들자. 전자는 ```versusExectued == false```이어야 진행시키고, 후자는 ```true```인 경우에 진행시키게 하는 것이다.
 
-3. ```function versus```를 설정한다. 두 팀의 이름을 저장하는 함수이다. 이 함수는 팀 이름을 받아서 저장한다. 저장하는 곳은 이 contract안에 ```bytes32 public team1```처럼 선언하자. 당연히 team2도 선언해야 한다. ```bytes32```는 SetTeam.sol에 있는 함수를 적절히 사용하면 될 것이다.
+3. ```function versus```를 설정한다. 두 팀의 이름을 저장하는 함수이다. 이 함수는 팀 이름을 받아서 저장한다. 저장하는 곳은 이 contract안에 ```bytes32 public team1```처럼 선언하자. 당연히 team2도 선언해야 한다. ```bytes32```는 **SetTeam.sol**에 있는 함수를 적절히 사용하면 될 것이다.
 
 4. ```function versus```에서는 ```onlyBeforeVersus```가 적용되어야 한다. 또, owner만 실행할 수 있게 ```onlyOwner```도 적용되어야 한다.
 
@@ -341,12 +344,14 @@ function versus(string calldata _team1, string calldata _team2) public onlyBefor
 ```
 
 ### 3. Vote
+----
 #### 3.1 Token.sol 추가
-이제, user들이 베팅을 하는 함수를 만들어보자. Token.sol에서 사용한 userData가 이제 여기서 쓰이게 된다. 아직은 우리가 ```Struct User```에 balance와 voted만 있어서, 어떤 팀을 투표했는지에 대한 정보, 얼마나 돈을 넣었는가에 대한 정보도 필요하다. 그래서 Token.sol의 내용을 추가해야한다.
+----
+이제, user들이 베팅을 하는 함수를 만들어보자. **Token.sol**에서 사용한 userData가 이제 여기서 쓰이게 된다. 아직은 우리가 ```Struct User```에 balance와 voted만 있어서, 어떤 팀을 투표했는지에 대한 정보, 얼마나 돈을 넣었는가에 대한 정보도 필요하다. 그래서 **Token.sol**의 내용을 추가해야한다.
 
 1. ```Struct User```에 어떤 팀에 베팅했는지 저장하는```teamName```과, 얼마를 베팅했는지 저장하는 ```voteBalance```를 입력하자.
 
-2. Token.sol ```balanceOf```처럼 추가한 두 정보를 볼 수 있는 함수를 만들자. 각각 ```voteBalanceOf```, ```getUserVotedTeamName```의 이름으로 만들자.
+2. **Token.sol** ```balanceOf```처럼 추가한 두 정보를 볼 수 있는 함수를 만들자. 각각 ```voteBalanceOf```, ```getUserVotedTeamName```의 이름으로 만들자.
 
 3. ```logIn```함수에서 돈을 주는 과정을 보면, 우리가 추가한 정보도 입력해줘야 할 것이다. ```teamName```은 ```''```을 배정하고, ```voteBalance```는 ```0```을 배정하자.
 
@@ -385,4 +390,214 @@ function logIn() public returns(uint){
   return balanceOf(msg.sender);
 }
 ```
-#### 3.2 Vote.sol 추가
+#### 3.2 SetTeam.sol 추가
+----
+이번에는 팀과 관련된 값들을 추가해야한다. 팀에 얼마나 베팅되었는지 확인하기 위해서 teamWeight를 설정하고, 이 값을 확인할 수 있는 함수를 선언해야한다.
+
+1. ```mapping으로 public teamWeight```를 선언하자. 팀 이름이 입력되면, 저장된 token의 양을 저장하는 용도이다.
+
+2. ```function getTeamWeightByTeamName```을 선언하자. ```_teamName```을 입력받으면, 해당 팀의```teaWeight```값을 알려주게 하자.
+
+```solidity
+mapping(bytes32 => uint) public teamWeight;
+
+function getTeamWeightByTeamName(string calldata _teamName) external view returns(uint) {
+  return teamWeight[stringToBytes32(_teamName)];
+}
+```
+
+#### 3.3 Vote.sol 추가
+----
+이제, ```function vote```를 만들 차례이다. 팀 이름과, 베팅하고 싶은 금액을 받아서 베팅을 한다. 
+
+1. ```function vote()```에서 ```string```형식의 ```_teamName```과, 베팅 금액인 ```_amount```들을 인수로 받고, ```onlyAfterVersus```가 성립해야지 실행할 수 있게 하자.
+
+2. 방금 **Token.sol**에서 나온 voted라는 변수를 여기서 쓰게 된다. voted가 false이어야지만 vote를 실행할 수 있다. 당연히 ```_amount```가 user의 balance보다 많아야 할 수 있게 하자.
+
+3. ```bytes32 teamName```을 선언하고, 입력받은 ```_teamName```을 저장하자. ```require```문으로 **Vote.sol**의 ```team1, team2```둘 중 하나에 맞는 값인지 확인하자.
+
+4. ```_amount```값은 user의 ```balance```에서 차감하고, ```teamWeight```에 추가하자. 그리고, user의 ```voteBalance```에 추가하자. 나중에 이긴 팀에 얼마나 베팅했는지 비율을 확인하기 위함이다.
+
+5. 투표를 완료했으니, user의 ```voted```를 ```true```로 바꾸고, ```teamName```값을 ```function vote```안에서 정의한 ```teamName```을 저장하자.
+
+6. 그냥 혹시 모르니 return하는 값은 true로 한다. 이유는 딱히 없다.
+
+```solidity
+function vote(string calldata _teamName, uint _amount) public onlyAfterVersus returns (bool) {
+  require(!userData[msg.sender].voted, "You have already voted!");
+  require(balanceOf(msg.sender) >= _amount, "Not enough tokens!");
+        
+  bytes32 teamName = stringToBytes32(_teamName);
+  require(teamName == team1 || teamName == team2, "Invalid team name!");
+
+  userData[msg.sender].balance -= _amount;
+  teamWeight[teamName] += _amount;
+
+  userData[msg.sender].voteBalance += _amount;
+
+  userData[msg.sender].voted = true;
+  userData[msg.sender].teamName = teamName;
+
+  return true;
+}
+```
+
+### 4. gameEnd
+----
+이제, 매치가 끝났을 때, 승 패를 정해주는 함수를 선언하자. 여기서 중요한 점은, 진 팀의 ```teamWeight```를 이긴 팀에 몰아줘야 하는 것이다. 그리고, 비율 계산을 하기 위해서, ```teamWeight```를 옮기기 전의 이긴 팀의 ```teamWeight```를 저장해두어야 한다. 점점 헷갈리기 시작하는데, 여기서 어떤 값들이 실제 ```token```에 해당하는지 명확하게 밝혀둘 필요가 있다. 
+
+```totalSupply```, ```teamWeight```, ```balance```가 실제 ```token```에 해당하는 것이고, 나머지 변수들(예를 들어 ```User -> voteBalance``` 등)은 계산 용일 뿐이다. 이론적으로 처음 deploy한 ```totalSupply```에서 ```token```의 양은 유지가 된다.
+
+1. 이긴 팀의 이름을 저장하는 ```teamNameWin```을 선언하자. 그리고 default 값은 ```stringToBytes32('none')```으로 하자. 
+
+2. 잠시 **SetTeam.sol**로 넘어가서, 총 베팅된 돈을 저장하는 변수인 ```bettingTotalBalance```와, 이긴 팀에 저장됬던 돈을 저장하는 변수인 ```winnerTeamPureBalance```를 선언하자.
+
+3. 다시 **Vote.sol**로 돌아와서, 지금까지 선언했던 변수들을 활용하도록 하자. ```function gameEnd```를 만들고, ```onlyAfterVersus```와```onlyOwner```이어야지 실행할 수 있게 하자.
+입력받는 인수는 ```_teamNameWin```, ```_teamNameLose```이다. 물론, ```string```형식이다.
+
+4. ```gameEnd```안에 ```bytes32 win```, ```bytes32 lose```를 선언하고, 각각 입력받은 인수들을 저장하자. 그리고, ```require```문으로 이 값들이 ```function versus()```에서 저장했던 ```team1, team2```에 있는 값인지 학인하도록 하자.
+
+5. 이제, ```teamNameWin```에 ```win```을 저장하고, ```winnerTeamPuerBalance```값에 이긴 팀의 ```teamWegiht```를 저장하자. 그 후, 이긴 팀의 ```teamWeight```에 진 팀의 ```teamWeight```를 몰아넣고, 진 팀의 ```teamWeight```는 ```0```으로 초기화하자. 당연히 ```bettingTotalBalance```에  이긴 팀의 몰아넣은 ```teamWeight```를 저장하자.
+
+6. 이긴 팀의 이름을 저장하기 위해서 ```mapping stringTeamName```에 ```teamNameWin```을 ```_teamNameWin```에 매칭하도록 하자.
+```solidity
+// SetTeam.sol
+uint bettingTotalBalance = 0;
+uint winnerTeamPureBalance = 0;
+```
+
+
+```solidity
+// Vote.sol
+bytes32 public teamNameWin = stringToBytes32('none');
+
+function gameEnd(string calldata _teamNameWin, string calldata _teamNameLose) public onlyAfterVersus onlyOwner {
+  bytes32 win = stringToBytes32(_teamNameWin);
+  bytes32 lose = stringToBytes(_teamNameLose);
+  require(win == team1 || win == team2);
+  require(lose == team1 || lose == team2);
+  
+  teamNameWin = win;
+
+  winnerTeamPureBalance = teamWeight[win];
+  teamWeight[win] += teamWeight[lose];
+  bettingTotalBalance = teamWeight[win];
+  teamWeight[lose] = 0;
+
+  stringTeamName[teamNameWin] = _teamNameWin;
+}
+```
+
+### 5. returnBettingResult
+----
+이제, 돈을 받아가는 함수를 만들어야한다. **Token.sol**에서 나온 ```Struct User -> teamName```이 ```teamNameWin```과 같으면 돈을 받아가면 된다. 그리고, ```Struct User -> voted```를 다시 ```false```가 되어야지 나중에 또 베팅을 할 수 있을 것이다.
+
+참고로, 비율은 user가 베팅한 값 / ```winnerTeamPureBalance```일 것이다.
+
+1. ```function returnBettingResult```를 만들자. ```onlyAfterVersus```를 만족해야 하고, ```uint```값을 return하도록 하겠다. 
+
+2. ```gameEnd```이후에 실행이 되어야 하기 때문에, ```teamNameWin```이 ```bytes32 -> 'none'```이 아니어야 실행할 수 있게 하자.
+
+3. ```uint amountToReturn = 0;``` 을 선언하자. 이게 되돌려주는 돈을 의미한다.
+
+4. 이긴 팀을 골랐을 경우를 확인하는 ```if```문을 쓰고, 비율을 반영해서 베팅한 값에 따른 돈을 받는 값을 설정하자. 이 값을 ```amountToReturn```에 저장하도록 하겠다. 이 값을 user의 ```balance```에 더하게 하고, ```teamWeight```에서 빼자. 이렇게 하면 베팅을 모두 받아오면 winner Team의 ```teamWeight```값이 0이 될 것이다.
+
+5. 그리고, 이 함수를 실행하는 누구나 다시 베팅을 할 수 있도록, ```Struct user -> teamName, voteBalance, voted```값을 초기화해야 한다. 각각 ``` '', 0, false```로 설정하자.
+
+6. 마지막 줄에 ```return amountToReturn;```을 쓰자. 베팅을 잘 한 user면 0이 아닌 값을 return할 것이고, 아니면 초기에 설정한 0을 return할 것이다.
+
+```solidity
+function returnBettingResult() public onlyAfterVersus returns(uint) {
+  require(teamNameWin != stringToBytes32('none'));
+  uint amountToReturn = 0;
+  if (getUserVotedTeamName(msg.sender) == teamNameWin) {
+    amountToReturn = (votedBalanceOf(msg.sender) / winnerTeamPureBalance) * bettingTotalBalance;
+    userData[msg.sender].balance += amountToReturn;
+    teamWeight[teamNameWin] -= amountToReturn;
+  }
+  userData[msg.sender].teamName = '';
+  userData[msg.sender].voteBalance = 0;
+  userData[msg.sender].voted = false;
+
+  return amountToReturn;
+}
+```
+
+### 6. returnBettingResultOver
+----
+이제, 다시 ```versus```를 시작하기 위해서 필요한 초기화 작업이다. ```teamNameWin```을 초기화 하고, ```returnBettingResult```를 실행하지 않은 경우 ```teamWeight```가 남아있을 테니 남은 값들을 ```totalSupply```로 옮겨야 한다. 그리고, ```versusExecuted```를 ```false```로 바꾸어야 한다.
+
+1. ```function returnBettingResultOver```를 만들자. ```owner```만 사용 가능하고, ```onlyAfterVersus```이어야 한다. 
+
+2. ```teamNameWin```이 초기 값인 ```bytes32 -> 'none'```이 아니어야 한다.
+
+3. 위의 설명을 그대로 옮기면 된다.
+
+4. 그리고, 나중에 사용할 수도 있으니 ```event BettingResultOver```를 만들고, 이 함수에서 ```emit```하는 것도 만들자.
+
+```solidity
+event BettingResultOver();
+
+function returnBettingResultOver() public onlyOwner onlyAfterVersus {
+  require(teamNameWin != stringToBytes32('none'));
+  totalSupply += teamWeight[teamNameWin];
+  teamWeight[teamNameWin] = 0;
+
+  emit BettingResultOver();
+  teamNameWin = stringToBytes32('none');
+  versusExecuted = false;
+}
+```
+
+### 7. 마무리 및 확인용
+----
+혹시 모를 나중을 대비한 보기 전용 함수들을 만들면 끝난다. 그리고 ```returnBettingResultOver```를 자동으로 실행되게 하는 상황도 만들어야한다. 앞에서 ```returnBettingResult```가 실행될 때, ```teamWeight[teamNameWin]```이 ```0```이 되면 모두가 받아갔다는 내용이 기억이나면, 이해가 될 것이다. 초기화의 조건이 이 경우가 되는 것이다.
+
+모두가 받아가도 초기화하고, 어느 일정 시점에 ```owner```가 초기화시키면 된다는 것이다. 이 두 작업을 마무리하고 solidity내용을 끝내자.
+
+1. ```function showVersus```를 만들자. 현재 ```versus```로 선언된 두 팀의 이름을 ```string```형식으로 알려주는 역할을 할 것이다.
+
+2. ```function showWinnerTeam```을 만들자. 현재 ```teamNameWin```의 값을 확인할 수 있다.
+
+3. ```returnBettingResult```에서 ```returnBettingResultOver```를 조건에 맞게 자동으로 실행할 수 있도록 하자. 물론, 이 경우는 이론상 ```owner```가 실행해야 자동으로 실행되겠지만, 뭐 테스트 용인데 그냥 머릿속에 있는 내용을 쓴다고 생각하자. 실제로 우리가 도박 사이트로 돈을 번다는 생각은 없으니.
+
+* 참고로, 1, 2번 과정은 후에 **React**을 사용하면서 값이 잘 적용되었는지 확인하기 위해서 설정하는 것이다.
+
+```solidity
+function returnBettingResult() public onlyAfterVersus returns(uint) {
+  require(teamNameWin != stringToBytes32('none'));
+  uint amountToReturn = 0;
+  if (getUserVotedTeamName(msg.sender) == teamNameWin) {
+    amountToReturn = (votedBalanceOf(msg.sender) / winnerTeamPureBalance) * bettingTotalBalance;
+    userData[msg.sender].balance += amountToReturn;
+    teamWeight[teamNameWin] -= amountToReturn;
+    if (teamWeight[teamNameWin] == 0) {
+      returnBettingResultOver();
+    }
+  }
+  userData[msg.sender].teamName = '';
+  userData[msg.sender].voteBalance = 0;
+  userData[msg.sender].voted = false;
+
+  return amountToReturn;
+}
+
+function showVersus() public view returns(string memory, string memory) {
+  return(stringTeamName[team1], stringTeamName[team2]);
+}
+function showWinnerTeam() public view returns(string memory) {
+  return(stringTeamName[teamNameWin]);
+}
+```
+
+### 최종 코드들
+여기에 쓰기 너무 길어서 Github에서 확인하기를 바란다. 보고 싶은 코드의 파일 이름을 클릭하면 확인할 수 있다.
+<ul>
+
+[Token.sol](https://github.com/Minkun00/Betting/blob/master/src/contracts/Token.sol)
+
+[SetTeam.sol](https://github.com/Minkun00/Betting/blob/master/src/contracts/SetTeam.sol)
+
+[Vote.sol](https://github.com/Minkun00/Betting/blob/master/src/contracts/Vote.sol)
+
+<ul>
