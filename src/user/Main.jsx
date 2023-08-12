@@ -3,7 +3,7 @@ import Login from './src/Login';
 import Vote from './src/Vote';
 import { getDataFromLocal } from '../owner/function/LocalStorageService';
 import ReturnBettingResult from './src/ReturnBettingResult';
-import './Main.css'
+import '../App.css'
 
 function Main({ contract, account, tokenBalance }) {
   const versusData = getDataFromLocal('versusTeamsData');

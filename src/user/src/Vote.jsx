@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { vote_,balanceOf_ } from "../function/Mainfunction"
-import '../Main.css'
+import '../../App.css'
 
 function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
     const [selectedTeamName, setSelectedTeamName] = useState('NOT SELECTED');
