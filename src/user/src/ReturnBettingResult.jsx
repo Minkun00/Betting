@@ -10,7 +10,7 @@ function ReturnBettingResult({ contract, account }) {
   
     return (
       <div>
-        <button onClick={returnBettingResult}>ReturnBettingResult</button>
+        <button className = 'common-button' onClick={returnBettingResult}>ReturnBettingResult</button>
       </div>
     );
   }

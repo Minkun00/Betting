@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { vote_,balanceOf_ } from "../function/Mainfunction"
+import '../Main.css'
 
 function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
     const [selectedTeamName, setSelectedTeamName] = useState('NOT SELECTED');
@@ -64,7 +65,7 @@ function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
 
     return (
         <React.Fragment>
-            <div style={{height: '350px', width: '100%', display: 'flex' }}>
+            <div className = 'component-spacing'style={{height: '350px', width: '100%', display: 'flex' }}>
                 <div style={{ flex: 3, backgroundColor: team1BackgroundColor, height: '350px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                     <img src={team1URL} alt="Image" style={{ width: '150px', height: '150px' }} 
                     onClick={() => handleImageClick(team1Name)} />
@@ -80,7 +81,7 @@ function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
                     <div style={{ marginBottom: '10px' }}>VS</div>
                     <input type='text' placeholder='0' required
                     onChange={handleInputChange} />
-                    <button type='submit' className='btn btn-primary btn-lg btn-block'
+                    <button type='submit' className='vote-button'
                     onClick={handleVote}>VOTE</button>
                 </div>
 

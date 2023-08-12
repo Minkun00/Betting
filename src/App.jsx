@@ -6,6 +6,7 @@ import Navbar from './navbar/Navbar.jsx';
 import Main from './user/Main.jsx';
 import Owner from './owner/Owner.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css'
 
 function App() {
   const [ownerAddress, setOwnerAddress] = useState('');
@@ -60,38 +61,32 @@ function App() {
   }
   return (
     <Router>
-      <div className="App">
-        <Navbar account={account} tokenBalance={tokenBalance} />
-        <div>
-          <div className="row">
-            <main role="main" style={{ maxWidth: '600px', minHeight: '100vh' }}>
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <Main
-                      contract={contract}
-                      account={account}
-                      tokenBalance={tokenBalance}
-                    />
-                  }
-                />
+      <Navbar account={account} tokenBalance={tokenBalance} />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Main
+                contract={contract}
+                account={account}
+                tokenBalance={tokenBalance}
+              />
+            }
+          />
 
-                <Route
-                  path="/owner"
-                  element={
-                    <Owner
-                      ownerAddress={ownerAddress}
-                      contract={contract}
-                      account={account}
-                    />
-                  }
-                />
-              </Routes>
-            </main>
-          </div>
-        </div>
-      </div>
+          <Route
+            path="/owner"
+            element={
+              <Owner
+                ownerAddress={ownerAddress}
+                contract={contract}
+                account={account}
+              />
+            }
+          />
+        </Routes>
+      </main>
     </Router>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css'
 
 export default function Navbar({ account, tokenBalance }) {
     const [formattedTokenBalance, setFormattedTokenBalance] = useState(
@@ -12,20 +13,22 @@ export default function Navbar({ account, tokenBalance }) {
     }, [tokenBalance]);
 
     return (
-        <nav className='navbar navbar-dark fixed-top shadow p-0 ' style={{backgroundColor: 'black', height:'110px'}}>
-            <a style={{color:'white'}} href='https://github.com/Minkun00/Betting'>VOTE FOR LEAGUE OF LEGEND CHAMPIONSHIP KOREA </a>
+        <nav className = 'nav-loc'>
+            <a className = 'nav-container nav-title-font' 
+                href='https://github.com/Minkun00/Betting'>
+                VOTE FOR LEAGUE OF LEGEND CHAMPIONSHIP KOREA 
+            </a>
             <ul>
-                <ul style={{color:'white'}}>
+                <ul className = 'nav-subtitle-font'>
                     Account Number: { account }<br/>
                     tokenBalance: { formattedTokenBalance }   
                 </ul>            
-                <ul style={{ color: 'white' }}>
+                <ul className = 'nav-container'>
                     <Link to='/owner'>
-                        <button className="link-button">OWNER PAGE</button>
+                        <button className = 'nav-button'>OWNER PAGE</button>
                     </Link>
-                    &nbsp;&nbsp;&nbsp;
                     <Link to='/'>
-                        <button className="link-button">VOTE PAGE</button>
+                        <button className = 'nav-button'>VOTE PAGE</button>
                     </Link>
                 </ul>
             </ul>
