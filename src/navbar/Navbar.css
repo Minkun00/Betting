@@ -1,0 +1,44 @@
+.nav-container {
+    display: flex;
+    justify-content: center;
+    
+}
+.nav-loc {
+    background-color: rgb(28, 25, 43);
+    height: 220px;
+}
+
+.nav-title-font {
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.nav-subtitle-font {
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.nav-left {
+    margin-left: 20px;
+}
+
+.nav-button {
+    font-family: 'Chaney Ultra Extended';
+    background-color: white;
+    font-size: 15px;
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+    color: black;
+    transition: background 0.3s; 
+}
+
+.nav-space {
+    margin: 0 10px;
+}
+
+.nav-button:hover {
+    background-color: rgba(245, 245, 245, 0.671);
+}

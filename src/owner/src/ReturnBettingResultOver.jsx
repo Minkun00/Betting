@@ -12,9 +12,11 @@ function ReturnBettingResultOver({contract, account }) {
         }
     }
     return(
-        <div>
+        <div className = 'common-container'>
             <h2>RETURN BETTING RESULT OVER</h2>
-            <button onClick={() => handleReturnBettingResultOver()}>ACTIVATE</button>
+            <button
+                className = 'common-button' 
+                onClick={() => handleReturnBettingResultOver()}>ACTIVATE</button>
         </div>    
     )
 }

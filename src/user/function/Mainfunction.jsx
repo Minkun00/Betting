@@ -62,5 +62,16 @@ async function returnBettingResult_(vote, account) {
     }
 }
 
+async function balanceOf_(contract, account) {
+    console.log("balance of activate")
+    try {
+        let tokenBalance = await contract.methods.balanceOf(account).call()
+        console.log(tokenBalance)
+    } catch(error) {
+        console.log(error)
+        window.alert("balanceOf error!")
+    }
+}
 
-export {LogIn_, showOwner_, getTeamWeightByTeamName_, vote_, returnBettingResult_};
+
+export {LogIn_, showOwner_, getTeamWeightByTeamName_, vote_, returnBettingResult_, balanceOf_};
