@@ -1,7 +1,7 @@
 .nav-container {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    
 }
 .nav-loc {
     background-color: rgb(28, 25, 43);
@@ -20,6 +20,10 @@
     padding: 10px;
 }
 
+.nav-left {
+    margin-left: 20px;
+}
+
 .nav-button {
     font-family: 'Chaney Ultra Extended';
     background-color: white;
@@ -28,9 +32,11 @@
     border: none;
     cursor: pointer;
     color: black;
-    transition: background 0.3s;
-    margin-right: 30px;
-    
+    transition: background 0.3s; 
+}
+
+.nav-space {
+    margin: 0 10px;
 }
 
 .nav-button:hover {

@@ -18,19 +18,19 @@ function Versus({ contract, account, teamData }) {
   }
 
   return (
-    <div className = 'common-container'>
+    <div className = 'common-container owner-component-spacing'>
       <h2>Versus</h2>
-      <ul>
+      <div>
         {teamData.map((team, index) => (
-          <ul key={index}>
+          <div key={index}>
             <button
               className = 'common-button'
               onClick={() => handleVersus(team.team1.name, team.team2.name)}>
               {team.team1.name} vs {team.team2.name}
             </button>
-          </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

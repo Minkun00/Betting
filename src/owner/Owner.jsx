@@ -4,6 +4,7 @@ import Versus from './src/Versus';
 import GameEnd from './src/GameEnd';
 import ReturnBettingResultOver from './src/ReturnBettingResultOver';
 import '../App.css'
+import './Owner.css'
 
 function Owner({ ownerAddress, contract, account })  {
   const [teamData, setTeamData] = useState([]);

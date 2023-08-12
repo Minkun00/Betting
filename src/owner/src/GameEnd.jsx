@@ -25,18 +25,18 @@ function GameEnd({ contract, account, teamData }) {
   };
 
   return (
-    <div className = 'common-container'>
+    <div className = 'common-container owner-component-spacing'>
       <h2>Game End</h2>
       <div>
         {teamData.map((team, index) => (
           <div key={index}>
             <button
-              className={`common-button team-button ${teamwin === team.team1.name ? "selected" : ""}`}
+              className={`common-button common-space-left team-button ${teamwin === team.team1.name ? "selected" : ""}`}
               onClick={() => handleTeamSelection(team.team1.name, team.team2.name)}>
               {team.team1.name}
             </button>
             <button
-              className={`common-button team-button ${teamwin === team.team2.name ? "selected" : ""}`}
+              className={`common-button team-button owner-component-spacing ${teamwin === team.team2.name ? "selected" : ""}`}
               onClick={() => handleTeamSelection(team.team2.name, team.team1.name)}>
               {team.team2.name}
             </button>

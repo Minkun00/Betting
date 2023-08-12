@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { saveDataToLocal, getDataFromLocal } from '../function/LocalStorageService';
 import '../../App.css'
+import '../Owner.css'
 
 function GetMatchData({ onTeamSelected }) {
   const [localData, setLocalData] = useState(getDataFromLocal('matchData') || null);
@@ -68,14 +69,14 @@ function GetMatchData({ onTeamSelected }) {
         <div>
           {localData.data.schedule.pages.newer && (
             <button 
-              className = 'common-button'
+              className = 'common-button common-space-left'
               onClick={() => handleFetchData(localData.data.schedule.pages.newer)} disabled={isLoading}>
               Fetch Newer Data
             </button>
           )}
           {localData.data.schedule.pages.older && (
             <button 
-              className = 'common-button'
+              className = 'common-button owner-component-spacing'
               onClick={() => handleFetchData(localData.data.schedule.pages.older)} disabled={isLoading}>
               Fetch Older Data
             </button>
@@ -87,7 +88,7 @@ function GetMatchData({ onTeamSelected }) {
       ) : (
         lckEvents && (
           <div>
-            <table className = 'event-table'>
+            <table className = 'event-table owner-component-spacing'>
               <tbody>
                 {lckEvents.map(event => (
                   <tr key={event.match.id} onClick={() => handleSelectRow(event)}>
@@ -96,6 +97,7 @@ function GetMatchData({ onTeamSelected }) {
                     type="checkbox"
                     checked={selectedRow === event}
                     onChange={() => handleSelectRow(event)}
+                    style={{ marginRight: '5px' }}
                     />
                     </td>
                     <td>{event.startTime}</td>
@@ -103,7 +105,7 @@ function GetMatchData({ onTeamSelected }) {
                       <img
                         src={event.match.teams[0].image}
                         alt={event.match.teams[0].name}
-                        style={{ maxWidth: '2em', maxHeight: '2em', border: '1px solid black', background: 'grey' }}
+                        style={{ maxWidth: '2em', maxHeight: '2em', background: 'grey', margin: '0 5px'}}
                       />
                     </td>
                     <td>{event.match.teams[0].name}</td>
@@ -111,7 +113,7 @@ function GetMatchData({ onTeamSelected }) {
                       <img
                         src={event.match.teams[1].image}
                         alt={event.match.teams[1].name}
-                        style={{ maxWidth: '2em', maxHeight: '2em', border: '1px solid black', background: 'grey' }}
+                        style={{ maxWidth: '2em', maxHeight: '2em', background: 'grey', margin: '0 5px'}}
                       />
                     </td>
                     <td>{event.match.teams[1].name}</td>
@@ -121,7 +123,7 @@ function GetMatchData({ onTeamSelected }) {
             </table>
             <div className='common-container'>
               <button 
-                className = 'common-button'
+                className = 'common-button owner-component-spacing'
                 onClick={handleSetMatch}>Set Match</button>
             </div>
           </div>
