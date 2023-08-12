@@ -275,21 +275,114 @@ contract SetTeam is Token {
 ## 4. Vote.sol
 지금까지 만든 것들은 Vote.sol을 실행하기 위한 초석들이다. 처음부터 완벽하게 contract들을 짜지 않았기에, Vote.sol을 만들면서 추가적으로 필요한 것들을 Token.sol, SetTeam.sol에 추가하면서 만들어보자. 
 
+물론, Vote.sol은 SetTeam.sol을 상속받고 있다.
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.8.18<0.9.0; //>=0.8.18 <0.9.0
+import './SetTeam.sol';
+// Vote.sol
+
+contract Vote is SetTeam {
+
+}
+```
+
 ### 1. 생각하는 시간
 잠시 정리하는 시간을 가져보자. 실제 베팅의 과정을 어떻게 해야 할까? React에서 실제 LCK 매칭 데이터를 어떻게든 가져온다고 생각을 해보자(이때까지는 API 사용이 아닌 Crawling으로 해결하려고 했다. 만약 python Crawling 과정이 궁금하다면 [여기](https://github.com/Minkun00/vote/tree/main/src/python)). 
 
 상상으로 React화면을 상상하면서 해보자.. 
 
-1. React에서 LCK Match 한 게임의 팀 이름의 값을 가져온다. 
-
-2. 두 팀 이름을 Contract에 저장하고, 게임 시작을 알린다.
-3. User들이 두 팀 중 어디가 이길지 베팅을 한다
-4. 게임 결과가 나오면 게임 종료 선언 및 승자 선언을 한다.
-5. User들은 자신들의 베팅 결과에 따른 돈을 받아간다.(베팅된 금액의 비율에 따라서 받아감)
-6. User들이 다 받아가면 다음 게임 Setting을 위한 준비를 한다.<br>
-(1 ~ 6 과정의 반복)
+>1. React에서 LCK Match 한 게임의 팀 이름의 값을 가져온다. 
+>
+>2. 두 팀 이름을 Contract에 저장하고, 게임 시작을 알린다.
+>3. User들이 두 팀 중 어디가 이길지 베팅을 한다
+>4. 게임 결과가 나오면 게임 종료 선언 및 승자 선언을 한다.
+>5. User들은 자신들의 베팅 결과에 따른 돈을 받아간다.(베팅된 금액의 비율에 따라서 받아감)
+>6. User들이 다 받아가면 다음 게임 Setting을 위한 준비를 한다.<br>
+>(1 ~ 6 과정의 반복)
 
 이러한 과정을 만들기 위해서 solidity로는 2 ~ 6의 과정을 함수로 만들 수 있다. 
 
-### 2. 기초 작업
-위에서 말한 순서대로 과정이 이루어지기 위해서 ```require, modifier```를 적절히 사용해야한다.
+### 2. Versus
+위에서 말한 순서대로 과정이 이루어지기 위해서 ```require, modifier```를 적절히 사용해야한다. 제일 중요한 것은 2번 과정이라고 생각한다. Contract에 매치가 저장이 되어있는지 확인하는 modifier를 작성해보자. 당연히, 매치를 저장하는 함수도 필요하다. 
+
+1. ```bool public versusExecuted```를 선언하고, 기본값을 false로 설정하자.(기본적으로 선언을 안하면 false라고 하는데, 혹시 모르니 해두는걸로..)
+
+2. ```modifier onlyBeforeVersus```와 ```modifier onlyAfterVersus```를 만들자. 전자는 ```versusExectued == false```이어야 진행시키고, 후자는 ```true```인 경우에 진행시키게 하는 것이다.
+
+3. ```function versus```를 설정한다. 두 팀의 이름을 저장하는 함수이다. 이 함수는 팀 이름을 받아서 저장한다. 저장하는 곳은 이 contract안에 ```bytes32 public team1```처럼 선언하자. 당연히 team2도 선언해야 한다. ```bytes32```는 SetTeam.sol에 있는 함수를 적절히 사용하면 될 것이다.
+
+4. ```function versus```에서는 ```onlyBeforeVersus```가 적용되어야 한다. 또, owner만 실행할 수 있게 ```onlyOwner```도 적용되어야 한다.
+
+```solidity
+bytes32 public team1;
+bytes32 public team2;
+
+bool public versusExecuted = false;
+
+modifier onlyBeforeVersus() {
+  require(!versusExecuted, "Versus has already been executed!");
+  _;
+}
+modifier onlyAfterVersus() {
+  require(versusExecuted, "Versus has not been executed yet");
+  _;
+}
+
+function versus(string calldata _team1, string calldata _team2) public onlyBeforeVersus onlyOwner{
+  team1 = stringToBytes32(_team1);
+  team2 = stringToBytes32(_team2);
+  stringTeamName[team1] = _team1;
+  stringTeamName[team2] = _team2;
+
+  versusExecuted = true;
+}
+```
+
+### 3. Vote
+#### 3.1 Token.sol 추가
+이제, user들이 베팅을 하는 함수를 만들어보자. Token.sol에서 사용한 userData가 이제 여기서 쓰이게 된다. 아직은 우리가 ```Struct User```에 balance와 voted만 있어서, 어떤 팀을 투표했는지에 대한 정보, 얼마나 돈을 넣었는가에 대한 정보도 필요하다. 그래서 Token.sol의 내용을 추가해야한다.
+
+1. ```Struct User```에 어떤 팀에 베팅했는지 저장하는```teamName```과, 얼마를 베팅했는지 저장하는 ```voteBalance```를 입력하자.
+
+2. Token.sol ```balanceOf```처럼 추가한 두 정보를 볼 수 있는 함수를 만들자. 각각 ```voteBalanceOf```, ```getUserVotedTeamName```의 이름으로 만들자.
+
+3. ```logIn```함수에서 돈을 주는 과정을 보면, 우리가 추가한 정보도 입력해줘야 할 것이다. ```teamName```은 ```''```을 배정하고, ```voteBalance```는 ```0```을 배정하자.
+
+```solidity
+struct User {
+  uint256 balance;    // user의 돈
+  bool voted;         // 한 팀에 베팅하면, 추가 베팅을 못하게 하는 변수
+  bytes32 teamName;     // user가 베팅한 팀명( hashed by function stringToBytes32() )
+  uint voteBalance;   // 그 팀에 얼마를 박았는가?(박은 비율에 따라서 돈을 되돌려주기 때문에 설정했음)
+}
+
+// 주소에 따른 베팅금액 표시
+function voteBalanceOf(address _address) view public returns(uint) {
+  return userData[_address].voteBalance;
+}
+// 주소에 따른 베팅을 한 팀명 표시
+function getUserVotedTeamName(address _address) view public returns(bytes32) {
+  return userData[_address].teamName;
+}
+
+function logIn() public returns(uint){
+  // logIn()은 한 번만 실행될 수 있음(by mapping -> registeredUsers)
+  // 토큰 총 발행량을 넘어서는 유저의 수는 안됨
+  require(!registeredUsers[msg.sender], 'You have already registered');
+  require(totalSupply >= 10 * (10 ** 18), 'Not enough totalSupply!');
+  registeredUsers[msg.sender] = true;
+
+  // user에게 기본 자본, 투표권 등 지급 및 세팅 설정
+  userData[msg.sender] = User({
+    balance: 10 * (10 ** 18),
+    voted: false,
+    teamName: '',
+    voteBalance: 0
+  });
+  totalSupply -= 10 * (10 ** 18);
+  return balanceOf(msg.sender);
+}
+```
+#### 3.2 Vote.sol 추가
