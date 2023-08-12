@@ -1,5 +1,6 @@
 import React  from "react";
 import { LogIn_, showOwner_ } from "../function/Mainfunction";
+import '../Main.css'
 
 function Login({ contract, account }) {
 
@@ -12,10 +13,10 @@ function Login({ contract, account }) {
   };
 
   return (
-    <div>
-      <button onClick={handleLogIn}>LOGIN</button>
+    <div className = 'common-container component-spacing'>
+      <button className = 'common-button' onClick={handleLogIn}>LOGIN</button>
       &nbsp;&nbsp;&nbsp;
-      <button onClick={handleShowOwner}>Show Owner</button>
+      <button className = 'common-button' onClick={handleShowOwner}>Show Owner</button>
     </div>
   );
 }
