@@ -1,8 +1,7 @@
 body {
   font-family: 'Chaney Ultra Extended';
-  background-color:rgba(41, 33, 57, 0.795);
-  overflow-x: hidden;
-  overflow-y: hidden;  
+  background-color:rgba(41, 33, 57, 0.694);
+
 }
 
 .common-container {
@@ -10,8 +9,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
   }
+
+
 
 .common-button {
     font-family: 'Chaney Ultra Extended';
@@ -22,8 +22,10 @@ body {
     cursor: pointer;
     color: black;
     transition: background 0.3s;
-    margin-right: 30px;
-    
+}
+
+.common-space-left {
+  margin-right: 10px;
 }
 
 .vote-button {
@@ -35,7 +37,6 @@ body {
     cursor: pointer;
     color: black;
     transition: background 0.3s;
-    margin-right: 30px;
     
 }
 
@@ -44,5 +45,5 @@ body {
 }
 
 .component-spacing {
-    margin-bottom: 20px; 
+    margin-bottom: 35px; 
 }

@@ -14,8 +14,7 @@ function Login({ contract, account }) {
 
   return (
     <div className = 'common-container component-spacing'>
-      <button className = 'common-button' onClick={handleLogIn}>LOGIN</button>
-      &nbsp;&nbsp;&nbsp;
+      <button className = 'common-button component-spacing' onClick={handleLogIn}>LOGIN</button>
       <button className = 'common-button' onClick={handleShowOwner}>Show Owner</button>
     </div>
   );
