@@ -47,3 +47,23 @@ body {
 .component-spacing {
     margin-bottom: 35px; 
 }
+
+.vote-container  {
+  height: 350px;
+  width: 70%;
+  display: flex;
+  margin : 20px;
+}
+
+.vote-team-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vote-team-imageSize {
+  width: 150px;
+  height: 150px;
+}
