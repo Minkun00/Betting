@@ -62,7 +62,7 @@ function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
 
     return (
         <React.Fragment>
-            {team1Name == 'No data' ? (
+            {team1Name === 'No data' ? (
                 //match doesn't select
                 <div className = 'vote-container' 
                     style={{backgroundColor: 'black', color:'white', alignItems: 'center', justifyContent: 'center', fontSize:'35px' }}>

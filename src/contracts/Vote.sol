@@ -74,10 +74,6 @@ contract Vote is SetTeam {
             amountToReturn = (voteBalanceOf(msg.sender) / winnerTeamPureBalance) * bettingTotalBalance;
             userData[msg.sender].balance += amountToReturn;
             teamWeight[teamNameWin] -= amountToReturn;
-
-            if (teamWeight[teamNameWin] == 0) {
-                returnBettingResultOver();
-            }
         }
         userData[msg.sender].teamName = '';
         userData[msg.sender].voteBalance = 0;
