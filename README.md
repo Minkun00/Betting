@@ -59,18 +59,18 @@ github가 친숙하다면 linux 환경에서 git clone을 이용하여 다운로
 ubuntu terminal을 연다. 
 
 cd startingFile을 통해 디렉토리에 접근한다. (압축을 통해 풀었다면 startingFile (압축을 푼 파일) 안에 startingFile (압축 안에 있었던 본 파일)이 하나 더 있을 수 있으므로 본 파일만 있을 수 있게 설정한다.)
-
+```bash
     cd ~
     cd startingFile
-
+```
 (간혹 디렉토리 파일 경로가 다르다면, ls 라는 명령어를 통해 디렉토리의 리스트를 확인할 수 있고, cd 라는 명령어를 통해 디렉토리 구조를 파악할 수 있다. cd .. (상위 디렉토리로 이동) cd . (현재 디렉토리) cd ~ (root 디렉토리로 이동))
 
 ### 1-2 
 
 ubuntu terminal에서 해당 디렉토리에 접근하였으면 
-
+```bash
     code . 
-
+```
 를 통해서 vscode로 열어준다. 만약 에러가 뜨며 열리지 않는다면, ubuntu terminal을 재실행해준다. 
 
 ![ubuntu-open-code](./wsl-img/ubuntu-open-code.png)
@@ -90,14 +90,14 @@ ubuntu terminal에서 해당 디렉토리에 접근하였으면
 터미널이 우분투 환경으로 변경될 것이다. 이제부터 해당 콘솔에 명령어를 하나씩 입력하면 된다.
 
 ### 1-
-
+```bash
     sudo apt-get update
     sudo apt-get upgrade
     sudo apt-get install curl
     sudo apt-get install build-essential libssl-dev
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
     source ~/.bashrc 
-
+```
 시스템의 패키지 목록을 최신으로 업데이트 하고 필요한 nvm 및 패키지를 설치하는 코드이다. 맨 마지막 코드를 통해 변경사항을 저장한다. 
 
     sudo apt-get install build-essential libssl-dev 
@@ -107,12 +107,12 @@ ubuntu terminal에서 해당 디렉토리에 접근하였으면
 해당 명령어를 실행한다면 위의 이미지 처럼 Y/n 을 입력하라는 창이 뜰 것이다. 이때 Y를 입력하면 정상적으로 설치가 진행된다.
 
 ### 1-
-
+```bash
     nvm install 14
     nvm use 14
     nvm install node
     npm install -g truffle
-
+```
 node는 애플리케이션 구축을 목적으로 설계된 Javascript 환경이다. 
 nvm과 npm은 node의 필요한 패키지들을 간편하게 설치하고 관리할 수 있는 CLI 도구이다. 
 truffle 이더리움 기반의 스마트 컨트랙트를 개발하고 배포할 수있도록 도와주는 프레임 워크이다.
@@ -169,7 +169,7 @@ https://trufflesuite.com/ganache/
 truffle-config.js는 truffle이라는 프레임워크를 사용할 경우 설정해야하는 파일이다. 
 truffle을 통해 스마트 컨트랙트를 컴파일하고, 사용하는 테스트넷에 배포할 수 있다. 
 각각의 필요한 세부사항을 살펴보겠다. 
-
+```js
     module.exports = {
         networks: {},
         contracts_directory: ,
@@ -178,10 +178,10 @@ truffle을 통해 스마트 컨트랙트를 컴파일하고, 사용하는 테스
         tests_directory:,
         compilers: {}
     }
-
+```
 해당 구조가 기본 코드의 틀이라고 할 수 있다. 
 networks 파트 에서 이전의 가나슈 설정 파트에서 사용했던 테스트 넷 RFC 주소를 참고하여 작성합니다. 
-
+```js
     networks: {
         development: {
         host: "XXX.XXX.XXX.XXX",     // Ganache 앱을 실행 중인 로컬 호스트
@@ -189,26 +189,26 @@ networks 파트 에서 이전의 가나슈 설정 파트에서 사용했던 테�
         network_id: "*",        // 모든 네트워크에 대해 설정
         },
     },
-    
+```   
 XXX.XXX.XXX.XXX:7545 이라는 테스트 넷에 접속하여, 테스트 넷의 네트워크 id와 상관없이 연결을 하겠다는 코드입니다. 
-
+```js
     contracts_directory: './src/contracts/',
     contracts_build_directory: './src/truffle_abis/',
     migrations_directory: './migrations/',
     tests_directory: './test/',
-
+```
 해당 디렉토리 중 컨트랙트가 보관되어 있는 디렉토리, 컴파일 시 생성되는 파일에 대한 디렉토리, migrations 설정이 들어있는 디렉토리, 그리고 test를 사용할 때 필요한 파일을 담은 디렉토리의 위치를 설정해주는 코드입니다. 
-
+```js
     compilers: {
         solc: {
         version: '0.8.18',
         optimizer: {
             enabled: true,
             runs: 200
-        },
+            },
         }
     }
-
+```
 해당 코드는 solidity언어를 compile할 compiler의 정보를 설정하는 코드입니다. 
 version은 compiler가 사용할 solidiy의 버전을
 optimizer의 enable은 컴파일러 실행 속도 및 가스 비용을 줄일 수 있는 기능입니다. 
@@ -216,30 +216,30 @@ run은 해당 기능이 활성화 되었을 경우, 계약이 자주 호출된�
 유리합니다. 
 
 아래의 코드는 truffle-config.js 파일의 코드 전체입니다. 
-
+```js
     module.exports = {
-    networks: {
-        development: {
-        host: "192.168.96.1",     
-        port: 7545,            
-        network_id: "*",        
+        networks: {
+            development: {
+                host: "192.168.96.1",     
+                port: 7545,            
+                network_id: "*",        
+            },
         },
-    },
-    contracts_directory: './src/contracts/',
-    contracts_build_directory: './src/truffle_abis/',
-    migrations_directory: './migrations/',
-    tests_directory: './test/',
-    compilers: {
-        solc: {
-        version: '0.8.18',
-        optimizer: {
-            enabled: true,
-            runs: 200
-        },
+        contracts_directory: './src/contracts/',
+        contracts_build_directory: './src/truffle_abis/',
+        migrations_directory: './migrations/',
+        tests_directory: './test/',
+        compilers: {
+            solc: {
+                version: '0.8.18',
+                optimizer: {
+                    enabled: true,
+                    runs: 200
+                },
+            }
         }
     }
-    }
-
+```
 만일 가나슈의 워크 스페이스를 계속 생성하고 실행하는 과정에서 테스트 넷 RFC server 주소가 바뀐다면 
 network의 host의 값을 계속해서 변경해야 제대로 deploy가 될 수 있습니다. 
 
