@@ -11,7 +11,7 @@ testnet ganache 사용법, 그리고 front-end 언어인 react를 이용해서 �
 본 과정은 초보자들이 가장 어렵고 까다로워하는 개발 환경 설정과 solidity를 중점적으로 다룰 것이다. 
 
 ## vscode
-![vscode-logo](./wsl-img/vscode-logo.png)
+![vscode-logo-1](./wsl-img/vscode-logo-1.png)
 
 vscode는 프로그래밍에서 기본적이며 대표적인 문서 편집기이다. 
 해당 프로젝트에서 대부분의 코딩 및 명령어 실행은 해당 편집기를 통해 이루어진다.
@@ -36,8 +36,12 @@ https://gaesae.com/161
 
 스타팅 파일 github 링크 (startingFile)
 
+![github-guide](./wsl-img/github-guide.png)
+
 위의 gitgub 링크에서 기본 디렉토리 파일을 설치한다. 
 github가 친숙하다면 linux 환경에서 git clone을 이용하여 다운로드하고, 그렇지 않다면 ZIP을 받아서 직접 Window GUI를 이용하여 Linux에 압축을 풀어 놓는다. 
+
+![linux-guide](./wsl-img/linux-guide.png)
 
 ## 의존성 설치 
 
@@ -51,6 +55,8 @@ cd startingFile을 통해 디렉토리에 접근한다.
 
     cd ~
     cd startingFile
+
+(간혹 디렉토리 파일 경로가 다르다면, ls 라는 명령어를 통해 디렉토리의 리스트를 확인할 수 있고, cd 라는 명령어를 통해 디렉토리 구조를 파악할 수 있다. cd .. (상위 디렉토리로 이동) cd . (현재 디렉토리) cd ~ (root 디렉토리로 이동))
 
 
 ### 1-2
@@ -82,7 +88,9 @@ truffle 이더리움 기반의 스마트 컨트랙트를 개발하고 배포할 
 ![metamask-logo](./wsl-img/metamask-logo.png)
 
 메타마스크는 이더리움 개인지갑을 편리하고 안전하게 관리 할 수 있는 구글 확장 프로그램이다. 
-아이디를 만들고 로그인을 한다. 
+아래의 링크를 참조하여 아이디를 만들고 로그인을 한다. 
+
+https://log-laboratory.tistory.com/355
 
 
 ## ganache
