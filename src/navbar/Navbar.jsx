@@ -6,7 +6,7 @@ export default function Navbar({ account, tokenBalance }) {
     const formattedTokenBalance = tokenBalance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
     useEffect(() => {
-        console.log(tokenBalance.toString());
+        console.log(`token Balance : ${tokenBalance.toString()}`);
     }, [tokenBalance]);
 
     return (

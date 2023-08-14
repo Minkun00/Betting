@@ -13,9 +13,6 @@ contract Vote is SetTeam {
     // versus과정 이후에 모든 과정들을 실행할 수 있게 modifier 작성했는데, 그걸 위한 bool 변수
     // versus 전 : false , versus 후 : true , returnBettingResultOver() 실행되면 다시 false...
     bool public versusExecuted = false;
-    // returnBettingResult()에서 returnBettingResultOver가 자동 실행될 경우를 대비해서
-    // react에서 인식하게 하기 위함.(추가적 returnBettingResultOver 실행 방지용)
-    event BettingResultOver();
     // versus 실행 전
     modifier onlyBeforeVersus() {
         require(!versusExecuted, "Versus has already been executed");
@@ -86,7 +83,6 @@ contract Vote is SetTeam {
         totalSupply += teamWeight[teamNameWin];
         teamWeight[teamNameWin] = 0;
         
-        emit BettingResultOver();
         teamNameWin = stringToBytes32('none');
         versusExecuted = false;
     }
