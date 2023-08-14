@@ -1,4 +1,4 @@
- #개요 
+# 개요 
 
 블록체인 개발을 처음 입문하시는 분들을 위한 튜토리얼
 개발을 위한 환경설정부터 블록체인 핵심 언어인 solidy의 기본 문법, metamask 생성,
@@ -10,7 +10,7 @@ testnet ganache 사용법, 그리고 front-end 언어인 react를 이용해서 �
 
 본 과정은 초보자들이 가장 어렵고 까다로워하는 개발 환경 설정과 solidity를 중점적으로 다룰 것이다. 
 
- ##vscode
+## vscode
 ![vscode-logo](./wsl-img/vscode-logo.png)
 
 vscode는 프로그래밍에서 기본적이며 대표적인 문서 편집기이다. 
@@ -20,7 +20,7 @@ https://code.visualstudio.com/
 
 위의 공식 사이트를 방문해 본인 사양에 맞는 프로그램을 설치해줍니다. 
 
- ##wsl 
+## wsl 
 ![wsl-logo](./wsl-img/wsl-logo.png)
 
 Window, Linux, Mac은 대표적인 운영체제이나, 프로그래밍과 코딩에 익숙치 않은 대부분의 사람들은 window를 사용한다. 프로그래밍, 특히 window에서 블록체인을 개발할 때에는 여러 호환성이나 종속성 문제가 발생하므로 WSL를 설치하여 사용하기를 권장한다.  
@@ -31,7 +31,7 @@ https://gaesae.com/161
 
 위의 게시글의 전 과정을 진행하며 WSL를 설치해준다. 
 
- ##github 
+## github 
 ![github-logo](./wsl-img/github-logo.png)
 
 스타팅 파일 github 링크 (startingFile)
@@ -39,11 +39,11 @@ https://gaesae.com/161
 위의 gitgub 링크에서 기본 디렉토리 파일을 설치한다. 
 github가 친숙하다면 linux 환경에서 git clone을 이용하여 다운로드하고, 그렇지 않다면 ZIP을 받아서 직접 Window GUI를 이용하여 Linux에 압축을 풀어 놓는다. 
 
- ##의존성 설치 
+## 의존성 설치 
 
 튜토리얼를 진행하기에 앞서 로컬 컴퓨터에 전역적으로 혹은, 해당 디렉토리에서 필요한 패키지들을 설치하는 과정이다. 
 
- ###1-1
+### 1-1
 
 ubuntu terminal을 연다. 
 
@@ -53,7 +53,7 @@ cd startingFile을 통해 디렉토리에 접근한다.
     cd startingFile
 
 
- ###1-2
+### 1-2
 
     sudo apt-get update
     sudo apt-get upgrade
@@ -63,7 +63,7 @@ cd startingFile을 통해 디렉토리에 접근한다.
 
 시스템의 패키지 목록을 최신으로 업데이트 하고 필요한 nvm 및 패키지를 설치하는 코드이다. 
 
- ###1-3
+### 1-3
 
     nvm install -lts
     nvm use 14
@@ -78,14 +78,14 @@ truffle 이더리움 기반의 스마트 컨트랙트를 개발하고 배포할 
 
 이라는 명령어를 통해 truffle이 잘 설치 되었는지 확인해 볼 수 있다. 
 
- ##metamask 
+## metamask 
 ![metamask-logo](./wsl-img/metamask-logo.png)
 
 메타마스크는 이더리움 개인지갑을 편리하고 안전하게 관리 할 수 있는 구글 확장 프로그램이다. 
 아이디를 만들고 로그인을 한다. 
 
 
- ##ganache
+## ganache
 ![ganache-logo](./wsl-img/ganache-logo.png)
 
 가나슈는 PC에 설치 가능한 블록체인 테스트넷 환경이다. 이를 통해 복잡한 절차 없이 블록체인을 테스트넷에 배포해보고 
@@ -95,29 +95,29 @@ https://trufflesuite.com/ganache/
 
 
 ![ganache-1](./wsl-img/ganache-1.png)
- ###1-1. 가나슈를 실행하여 workspace에 들어간다.
+###  1-1. 가나슈를 실행하여 workspace에 들어간다.
 ![ganache-2](./wsl-img/ganache-2.png)
- ###1-2. server에서 hostname을 WSL버전으로 바꿔준다. 
+### 1-2. server에서 hostname을 WSL버전으로 바꿔준다. 
 ![ganache-3](./wsl-img/ganache-3.png)
 가나슈 설명란, 10개의 지갑이 보인다. 
 ![ganache-4](./wsl-img/ganache-4.png)
- ###1-3. RFC SERVER의 IP주소를 복사 해둔다.
+### 1-3. RFC SERVER의 IP주소를 복사 해둔다.
 ![ganache-6](./wsl-img/ganache-6.png)
- ###1-4. NETWORK 추가를 누른뒤, 네트워크 수동추가를 눌러준다.
+### 1-4. NETWORK 추가를 누른뒤, 네트워크 수동추가를 눌러준다.
 ![ganache-7](./wsl-img/ganache-7.png)
- ###1-5. 네트워크 이름을 설정하고, 아까 복사했던 주소를 RFC SERVER란에 붙여넣어준다. 나머지는 위의 이미지와 동일하게 작성해준뒤 저장을 누른다.  
+### 1-5. 네트워크 이름을 설정하고, 아까 복사했던 주소를 RFC SERVER란에 붙여넣어준다. 나머지는 위의 이미지와 동일하게 작성해준뒤 저장을 누른다.  
 ![ganache-4](./wsl-img/ganache-4.png)
 ![ganache-5](./wsl-img/ganache-5.png)
- ###1-6. 가나슈 설정 창의 첫번째 지갑의 열쇠 모양을 클릭하고 개인키를 복사해준다. 
+### 1-6. 가나슈 설정 창의 첫번째 지갑의 열쇠 모양을 클릭하고 개인키를 복사해준다. 
 ![ganache-8](./wsl-img/ganache-8.png)
- ###1-7. 위의 ACCOUNT를 누른 뒤, 계정 가져오기를 클릭한다. 
+### 1-7. 위의 ACCOUNT를 누른 뒤, 계정 가져오기를 클릭한다. 
 ![ganache-9](./wsl-img/ganache-9.png)
- ###1-8. 빈 칸란에 아까 복사해둔 개인키를 붙여넣고 가져오기를 클릭한다. 
+### 1-8. 빈 칸란에 아까 복사해둔 개인키를 붙여넣고 가져오기를 클릭한다. 
 ![ganache-10](./wsl-img/ganache-10.png)
 ![ganache-11](./wsl-img/ganache-11.png)
- ###1-9. 아까 설정했던 네트워크 및 계정을 설정하면 가나슈의 첫번째 계정 정보를 메타마스크에서 확인 할 수 있다. 
+### 1-9. 아까 설정했던 네트워크 및 계정을 설정하면 가나슈의 첫번째 계정 정보를 메타마스크에서 확인 할 수 있다. 
 
- ##truffle-config.js 설정 
+## truffle-config.js 설정 
 
 truffle-config.js는 truffle이라는 프레임워크를 사용할 경우 설정해야하는 파일이다. 
 truffle을 통해 스마트 컨트랙트를 컴파일하고, 사용하는 테스트넷에 배포할 수 있다. 
