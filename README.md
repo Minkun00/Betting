@@ -31,6 +31,13 @@ https://gaesae.com/161
 
 위의 게시글의 전 과정을 진행하며 WSL를 설치해준다. 
 
+wsl 설치과정 48.에서 versbose가 아닌 verbose이다. 
+
+    wsl --list --verbose
+
+
+![installing-wsl-error](./wsl-img/installing-wsl-error.png)
+
 ## github 
 ![github-logo](./wsl-img/github-logo.jpeg)
 
@@ -51,27 +58,57 @@ github가 친숙하다면 linux 환경에서 git clone을 이용하여 다운로
 
 ubuntu terminal을 연다. 
 
-cd startingFile을 통해 디렉토리에 접근한다.
+cd startingFile을 통해 디렉토리에 접근한다. (압축을 통해 풀었다면 startingFile (압축을 푼 파일) 안에 startingFile (압축 안에 있었던 본 파일)이 하나 더 있을 수 있으므로 본 파일만 있을 수 있게 설정한다.)
 
     cd ~
     cd startingFile
 
 (간혹 디렉토리 파일 경로가 다르다면, ls 라는 명령어를 통해 디렉토리의 리스트를 확인할 수 있고, cd 라는 명령어를 통해 디렉토리 구조를 파악할 수 있다. cd .. (상위 디렉토리로 이동) cd . (현재 디렉토리) cd ~ (root 디렉토리로 이동))
 
+### 1-2 
 
-### 1-2
+ubuntu terminal에서 해당 디렉토리에 접근하였으면 
+
+    code . 
+
+를 통해서 vscode로 열어준다. 만약 에러가 뜨며 열리지 않는다면, ubuntu terminal을 재실행해준다. 
+
+![ubuntu-open-code](./wsl-img/ubuntu-open-code.png)
+
+이미지 속 터미널에서 디렉터리 명이 다를 수 있으므로 주의.  Betting-master -> startingFile
+
+![vscode-open-wsl](./wsl-img/vscode-open-wsl.png)
+
+이후 상단의 터미널 창을 열어주면 해당 이미지와 같이 뜰 것이다. 
+
+![vscode-install-wsl](./wsl-img/vscode-install-wsl.png)
+
+를 통해 vscode 내에서 wsl를 설치해준다면 
+
+![installing-wsl-after-vscode](./wsl-img/installing-wsl-after-vscode.png)
+
+터미널이 우분투 환경으로 변경될 것이다. 이제부터 해당 콘솔에 명령어를 하나씩 입력하면 된다.
+
+### 1-
 
     sudo apt-get update
     sudo apt-get upgrade
     sudo apt-get install curl
     sudo apt-get install build-essential libssl-dev
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+    source ~/.bashrc 
 
-시스템의 패키지 목록을 최신으로 업데이트 하고 필요한 nvm 및 패키지를 설치하는 코드이다. 
+시스템의 패키지 목록을 최신으로 업데이트 하고 필요한 nvm 및 패키지를 설치하는 코드이다. 맨 마지막 코드를 통해 변경사항을 저장한다. 
 
-### 1-3
+    sudo apt-get install build-essential libssl-dev 
+    
+![libssl-guide](./wsl-img/libssl-guide.png)
 
-    nvm install -lts
+해당 명령어를 실행한다면 위의 이미지 처럼 Y/n 을 입력하라는 창이 뜰 것이다. 이때 Y를 입력하면 정상적으로 설치가 진행된다.
+
+### 1-
+
+    nvm install 14
     nvm use 14
     nvm install node
     npm install -g truffle
@@ -83,6 +120,8 @@ truffle 이더리움 기반의 스마트 컨트랙트를 개발하고 배포할 
     truffle version 
 
 이라는 명령어를 통해 truffle이 잘 설치 되었는지 확인해 볼 수 있다. 
+
+![success_truffle_version](./wsl-img/success_truffle_version.png)
 
 ## metamask 
 ![metamask-logo](./wsl-img/metamask-logo.png)
