@@ -5,6 +5,7 @@
 /src/truffle_abis
 /.pnp
 .pnp.js
+truffle-config.js
 
 
 # testing

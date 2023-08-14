@@ -6,6 +6,9 @@ function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
     const [selectedTeamName, setSelectedTeamName] = useState('NOT SELECTED');
     const [amount, setAmount] = useState('0');
 
+    const team1BackgroundColor = getBackgroundColor(team1Name);
+    const team2BackgroundColor = getBackgroundColor(team2Name);
+    
     const selectedTeamURL = 'NOT SELECTED' === selectedTeamName ? 'NOT SELECTED' : (selectedTeamName === team1Name ? team1URL : team2URL);
     const selectedTeamBackgroundColor = 'NOT SELECTED' === selectedTeamName ? 'rgb(255, 255, 255)' : (selectedTeamName === team1Name ? team1BackgroundColor : team2BackgroundColor);
 
@@ -35,8 +38,7 @@ function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
                 return 'rgb(255, 255, 255)';
         }
     }
-    const team1BackgroundColor = getBackgroundColor(team1Name);
-    const team2BackgroundColor = getBackgroundColor(team2Name);
+
 
     const handleVote = async () => {
     try {
@@ -60,7 +62,7 @@ function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
 
     return (
         <React.Fragment>
-            {team1Name == 'No data' ? (
+            {team1Name === 'No data' ? (
                 //match doesn't select
                 <div className = 'vote-container' 
                     style={{backgroundColor: 'black', color:'white', alignItems: 'center', justifyContent: 'center', fontSize:'35px' }}>
