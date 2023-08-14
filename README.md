@@ -32,7 +32,7 @@ https://gaesae.com/161
 위의 게시글의 전 과정을 진행하며 WSL를 설치해준다. 
 
 ## github 
-![github-logo](./wsl-img/github-logo.png)
+![github-logo](./wsl-img/github-logo.jpeg)
 
 스타팅 파일 github 링크 (startingFile)
 
@@ -93,29 +93,29 @@ truffle 이더리움 기반의 스마트 컨트랙트를 개발하고 배포할 
 
 https://trufflesuite.com/ganache/
 
-
-![ganache-1](./wsl-img/ganache-1.png)
 ###  1-1. 가나슈를 실행하여 workspace에 들어간다.
-![ganache-2](./wsl-img/ganache-2.png)
+![ganache-1](./wsl-img/ganache-1.png)
 ### 1-2. server에서 hostname을 WSL버전으로 바꿔준다. 
+![ganache-2](./wsl-img/ganache-2.png)
+### 1-3. RFC SERVER의 IP주소를 복사 해둔다.
 ![ganache-3](./wsl-img/ganache-3.png)
 가나슈 설명란, 10개의 지갑이 보인다. 
 ![ganache-4](./wsl-img/ganache-4.png)
-### 1-3. RFC SERVER의 IP주소를 복사 해둔다.
-![ganache-6](./wsl-img/ganache-6.png)
 ### 1-4. NETWORK 추가를 누른뒤, 네트워크 수동추가를 눌러준다.
-![ganache-7](./wsl-img/ganache-7.png)
+![ganache-6](./wsl-img/ganache-6.png)
 ### 1-5. 네트워크 이름을 설정하고, 아까 복사했던 주소를 RFC SERVER란에 붙여넣어준다. 나머지는 위의 이미지와 동일하게 작성해준뒤 저장을 누른다.  
+![ganache-7](./wsl-img/ganache-7.png)
+### 1-6. 가나슈 설정 창의 첫번째 지갑의 열쇠 모양을 클릭하고 개인키를 복사해준다.   
 ![ganache-4](./wsl-img/ganache-4.png)
 ![ganache-5](./wsl-img/ganache-5.png)
-### 1-6. 가나슈 설정 창의 첫번째 지갑의 열쇠 모양을 클릭하고 개인키를 복사해준다. 
-![ganache-8](./wsl-img/ganache-8.png)
 ### 1-7. 위의 ACCOUNT를 누른 뒤, 계정 가져오기를 클릭한다. 
+![ganache-8](./wsl-img/ganache-8.png)
+### 1-8. 빈 칸란에 아까 복사해둔 개인키를 붙여넣고 가져오기를 클릭한다.
 ![ganache-9](./wsl-img/ganache-9.png)
-### 1-8. 빈 칸란에 아까 복사해둔 개인키를 붙여넣고 가져오기를 클릭한다. 
+### 1-9. 아까 설정했던 네트워크 및 계정을 설정하면 가나슈의 첫번째 계정 정보를 메타마스크에서 확인 할 수 있다. 
 ![ganache-10](./wsl-img/ganache-10.png)
 ![ganache-11](./wsl-img/ganache-11.png)
-### 1-9. 아까 설정했던 네트워크 및 계정을 설정하면 가나슈의 첫번째 계정 정보를 메타마스크에서 확인 할 수 있다. 
+ 
 
 ## truffle-config.js 설정 
 
