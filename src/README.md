@@ -114,7 +114,7 @@ async function loadContracts() {
 
 contract의 함수를 호출하는 데에는 두 가지 방법이 존재한다.
 
-## 1. call 함수로 Contract 함수 호출 ([/src/App.jsx](https://github.com/Minkun00/Betting/blob/master/src/App.jsx) : Line 28-29 참조))
+### 1. call 함수로 Contract 함수 호출 ([/src/App.jsx](https://github.com/Minkun00/Betting/blob/master/src/App.jsx) : Line 28-29 참조))
 ```
 const userBalance = await contract.methods.balanceOf(account).call();
 const ownerAddress = await contract.methods.showOwner(account).call();
@@ -123,7 +123,7 @@ const ownerAddress = await contract.methods.showOwner(account).call();
 
 호출이 빠르고 contract의 상태 변경이 없어 가스 비용이 낮은 호출 방법이다.
 
-## 2. send 함수로 Contract 함수 호출 ([/src/user/function/Mainfunction.jsx](https://github.com/Minkun00/Betting/blob/master/src/user/function/Mainfunction.jsx) : Line 46 참조))
+### 2. send 함수로 Contract 함수 호출 ([/src/user/function/Mainfunction.jsx](https://github.com/Minkun00/Betting/blob/master/src/user/function/Mainfunction.jsx) : Line 46 참조))
 ```
 await vote.methods.vote(teamName, amount).send({ from: account })
 ```
