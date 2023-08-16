@@ -15,7 +15,7 @@ export default function Navbar({ account, tokenBalance }) {
                 href='https://github.com/Minkun00/Betting'>
                 VOTE FOR LEAGUE OF LEGEND CHAMPIONSHIP KOREA
             </a>
-            <div>
+            <div>   
                 <div className='nav-left nav-subtitle-font'>
                     Account Number: {account}<br />
                     tokenBalance: {formattedTokenBalance}
