@@ -124,13 +124,114 @@ const ownerAddress = await contract.methods.showOwner(account).call();
 호출이 빠르고 contract의 상태 변경이 없어 가스 비용이 낮은 호출 방법이다.
 
 ### 2. send 함수로 Contract 함수 호출 ([/src/user/function/Mainfunction.jsx](https://github.com/Minkun00/Betting/blob/master/src/user/function/Mainfunction.jsx) : Line 46 참조))
+
+아래는 contract상의 vote함수를 호출하는 vote_함수를 Mainfunction.jsx에 구현한 코드이다.
 ```
-await vote.methods.vote(teamName, amount).send({ from: account })
+src/user/function/Mainfunction.jsx
+
+async function vote_(vote, teamName, amount, account) {
+    console.log("vote activate")
+    try {
+        await vote.methods.vote(teamName, amount).send({ from: account })
+        console.log(`user have voted for ${teamName}, ${amount}`)
+    } catch(error) {
+        console.log(error)
+        window.alert("vote error")
+    }
+}
 ```
+vote contract의 method 중 vote 함수를 teamName과 amount 값을 이용해 실행하는 데, 이 때 send 함수를 사용하여 트랜잭션을 호출하게 된다.
+
 send 함수로 호출할 때에는 트랜잭션을 생성하여 블록체인 contract의 상태 변경을 유발해 가스 비용이 높은 방법이다.
 
-
 따라서 상황을 잘 구분하여 두 가지 방법을 적절하게 활용하는 것이 중요하다.
+
+이제 웹페이지에서 버튼을 눌렀을 때 만들어놓은 vote_함수를 사용할 수 있도록 설정해보겠다.
+
+```
+src/user/src/Vote.jsx
+
+import { vote_,balanceOf_ } from "../function/Mainfunction"
+
+function Vote({ contract, account, team1Name, team1URL, team2Name, team2URL}) {
+
+    const handleVote = async () => {
+        try {
+            await vote_(contract, selectedTeamName, amount, account);
+            console.log(selectedTeamName);
+            console.log(amount);
+        } catch (error) {
+            console.log(error);
+            window.alert("vote Error!");
+        }
+        balanceOf_(contract, account)
+        }
+    return(
+        <React.Fragment>{
+            <button type='submit' className='vote-button' onClick={handleVote}>VOTE</button>
+        }</React.Fragment>
+    );
+}
+```
+
+1. 먼저 /src/user/function/Mainfunction.jsx 파일에서 vote_ 함수를 import 해서 사용할 수 있도록 한다.
+ 
+2. VOTE 버튼이 눌렸을 때 실행될 함수인 handleVote를 설정해주는데 이 때, /src/user/function/Mainfunction.jsx의 vote_함수를 실행하도록 설정해주었다.
+   
+3. <button> 태그의 onClick 속성을 handleVote 함수로 설정하여 클릭했을 때 handleVote 함수가 실행되어 vote의 단계가 진행되도록 설정하면 된다.
+
+
+# #4. react의 useState 사용하기
+React에서 상태관리를 위해 useState를 사용한다.
+
+함수형 컴포넌트 내부에서 다양한 상태의 관리를 useState를 통해 할 수 있다.
+
+코드 내용은 다음과 같다.
+
+```
+import React, { useState, useEffect } from 'react';
+function App() {
+  const [account, setAccount] = useState('0x0');
+}
+```
+1. react의 useState 훅을 사용할 수 있게 import 해준다.
+2. useState를 사용하여 account 상태와 이를 업데이트하는 setAccount 함수를 생성한다. (이 때 account의 초기값은 useState 함수의 parameter인 '0x0'으로 설정된다.
+3. 이 state를 변경시키고 싶다면 setAccount 함수를 호출하면 된다.
+```
+     src/App.jsx : Line 22.
+      setAccount(account);
+```
+
+# #5. react의 localStorage 사용하기
+웹 애플리케이션 전체에서 데이터를 유지하려면 웹 브라우저에서 제공하는 localStorage를 사용할 수 있다. 
+
+localStorage는 브라우저 저장소에 데이터를 영구적으로 저장하므로, 사용자 경험 개선이나 데이터 유지가 필요한 경우에 사용한다.
+
+따라서 localStorage를 사용하면 브라우저를 닫았다가 다시 열어도 데이터가 유지되도록 할 수 있다.
+
+코드 내용을 확인해보자.
+
+```
+src/owner/function/LocalStorageService.jsx
+
+export const saveDataToLocal = (key, data) => {
+    localStorage.setItem(key, JSON.stringify(data));
+};
+  
+export const getDataFromLocal = (key) => {
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : null;
+};
+```
+
+1. 데이터를 저장할 때에는 localStorage.setItem 함수를 이용하여 key와 값을 localStorage에 저장할 수 있다.
+   
+2. 데이터를 받아올 때에는 localStorage.getItem 함수를 이용하여 해당 key의 값을 받아올 수 있다.
+
+위 코드에서는 key에 대한 값을 json형식으로 저장하고, 이를 다시 원래 데이터 형태로 받아오는 방식으로 저장하였다.
+
+localStorage를 사용할 때 주의할 점은 도메인별로 용량 제한이 있기에 많은 데이터를 저장할 수 없다는 점이다.
+
 
 <br/><br/><br/>
 ## 최종 코드
