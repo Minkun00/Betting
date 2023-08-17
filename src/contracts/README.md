@@ -535,6 +535,8 @@ function returnBettingResult() public onlyAfterVersus returns(uint) {
 
 4. 그리고, 나중에 사용할 수도 있으니 ```event BettingResultOver```를 만들고, 이 함수에서 ```emit```하는 것도 만들자.
 
+* 수정 : ```emit```을 사용하는 것은 상당히 좋은 방법일 수 있으나, 나중에 React에서 사용할 때 조금 다른 방식으로 접근해야하기 때문에 이 프로젝트에서는 ```emit```을 사용하지 않았다.
+
 ```solidity
 event BettingResultOver();
 
@@ -543,7 +545,6 @@ function returnBettingResultOver() public onlyOwner onlyAfterVersus {
   totalSupply += teamWeight[teamNameWin];
   teamWeight[teamNameWin] = 0;
 
-  emit BettingResultOver();
   teamNameWin = stringToBytes32('none');
   versusExecuted = false;
 }
@@ -559,7 +560,6 @@ function returnBettingResultOver() public onlyOwner onlyAfterVersus {
 
 2. ```function showWinnerTeam```을 만들자. 현재 ```teamNameWin```의 값을 확인할 수 있다.
 
-3. ```returnBettingResult```에서 ```returnBettingResultOver```를 조건에 맞게 자동으로 실행할 수 있도록 하자. 물론, 이 경우는 이론상 ```owner```가 실행해야 자동으로 실행되겠지만, 뭐 테스트 용인데 그냥 머릿속에 있는 내용을 쓴다고 생각하자. 실제로 우리가 도박 사이트로 돈을 번다는 생각은 없으니.
 
 * 참고로, 1, 2번 과정은 후에 **React**을 사용하면서 값이 잘 적용되었는지 확인하기 위해서 설정하는 것이다.
 
@@ -571,9 +571,6 @@ function returnBettingResult() public onlyAfterVersus returns(uint) {
     amountToReturn = (votedBalanceOf(msg.sender) / winnerTeamPureBalance) * bettingTotalBalance;
     userData[msg.sender].balance += amountToReturn;
     teamWeight[teamNameWin] -= amountToReturn;
-    if (teamWeight[teamNameWin] == 0) {
-      returnBettingResultOver();
-    }
   }
   userData[msg.sender].teamName = '';
   userData[msg.sender].voteBalance = 0;
