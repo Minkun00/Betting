@@ -144,6 +144,8 @@ https://trufflesuite.com/ganache/
 ![ganache-1](./wsl-img/ganache-1.png)
 ### 1-2. server에서 hostname을 WSL버전으로 바꿔준다. 
 ![ganache-2](./wsl-img/ganache-2.png)
+
+* wsl로 바꾸고 Start를 눌렀을 때, 무한로딩이 걸리는 현상이 생길 수 있다. 해결방법은 아래의 truffle-config.js에서 networks의 값을 미리 설정하면 된다. 이 값은 1-2 화면에서 나오는 WSL 의 값을 기억해두고 쓰면 된다.
 ### 1-3. RFC SERVER의 IP주소를 복사 해둔다.
 ![ganache-3](./wsl-img/ganache-3.png)
 가나슈 설명란, 10개의 지갑이 보인다. 
