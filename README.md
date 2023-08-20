@@ -14,13 +14,13 @@ testnet ganache 사용법, 그리고 front-end 언어인 react를 이용해서 �
 
 <ul>
 
-    개발환경 : https://github.com/Minkun00/Betting#readme
+    1. 개발환경 : https://github.com/Minkun00/Betting#readme
 
-    Solidity : https://github.com/Minkun00/Betting/tree/master/src/contracts#readme
+    2. Solidity : https://github.com/Minkun00/Betting/tree/master/src/contracts#readme
 
-    React : https://github.com/Minkun00/Betting/blob/master/src/README.md
+    3. React : https://github.com/Minkun00/Betting/blob/master/src/README.md
 
-    API : https://github.com/Minkun00/Betting/tree/master/src/owner/src#readme
+    참고자료. API : https://github.com/Minkun00/Betting/tree/master/src/owner/src#readme
 
 
 
