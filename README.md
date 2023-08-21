@@ -1,8 +1,8 @@
 # 개요 
 
 블록체인 개발을 처음 입문하시는 분들을 위한 튜토리얼
-개발을 위한 환경설정부터 블록체인 핵심 언어인 solidy의 기본 문법, metamask 생성,
-testnet ganache 사용법, 그리고 front-end 언어인 react를 이용해서 블록체인 개발의 전 과정을 실습하며
+개발을 위한 환경설정부터 블록체인 핵심 언어인 solidity의 기본 문법, metamask 생성,
+testnet인 ganache 사용법, 그리고 front-end 언어인 react를 이용해서 블록체인 개발의 전 과정을 실습하며
 입문자를 도와주는 학습 프로젝트이다. 
 
 이번 프로젝트에서는 League Of Legend의 한국 대회인 LCK 경기 일정에 따라 사용자가 토큰을 배팅하면 
@@ -33,10 +33,9 @@ https://gaesae.com/161
 
 wsl 설치과정 48.에서 versbose가 아닌 verbose이다. 
 
-    wsl --list --verbose
-
-
 ![installing-wsl-error](./wsl-img/installing-wsl-error.png)
+
+    wsl --list --verbose
 
 ## github 
 ![github-logo](./wsl-img/github-logo.jpeg)
@@ -150,7 +149,7 @@ https://trufflesuite.com/ganache/
 ![ganache-4](./wsl-img/ganache-4.png)
 ### 1-4. NETWORK 추가를 누른뒤, 네트워크 수동추가를 눌러준다.
 ![ganache-6](./wsl-img/ganache-6.png)
-### 1-5. 네트워크 이름을 설정하고, 아까 복사했던 주소를 RFC SERVER란에 붙여넣어준다. 나머지는 위의 이미지와 동일하게 작성해준뒤 저장을 누른다.  
+### 1-5. 네트워크 이름을 설정하고, 아까 복사했던 주소를 RPC SERVER란에 붙여넣어준다. 나머지는 위의 이미지와 동일하게 작성해준뒤 저장을 누른다.  
 ![ganache-7](./wsl-img/ganache-7.png)
 ### 1-6. 가나슈 설정 창의 첫번째 지갑의 열쇠 모양을 클릭하고 개인키를 복사해준다.   
 ![ganache-4](./wsl-img/ganache-4.png)
